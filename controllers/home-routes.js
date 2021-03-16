@@ -5,7 +5,7 @@ const { User, Items } = require('../models');
 // get all items for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Item.findAll({
+  Items.findAll({
     attributes: [
       'id',
       'title',
