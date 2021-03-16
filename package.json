@@ -1,0 +1,30 @@
+{
+  "name": "personal-inventory-management-",
+  "version": "1.0.0",
+  "description": "A personal inventory management application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P-I-M/Personal-Inventory-Management-.git"
+  },
+  "author": "Hypertext Assassins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/P-I-M/Personal-Inventory-Management-/issues"
+  },
+  "homepage": "https://github.com/P-I-M/Personal-Inventory-Management-#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.1"
+  }
+}
