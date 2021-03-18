@@ -13,7 +13,7 @@ async function newMakeupProduct(event) {
     const mfg_date = document.querySelector('input[name="mfg_date"]').value;
     const exp_date = document.querySelector('input[name="exp_date"]').value;
 
-    const response = await fetch(`/api/makeup`, {
+    const response = await fetch(`/api/cosmetics`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
@@ -44,7 +44,7 @@ async function newGroceryProduct(event) {
     const stock = document.querySelector('input[name="stock"]').value;
     const exp_date = document.querySelector('input[name="exp_date"]').value;
 
-    const response = await fetch(`/api/makeup`, {
+    const response = await fetch(`/api/grocery`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
@@ -75,7 +75,7 @@ async function newMedicineProduct(event) {
     const mfg_date = document.querySelector('input[name="mfg_date"]').value;
     const exp_date = document.querySelector('input[name="exp_date"]').value;
 
-    const response = await fetch(`/api/makeup`, {
+    const response = await fetch(`/api/medicine`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
@@ -106,7 +106,7 @@ async function newBookProduct(event) {
     const stock = document.querySelector('input[name="stock"]').value;
     const author_name = document.querySelector('input[name="author_name"]').value;
 
-    const response = await fetch(`/api/makeup`, {
+    const response = await fetch(`/api/books`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
