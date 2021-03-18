@@ -1,29 +1,33 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { User, Items } = require('../models');
+const { User, Product, Category } = require('../models');
 
-// get all items for homepage
+// get all products for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Items.findAll({
+  Product.findAll({
     attributes: [
       'id',
-      'title',
-      'text',
-      'created_at'
+      'product_name',
+      'prod_desc',
+      'price',
+      'stock',
+      'mfg_date',
+      'exp_date',
+      'author_name',
+      'category_id'
     ],
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ['email']
       }
     ]
   })
-    .then(dbItemData => {
-      const items = dbItemData.map(item => item.get({ plain: true }));
+    .then(dbProductData => {
+      const products = dbProductData.map(product => product.get({ plain: true }));
 
       res.render('homepage', {
-        items,
+        products,
         loggedIn: req.session.loggedIn
       });
     })
@@ -33,35 +37,40 @@ router.get('/', (req, res) => {
     });
 });
 
-// get single item
-router.get('/item/:id', (req, res) => {
-  Item.findOne({
+// get single product
+router.get('/product/:id', (req, res) => {
+  product.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      'title',
-      'text',
-      'created_at'
+      'product_name',
+      'prod_desc',
+      'price',
+      'stock',
+      'mfg_date',
+      'exp_date',
+      'author_name',
+      'category_id'
     ],
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: ['email']
       }
     ]
   })
-    .then(dbItemData => {
-      if (!dbItemData) {
-        res.status(404).json({ message: 'No item found with this id' });
+    .then(dbProductData => {
+      if (!dbProductData) {
+        res.status(404).json({ message: 'No product found with this id' });
         return;
       }
 
-      const item = dbItemData.get({ plain: true });
+      const product = dbProductData.get({ plain: true });
 
-      res.render('single-item', {
-        item,
+      res.render('single-product', {
+        product,
         loggedIn: req.session.loggedIn
       });
     })
@@ -70,6 +79,7 @@ router.get('/item/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
