@@ -39,6 +39,18 @@ Product.init(
         isNumeric: true
       }
     },
+    mfg_date:{
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    exp_date:{
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    author_name:{
+      type: DataTypes.STRING,
+      allowNull:true
+    },
     category_id:{
       type: DataTypes.INTEGER,
       references: {
