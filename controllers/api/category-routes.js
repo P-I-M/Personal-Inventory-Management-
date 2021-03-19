@@ -38,5 +38,20 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
   });
+
+  // post a category
+  router.post('/', withAuth, (req, res) => {
+    // expects => {"category_desc": "Test description", "category_name": "Food Items"}
+    Category.create({
+      category_desc: req.body.category_desc,
+      category_name: req.body.category_name,
+      user_id: req.session.user_id,
+    })
+      .then(dbCategoryData => res.json(dbCategoryData))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
+  });
   
   module.exports = router;
