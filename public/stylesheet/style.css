@@ -1,0 +1,17 @@
+/*colour blue: 000066*/
+:root{
+    --p-color: #000066;
+    --s-color: #fff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: var(--s-color);
+    font-family: 'Times New Roman', Times, serif;
+}
+
