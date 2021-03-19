@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
   
   // get single product
   router.get('/product/:id', (req, res) => {
-    product.findOne({
+    Product.findOne({
       where: {
         id: req.params.id
       },
@@ -63,5 +63,24 @@ router.get('/', (req, res) => {
     });
   });
   
+    // post a Product
+    router.post('/', withAuth, (req, res) => {
+      // expects => {"category_desc": "Test description", "category_name": "Food Items"}
+      Product.create({
+        product_name: req.body.product_name,
+        prod_desc: req.body.prod_desc,
+        price: req.body.price,
+        stock: req.body.stock,
+        mfg_date: req.body.mfg_date,
+        exp_date: req.body.exp_date,
+        category_id: req.body.category_id,
+        user_id: req.session.user_id,
+      })
+        .then(dbProductData => res.json(dbProductData))
+        .catch(err => {
+          console.log(err);
+          res.status(400).json(err);
+        });
+    });
   
   module.exports = router;
