@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title></title>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">  
+<link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+    
+<body>
+  <div class="wrapper">
+    <header class="hero">
+
+<section class="masthead" role="img" aria-label="PIM Hero">
+  <h1>
+   Personal Inventory Management
+  </h1>
+   <a href="/login"><button>Login</a>
+    </button>
+</section>
+<br />
+      <nav>
+        {{#if loggedIn}}
+       <button class="btn-no-style"><a href="/">Home</button></a>
+        <button class="btn-no-style"><a href="/dashboard">Dashboard</button></a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+<footer>
+    <p>
+        &copy 2021 Hypertext Assassins.
+    </p>
+</footer>
+  </div>
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <article class="post">
     <div class="title">
       <a href="/post/{{id}}">{{title}}</a>  
@@ -11,3 +12,13 @@
       <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>  
     </div>
 </article>
+=======
+
+<div class="card">
+    <div class="card-header">
+       <h4><a class="link" href="/post/{{id}}">{{title}}</a></h4>
+        <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+    </div>
+        <p class="card-body">{{content}}</p>
+</div>
+>>>>>>> 532ff1c28a05cbe815fbae7368ed2c9e6ce858b5
