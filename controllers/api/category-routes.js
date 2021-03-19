@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
   });
 
   // post a category
-  router.post('/', withAuth, (req, res) => {
+  router.post('/', (req, res) => {
     // expects => {"category_desc": "Test description", "category_name": "Food Items"}
     Category.create({
       category_desc: req.body.category_desc,
