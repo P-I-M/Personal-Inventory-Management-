@@ -5,10 +5,11 @@ async function logout() {
     });
   
     if (response.ok) {
+      window.alert("You are logged out!");
       document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   }
   
-  document.querySelector('#xxx').addEventListener('click', logout);
+  document.querySelector('#logout').addEventListener('click', logout);
