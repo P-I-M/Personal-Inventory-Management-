@@ -24,14 +24,15 @@ const sess = {
   })
 };
 
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
+/*const helpers = require('./utils/helpers');*/
+
 
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', hbs.engine);
+app.use(express.static(path.join(__dirname, '/public')));
+app.engine('handlebars', exphbs({ deafaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 // turn on routes
 app.use(routes);
 
