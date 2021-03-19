@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
         window.alert("welcome new user!");
         console.log('success');
-        document.location.replace('/homepage');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
