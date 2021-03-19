@@ -33,6 +33,7 @@ body {
       
         
   button {
+    font-weight: 700;
     background: #098191;
     transition: background ease .25s;
     border-radius: 5px;
@@ -55,5 +56,15 @@ body {
     outline: 1px solid #fff;
     outline-offset: -4px;
   }
+
+  a:link {
+    text-decoration: none;
+  }
+  
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
 
       
