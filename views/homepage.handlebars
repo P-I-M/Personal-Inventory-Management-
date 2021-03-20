@@ -1,11 +1,17 @@
 
-<div class=""
+<div>
+  <h2 class="dash-title">Your Inventory</h2>
+  <a href="/dashboard/create/"><button id="create-product">Create New Product</button></a>
 
-<ol class="post-list">
+{{#if products.length}}
+</div>
  
-  {{#each posts as |post|}}
-  <li>
-    {{> add-product post }}
-  </li>
+  {{#each products as |product|}}
+    {{> product-info product}}
+      <a href="/dashboard/edit/{{product.id}}"><button id="edit-product">Edit Product</button></a>
+    </div>
   {{/each}}
-</ol>
+
+{{else}}
+<h6>You do not have any products in your inventory.</h6>
+{{/if}}
