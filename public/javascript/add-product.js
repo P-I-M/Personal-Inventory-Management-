@@ -3,6 +3,33 @@
 //if medicine chosen then newMedicineProduct()
 //if books chosen then newBookProduct()
 
+const handleGetCategorySubmit = event => {
+  event.preventDefault(); 
+  const categoryRadioHTML = $productForm.querySelectorAll('[name="category"]');
+  let category; 
+
+  for (let i=0; i< categoryRadioHTML.length; i += 1) {
+    if(categoryRadioHTML[i].checked) {
+      category = categoryRadioHTML[i].value;
+    }
+  }
+  switch(category) {
+    case "makeup":
+      newMakeupProduct(); 
+      break; 
+    case "grocery":
+      newGroceryProduct(); 
+      break; 
+    case "medicine":
+      newMedicineProduct(); 
+      break; 
+    case "books" :
+      newBookProduct(); 
+      break; 
+  }
+};
+
+
 async function newMakeupProduct(event) {
     event.preventDefault();
   
@@ -13,7 +40,7 @@ async function newMakeupProduct(event) {
     const mfg_date = document.querySelector('input[name="mfg_date"]').value;
     const exp_date = document.querySelector('input[name="exp_date"]').value;
 
-    const response = await fetch(`/api/cosmetics`, {
+    const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
@@ -44,7 +71,7 @@ async function newGroceryProduct(event) {
     const stock = document.querySelector('input[name="stock"]').value;
     const exp_date = document.querySelector('input[name="exp_date"]').value;
 
-    const response = await fetch(`/api/grocery`, {
+    const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
@@ -75,7 +102,7 @@ async function newMedicineProduct(event) {
     const mfg_date = document.querySelector('input[name="mfg_date"]').value;
     const exp_date = document.querySelector('input[name="exp_date"]').value;
 
-    const response = await fetch(`/api/medicine`, {
+    const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
@@ -106,7 +133,7 @@ async function newBookProduct(event) {
     const stock = document.querySelector('input[name="stock"]').value;
     const author_name = document.querySelector('input[name="author_name"]').value;
 
-    const response = await fetch(`/api/books`, {
+    const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
         product_name,
