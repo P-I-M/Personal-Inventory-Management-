@@ -1,15 +1,32 @@
 <div class="card">
     <h3 class="card-header">Edit Post</h3>
     <form class="card-body edit-post-form">
-        <label for="post-title" class="form-label">Title</label>
-        <input name="post-title" type="text" value="{{post.title}}" class="form-input" />
-        <label class="form-label" for="content">Content</label>
-        <input name="content" type="text" value="{{post.content}}" class="form-input" />
-        <button type="submit" class="btn">Update Post</button>
-        <button type="button" class="delete-post-btn btn">Delete Post</button>
+        <label for="product-title" class="form-label">Product</label>
+        <input name="product-title" type="text" value="{{product.product_title}}" class="form-input" />
+
+        <label for="prod-desc" class="form-label" >Description</label>
+        <input name="prod-desc" type="text" value="{{product.prod_desc}}" class="form-input" />
+
+        <label for="price" class="form-label" >Price</label>
+        <input name="price" type="text" value="{{product.price}}" class="form-input" />
+
+        <label for="stock" class="form-label" >Stock</label>
+        <input name="stock" type="text" value="{{product.stock}}" class="form-input" />
+
+        <label for="mfg_date" class="form-label" >Manufacturing Date</label>
+        <input name="mfg_date" type="text" value="{{product.mfg_date}}" class="form-input" />
+
+        <label for="exp_date" class="form-label" >Expiration Date</label>
+        <input name="exp_date" type="text" value="{{product.exp_date}}" class="form-input" />
+
+        <label for="author_name" class="form-label" >Author</label>
+        <input name="author_name" type="text" value="{{product.author_name}}" class="form-input" />
+
+        <button type="submit" class="btn">Update Product</button>
+        <button type="button" class="delete-prod-btn btn">Delete Product</button>
     </form>
 </div>
 
 
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/edit-product.js"></script>
+<script src="/javascript/delete-product.js"></script>
