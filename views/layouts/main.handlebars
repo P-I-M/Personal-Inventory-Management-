@@ -5,10 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title></title>
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
-    
+
 <body>
   <div class="wrapper">
     <header class="hero">
@@ -17,16 +19,24 @@
   <h1>
    Personal Inventory Management
   </h1>
-   <a href="/login"><button>Login</a>
+    {{#if loggedOut}}
+      <a href="/login"><button>Login</a>
     </button>
+        {{else}}
+    
+        {{/if}}
+
 </section>
 <br />
-      <nav>
+       <nav>
         {{#if loggedIn}}
        <button class="btn-no-style"><a href="/">Home</button></a>
         <button class="btn-no-style"><a href="/dashboard">Dashboard</button></a>
         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
+   <button class="btn-no-style"><a href="/">Home</button></a>     
+   <button class="btn-no-style"><a href="/login">Login</button></a>
+   <button class="btn-no-style"><a href="/signup">Create Account</button></a>
         {{/if}}
       </nav>
     </header>
@@ -37,6 +47,9 @@
     <p>
         &copy 2021 Hypertext Assassins.
     </p>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/javasctipt/script.js"></script>
 </footer>
   </div>
   

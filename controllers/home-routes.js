@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User, Product, Category } = require('../models');
+const sequelize = require('../config/connection');
+const { User, Product} = require('../models');
 
 // get all products for homepage
 router.get('/', (req, res) => {
@@ -35,6 +36,24 @@ router.get('/', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  if(req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup');
 });
 
 // get single product
@@ -80,17 +99,6 @@ router.get('/product/:id', (req, res) => {
     });
 });
 
-router.get('/signup', (req, res) => {
-  res.render('signup');
-});
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 module.exports = router;

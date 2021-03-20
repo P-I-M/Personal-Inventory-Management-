@@ -16,7 +16,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        alert("you're logged in!")
+        alert("Login Successful")
         document.location.replace('/');
       } else {
         alert(response.statusText);
