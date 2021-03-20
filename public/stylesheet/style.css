@@ -1,9 +1,9 @@
 body {
-    background-color: blue;;
+    background-color: white;;
     margin: 0;
     padding: 0;
     font-family: "PT Sans", sans-serif;
-    color: white;;
+    color: black;;
     line-height: 1.5;
     font-size: 24px;
 }
@@ -63,6 +63,7 @@ body {
 
   a:link {
     text-decoration: none;
+    color: white;
   }
   
 a:visited {
@@ -70,5 +71,253 @@ a:visited {
     color: white;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header"
+    "product-display product-display product-nav product-nav scheduler scheduler scheduler scheduler"
+    "product-display product-display product-nav product-nav scheduler scheduler scheduler scheduler"
+    "product-info product-info product-info product-info scheduler scheduler scheduler scheduler"
+    "product-info product-info product-info product-info scheduler scheduler scheduler scheduler"
+    "product-info product-info product-info product-info scheduler scheduler scheduler scheduler";
+}
+
+.textarea {
+  background: lightgrey;
+  resize: vertical ;
+  color: #000000;
+  border-left: 3px dotted black;
+  border-bottom: 3px;
+  border-right: 3px dotted black;
+  padding: 0;
+  border-radius: 0;
+  text-justify: center;
+}
+
+.time-block {
+  text-align: center;
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
+
+.row {
+  white-space: pre-wrap;
+  border-top: 1px solid white;
+}
+
+.day {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 900;
+  height: 85px;
+}
+
+
+
+
+.dashboard-header { 
+  margin: 15px;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  grid-area: dashboard-header; 
+}
+
+
+.product-display { 
+  border:solid black;
+  margin: 5px;
+  background: url(/images/banada.png);
+  text-align: center;
+  height: 300px;
+  grid-area: product-display; 
+}
+
+.product-nav {
+  border: solid black;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "my-inventory my-inventory my-inventory"
+    "add-item add-item add-item"
+    "suggetions suggetions suggetions"
+    "delete-item delete-item delete-item";
+  grid-area: product-nav;
+}
+
+.my-inventory { grid-area: my-inventory; }
+
+.add-item { grid-area: add-item; }
+
+.suggetions { grid-area: suggetions; }
+
+.delete-item { grid-area: delete-item; }
+
+.product-info {
+  display: grid;
+  color: white;
+  font-weight: 700;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.1fr 1fr;
+  gap: 0px 0px;
+  border: solid 5px;
+  margin: 5px;
+  grid-template-areas:
+    "your-products your-products"
+    "prod_desc prod_desc"
+    "product_name product_name"
+    "price price"
+    "stock stock"
+    "mfg_date mfg_date"
+    "exp_date exp_date"
+    "author_name author_name"
+    "category_id category_id";
+  grid-area: product-info;
+}
+
+.product-info span{
+  text-align: center;
+  color: black;
+  font-weight:700;
+  font-size: 25px;
+}
+
+.btn {
+  font-weight: 700;
+  background: #098191;
+  transition: background ease .25s;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.your-products { 
+  text-align: center;
+  font-weight:700;
+  font-size: 25px;
+  border-bottom: solid 5px;
+  grid-area: your-products; 
+}
+
+.prod_desc { 
+  background: #098191;
+  grid-area: prod_desc;
+}
+
+.product_name { 
+  background: #098191;
+  border-top: dotted grey;
+  grid-area: product_name; }
+
+.price { 
+  background: #098191;
+  border-top: dotted grey;
+  grid-area: price; }
+
+.stock { 
+  background: #098191;
+  border-top: dotted grey;
+  grid-area: stock; }
+
+.mfg_date { 
+  background: #098191;
+  border-top: dotted grey;
+  grid-area: mfg_date; }
+
+.exp_date { 
+  background: #098191;
+  border-top: dotted grey;
+  grid-area: exp_date; }
+
+.author_name { 
+  background: #098191;
+  border-top: dotted grey;
+  border-bottom: dotted grey;
+  grid-area: author_name; }
+
+.category_id { 
+  background: #098191;
+  grid-area: category_id; }
+
+  .scheduler {
+    width: 100%;
+    height: 100%;
+    padding: 0px 25px 0px 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
+    grid-template-areas:
+      "todays-date"
+      "monday"
+      "tuesday"
+      "wednesday"
+      "thursday"
+      "friday"
+      "saturday"
+      "sunday";
+    grid-area: scheduler;
+  }
+
+.input-group-text {
+  width: 175px;
+}
+
+.todays-date { 
+  font-weight: 700;
+  text-align: center;
+  padding-top: 5;
+  height: 100px;
+  grid-area: todays-date; 
+}
+
+.mborder {
+  padding: 10px;
+  margin-bottom: 24px!important;
+  height: 65px;
+}
+
+.monday {
+border-top: solid black;
+}
+
+.tuesday {
+  border-top: dotted grey;
+}
+
+.wednesday {
+  border-top: dotted grey;
+}
+
+.thursday {
+  border-top: dotted grey;
+}
+
+.friday {
+  border-top: dotted grey;
+}
+
+.saturday {
+  border-top: dotted grey;
+}
+
+.sunday {
+  border-top: dotted grey;
+}
 
       
