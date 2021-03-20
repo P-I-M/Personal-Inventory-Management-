@@ -22,4 +22,4 @@ async function deleteProduct(event) {
     }
 };
   
-document.querySelector('.xxx').addEventListener('click', deleteFormHandler);
+document.querySelector('.delete-prod-btn').addEventListener('click', deleteProduct);

@@ -52,7 +52,6 @@ async function editGroceryProduct(event) {
             prod_desc,
             price,
             stock,
-            mfg_date,
             exp_date
         }),
         headers: {
@@ -121,8 +120,7 @@ async function editBookProduct(event) {
             prod_desc,
             price,
             stock,
-            mfg_date,
-            exp_date
+            author_name
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -136,4 +134,4 @@ async function editBookProduct(event) {
       }
 };
   
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-post-form').addEventListener('submit', edit____Product);
