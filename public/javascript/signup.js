@@ -15,7 +15,7 @@ async function signupFormHandler(event) {
       });
   
       if (response.ok) {
-        window.alert("welcome new user!");
+        window.alert("Congratulations, account created!");
         console.log('success');
         document.location.replace('/');
       } else {

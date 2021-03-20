@@ -5,7 +5,7 @@ async function logout() {
     });
   
     if (response.ok) {
-      window.alert("You are logged out!");
+      window.alert("Logout Successful");
       document.location.replace('/');
     } else {
       alert(response.statusText);

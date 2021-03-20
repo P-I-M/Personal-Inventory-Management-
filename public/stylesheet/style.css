@@ -57,6 +57,10 @@ body {
     outline-offset: -4px;
   }
 
+  footer {
+      text-align: center;
+  }
+
   a:link {
     text-decoration: none;
   }
