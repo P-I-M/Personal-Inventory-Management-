@@ -1,4 +1,4 @@
-const url = "https://api.cloudinary.com/v1_1/personal-inventory-management/image/upload";
+const url = "https://api.cloudinary.com/v1_1/personal-inventory-management/image/upload/";
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
@@ -27,7 +27,6 @@ form.addEventListener("submit", (e) => {
         var image = document.createElement("img");
         image.src = imageurl;
         div.appendChild(image);
-        console.log(imageurl);
       });
   }
 });

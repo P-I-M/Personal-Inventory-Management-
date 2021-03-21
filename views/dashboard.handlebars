@@ -1,9 +1,17 @@
 
 <div class="grid-container">
-    <div class="dashboard-header">test</div>
-  <div class="profile-photo">
-    <img src="/images/rudd.jpeg">
-  </div>
+      <!-- upload image -->
+    <div class="profile-photo">
+        <!-- display image -->
+        <div id="product_image">
+          <p id="data"></p>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+          <label for="prod-img"><b>Add a profile picture!</b></label>
+          <input type="file" id="prod-img" name="files[]" multiple>
+          <input type="submit" value="Upload Image" name="submit">
+        </form>
+    </div>
   <div class="product-nav">
       <button class="my-inventory"><a href="/dashboard/products">My Inventory</button></a>
        <button class="suggetions">Daily Suggestions</button>
@@ -110,3 +118,4 @@
 
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/upload.js"></script>
