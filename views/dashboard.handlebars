@@ -1,18 +1,16 @@
 
-  <div class="grid-container">
-    <div class="dashboard-header"></div>
-    <div class="product-display">
-        <img src="images/banana.jpg"></div>
-    <div class="product-nav">
+<div class="grid-container">
+  <div class="profile-photo">
+    <img src="/images/rudd.jpg" width="700" height="290">
+  </div>
+  <div class="product-nav">
       <button class="my-inventory"><a href="/products">My Inventory</button></a>
       <button class="add-item"><a href="/dashboard/new">Add Item</button></a>
       <button class="suggetions">Daily Suggestions</button>
       <button class="delete-item">Delete Item</button>
-
   </div>
-   <div class="scheduler">
-
-          <!-- Monday  -->
+  <div class="scheduler">
+    <!-- Monday  -->
           <div class="input-group mborder">
             <div class="input-group-prepend row">
               <span class="input-group-text day">Monday:</span>
@@ -97,37 +95,7 @@
             </div>
            </div>
 
-  <div class="product-header">YOUR PRODUCT</div>
-  <div class="product-info">
-    <div class="entry1">PH</div>
-    <div class="entry2">PH</div>
-    <div class="entry3">PH</div>
-    <div class="entry4">PH</div>
-    <div class="entry5">PH</div>
-    <div class="entry6">PH</div>
-    <div class="entry7">PH</div>
-    <div class="entry8">PH</div>
-    <div class="prod_desc">Description:</div>
-    <div class="product_name">Product Name:</div>
-    <div class="mfg_date">Manufacture Date:</div>
-    <div class="stock">Quantity:</div>
-    <div class="price">Price:</div>
-    <div class="exp_date">Expiry Date:</div>
-    <div class="author_name">Author:</div>
-    <div class="category_id">Categor:</div>
-  </div>
-</div>
 
-{{#if posts.length}}
-<section>
-  <h2>Your Products</h2>
-    {{#each product as |product|}}
-      {{> dashboard-postinfo product}}
-    {{/each}}
 
-</section>
-{{/if}}
-
-<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
 
 <script src="/javascript/add-post.js"></script>

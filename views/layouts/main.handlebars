@@ -15,9 +15,7 @@
     <header class="hero">
 
 <section class="masthead" role="img" aria-label="PIM Hero">
-  <h1>
-   Personal Inventory Management
-  </h1>
+  <h1> mnmlize </h1>
     {{#if loggedOut}}
       <a href="/login"><button>Login</a>
     </button>
@@ -29,11 +27,8 @@
 <br />
        <nav>
         {{#if loggedIn}}
-       <button class="btn-no-style"><a href="/">Home</button></a>
-        <button class="btn-no-style"><a href="/dashboard">Dashboard</button></a>
         <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-   <button class="btn-no-style"><a href="/">Home</button></a>     
+        {{else}}   
    <button class="btn-no-style"><a href="/login">Login</button></a>
    <button class="btn-no-style"><a href="/signup">Create Account</button></a>
         {{/if}}
