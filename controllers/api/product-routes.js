@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
     Product.findAll({
       attributes: [
         'id',
+        'img_url',
         'product_name',
         'prod_desc',
         'price',
@@ -40,6 +41,7 @@ router.get('/', (req, res) => {
       },
       attributes: [
         'id',
+        'img_url',
         'product_name',
         'prod_desc',
         'price',
@@ -68,6 +70,7 @@ router.get('/', (req, res) => {
       // expects => {    "product_name": "Lip gloss", "prod_desc": "Lakme", "price": "20", "stock": 3, "mfg_date": "2021-01-01T00:00:00.000Z", "exp_date": "2022-01-01T00:00:00.000Z","category_id": 3}
       
       Product.create({
+        img_url: req.body.img_url,
         product_name: req.body.product_name,
         prod_desc: req.body.prod_desc,
         price: req.body.price,

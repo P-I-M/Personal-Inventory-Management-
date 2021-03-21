@@ -28,9 +28,23 @@
     <div> 
     <button type="submit" class="btn">Add Product</button>
     </div>
+    <!-- upload image -->
+    <div>
+      <form method="post" enctype="multipart/form-data">
+      <label for="prod-img"><b>Product Image : </b></label>
+      <input type="file" id="prod-img" name="files[]" multiple>
+      <input type="submit" value="Upload Image" name="submit">
+      </form>
+      <!-- display image -->
+      <div id="product_image">
+        <p id="data"></p>
+      </div>
+    </div>
+    <div> 
+      <button type="submit" class="btn">Add Product</button>
+    </div>
   </form>
 </section>
 
-
-
 <script src="/javascript/add-product.js"></script>
+<script src="/javascript/upload.js"></script>

@@ -30,7 +30,8 @@ const handleGetCategorySubmit = event => {
 
 async function newMakeupProduct(event) {
     event.preventDefault();
-  
+
+    const img_url = document.querySelect('input[name="prod-img"]').value;
     const product_name = document.querySelector('input[name="prod-name"]').value;
     const prod_desc = document.querySelector('input[name="prod-desc"]').value;
     const price = document.querySelector('input[name="prod-price"]').value;
@@ -38,9 +39,11 @@ async function newMakeupProduct(event) {
     const mfg_date = document.querySelector('input[name="mfg-date"]').value;
     const exp_date = document.querySelector('input[name="exp-date"]').value;
 
+
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
+        img_url, 
         product_name,
         prod_desc,
         price,
@@ -64,7 +67,8 @@ async function newMakeupProduct(event) {
 
 async function newGroceryProduct(event) {
     event.preventDefault();
-  
+
+    const img_url = document.querySelect('input[name="prod-img"]').value;
     const product_name = document.querySelector('input[name="product-name"]').value;
     const prod_desc = document.querySelector('input[name="prod_desc"]').value;
     const price = document.querySelector('input[name="price"]').value;
@@ -74,6 +78,7 @@ async function newGroceryProduct(event) {
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
+        img_url, 
         product_name,
         prod_desc,
         price,
@@ -97,6 +102,7 @@ async function newGroceryProduct(event) {
 async function newMedicineProduct(event) {
     event.preventDefault();
   
+    const img_url = document.querySelect('input[name="prod-img"]').value;
     const product_name = document.querySelector('input[name="product-name"]').value;
     const prod_desc = document.querySelector('input[name="prod_desc"]').value;
     const price = document.querySelector('input[name="price"]').value;
@@ -107,6 +113,7 @@ async function newMedicineProduct(event) {
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
+        img_url, 
         product_name,
         prod_desc,
         price,
@@ -130,7 +137,8 @@ async function newMedicineProduct(event) {
 
 async function newBookProduct(event) {
     event.preventDefault();
-  
+
+    const img_url = document.querySelect('input[name="prod-img"]').value;
     const product_name = document.querySelector('input[name="product-name"]').value;
     const prod_desc = document.querySelector('input[name="prod_desc"]').value;
     const price = document.querySelector('input[name="price"]').value;
@@ -140,6 +148,7 @@ async function newBookProduct(event) {
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
+        img_url, 
         product_name,
         prod_desc,
         price,
@@ -162,4 +171,4 @@ async function newBookProduct(event) {
 
 
   
-document.querySelector('.new-product-form').addEventListener('submit', handleGetCategorySubmit);
+document.querySelector('.new-product-form').addEventListener('submit', newMedicineProduct);
