@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Product } = require('../models');
+const { User, Product,Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
@@ -112,8 +112,45 @@ router.get('/create/', withAuth, (req, res) => {
       });
 });
 
-router.get('/new', (req, res) => {
-    res.render('new-product');
+//route to add new product
+router.get('/new',withAuth, (req, res) => {
+    Category.findAll({
+        attributes: [
+          'id',
+          'category_name',
+          'category_desc'
+        ]
+      })
+      .then(dbPostData => {
+        
+        const categories = dbPostData.map(category =>category.get({ plain:true}));
+        res.render('add-product', { categories, loggedIn: true });
+        })
+        .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+        });
+});
+
+//route to add new product
+router.get('/add/:id',withAuth, (req, res) => {    
+    
+    if(req.params.id == 1)
+    {
+        res.render('add-grocery');
+    }
+    if(req.params.id == 2)
+    {
+        res.render('add-medicine');
+    }
+    if(req.params.id == 3)
+    {
+        res.render('add-cosmetics');
+    }
+    if(req.params.id == 4)
+    {
+        res.render('add-book');
+    }
 });
 
 module.exports = router;

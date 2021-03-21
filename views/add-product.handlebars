@@ -1,0 +1,15 @@
+{{#if categories.length}}
+<section>
+  <h2>Select Category to add product</h2>
+  <ul>
+    {{#each categories as |category|}}         
+        <li>   
+          <div>       
+          <a href="/dashboard/add/{{id}}"> {{category_name}} </a>
+          </div>   
+        </li> 
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
+
