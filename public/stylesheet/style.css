@@ -184,7 +184,6 @@ p.lead {
 .wednesday { grid-area: wednesday; }
 
 .thursday { grid-area: thursday; }
-<<<<<<< HEAD
 
 .friday { grid-area: friday; }
 
@@ -192,15 +191,6 @@ p.lead {
 
 .sunday { grid-area: sunday; }
 
-=======
-
-.friday { grid-area: friday; }
-
-.saturday { grid-area: saturday; }
-
-.sunday { grid-area: sunday; }
-
->>>>>>> dd2ec157d00ee6f592c1f180a4b3bdbd95099061
 .iframe-title {
   display: grid;
   padding: 25px;
@@ -213,7 +203,6 @@ p.lead {
   grid-template-areas:
     ".";
   grid-area: iframe-title;
-<<<<<<< HEAD
 }
 
 .iframediv {
@@ -228,22 +217,6 @@ p.lead {
   grid-area: iframediv;
 }
 
-=======
-}
-
-.iframediv {
-  display: grid;
- 
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  margin: 10px;
-  gap: 5px 5px;
-  grid-template-areas:
-    ".";
-  grid-area: iframediv;
-}
-
->>>>>>> dd2ec157d00ee6f592c1f180a4b3bdbd95099061
 .product-header {
   text-align: center;
   color: black;
@@ -388,13 +361,8 @@ p.lead {
   text-align: center;
   grid-area: profile-photo; 
 }
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> dd2ec157d00ee6f592c1f180a4b3bdbd95099061
 .product-nav {
   display: grid;
   padding: 5px;
