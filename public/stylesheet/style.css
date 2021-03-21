@@ -63,7 +63,7 @@ body {
 
   a:link {
     text-decoration: none;
-    color: white;
+    color: black;
   }
   
 a:visited {
@@ -320,4 +320,4 @@ border-top: solid black;
   border-top: dotted grey;
 }
 
-      
+    
