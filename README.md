@@ -30,3 +30,6 @@ To run this project, install it locally using npm: <br>
     "jest": "^26.6.3", <br>
     "mysql2": "^2.2.5", <br>
     "sequelize": "^6.5.1" <br>
+
+## images
+![localhost-3001-dashboard-create-](https://user-images.githubusercontent.com/40303668/111889995-e479a880-89bb-11eb-8082-421c966c6429.png)
