@@ -1,3 +1,72 @@
+//Update product info
+async function handleGetCategorySubmit(event) {
+  event.preventDefault();
+    debugger;
+    let category_id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 2
+    ];
+    let id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
+    category_id = parseInt(category_id);
+    id = parseInt(id);
+    let mfg_date=null;
+    let exp_date=null;
+      
+    const product_name = document.querySelector('input[name="product-title"]').value.trim();
+    const prod_desc = document.querySelector('input[name="prod-desc"]').value.trim();
+    const price = parseFloat(document.querySelector('input[name="price"]').value.trim());
+    const stock = parseInt(document.querySelector('input[name="stock"]').value.trim());
+    if(category_id == 1 || category_id== 2 || category_id == 3)
+    {
+    mfg_date = Date.parse(document.querySelector('input[name="mfg_date"]').value.trim());
+    exp_date = Date.parse(document.querySelector('input[name="exp_date"]').value.trim());
+    }   
+    const author_name = document.querySelector('input[name="author_name"]').value.trim();
+
+    if(product_name && prod_desc && price && stock)
+    {   
+      const response = await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+        product_name,
+        prod_desc,
+        price,
+        stock,
+        mfg_date,
+        exp_date,
+        author_name
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  
+    if (response.ok) {
+      window.alert("New product added!");
+      document.location.replace('/dashboard');
+    } else {
+      alert(response.statusText);
+    } 
+  }
+  else
+  {
+    window.alert("Product enter all details");
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 const category_id = window.location.toString().split('/')[
   window.location.toString().split('/').length - 2
 ];
@@ -138,4 +207,4 @@ async function editBookProduct(event) {
       }
 };
   
-document.querySelector('.edit-post-form').addEventListener('submit', edit____Product);
+document.querySelector('.edit-post-form').addEventListener('submit', handleGetCategorySubmit);
