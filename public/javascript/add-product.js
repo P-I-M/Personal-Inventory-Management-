@@ -10,27 +10,19 @@ const category_id = id;
 
 const handleGetCategorySubmit = event => {
   event.preventDefault();
- 
-  const categoryRadioHTML = $productForm.querySelectorAll('[name="category"]');
-  let category; 
 
-  for (let i=0; i< categoryRadioHTML.length; i += 1) {
-    if(categoryRadioHTML[i].checked) {
-      category = categoryRadioHTML[i].value;
-    }
-  }
-  switch(id) {
+  switch(category_id) {
     case 1:
-      newGroceryProduct(); 
+      newGroceryProduct(category_id); 
       break; 
     case 2:
-      newMedicineProduct(); 
+      newMedicineProduct(category_id); 
       break; 
     case 3:
-      newMakeupProduct(); 
+      newMakeupProduct(category_id); 
       break;     
     case 4 :
-      newBookProduct(); 
+      newBookProduct(category_id); 
       break; 
   }
 };
@@ -39,12 +31,12 @@ const handleGetCategorySubmit = event => {
 async function newMakeupProduct(event) {
     event.preventDefault();
   
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const mfg_date = document.querySelector('input[name="mfg_date"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
+    const product_name = document.querySelector('input[name="prod-name"]').value;
+    const prod_desc = document.querySelector('input[name="prod-desc"]').value;
+    const price = document.querySelector('input[name="prod-price"]').value;
+    const stock = document.querySelector('input[name="prod-stock"]').value;
+    const mfg_date = document.querySelector('input[name="mfg-date"]').value;
+    const exp_date = document.querySelector('input[name="exp-date"]').value;
 
     const response = await fetch(`/api/products`, {
       method: 'POST',
@@ -63,6 +55,7 @@ async function newMakeupProduct(event) {
     });
   
     if (response.ok) {
+      window.alert("New product added!");
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -94,6 +87,7 @@ async function newGroceryProduct(event) {
     });
   
     if (response.ok) {
+      window.alert("New product added!");
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -127,6 +121,7 @@ async function newMedicineProduct(event) {
     });
   
     if (response.ok) {
+      window.alert("New product added!");
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -158,6 +153,7 @@ async function newBookProduct(event) {
     });
   
     if (response.ok) {
+      window.alert("New product added!");
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -166,4 +162,4 @@ async function newBookProduct(event) {
 
 
   
-document.querySelector('.xxx').addEventListener('submit', newFormHandler);
+document.querySelector('.new-product-form').addEventListener('submit', handleGetCategorySubmit);
