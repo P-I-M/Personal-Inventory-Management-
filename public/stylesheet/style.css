@@ -31,7 +31,10 @@ body {
     text-shadow: 1px 2px 4px #ffffff(0, 0, 0, 0.8);
     margin-bottom: 40px;
   }
-      
+  
+  h1 span {
+    letter-spacing: 0.25em;
+  }
         
   button {
     font-weight: 700;
