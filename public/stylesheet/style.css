@@ -20,6 +20,15 @@ body {
     background-size: cover !important;
     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url(/images/hero.png) no-repeat center center scroll;
   }
+
+  .infographic {
+    text-align: center;
+  }
+
+  .loginh3 {
+    padding-left: 28px;
+    font-weight: 700;
+  }
   
   h1 {
     color: #098191;
@@ -33,7 +42,7 @@ body {
   }
   
   h1 span {
-    letter-spacing: 0.25em;
+   
   }
         
   button {
@@ -50,8 +59,6 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
   }
   button:hover {
     background: #63b6b8
@@ -65,11 +72,10 @@ body {
       text-align: center;
   }
 
-  .logout {
-    float: right;
-    position: absolute;
-    right: 10px;
-    top: 5px;
+  .hero-button {
+    margin: 5px;
+    width: 37%;
+    gap: 2px 2px;
   }
 
   a:link {
@@ -82,11 +88,15 @@ a:visited {
     color: white;
 }
 
+.categorybtn {
+  width: 300px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 5px 5px;
   grid-template-areas:
     "product-display product-display product-nav product-nav scheduler scheduler scheduler scheduler"
     "embed-responsive embed-responsive embed-responsive embed-responsive scheduler scheduler scheduler scheduler"
