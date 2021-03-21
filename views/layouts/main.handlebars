@@ -15,9 +15,13 @@
     <header class="hero">
 
 <section class="masthead" role="img" aria-label="PIM Hero">
-  <h1>
-   Personal Inventory Management
-  </h1>
+  <h1> mnm<span>lize</span> </h1>
+         {{#if loggedIn}}
+        <button id="logout" class="hero-button">Logout</button>
+        {{else}}   
+   <button class="hero-button"><a href="/login">Login</button></a>
+   <button class="hero-button"><a href="/signup">Create Account</button></a>
+        {{/if}}
     {{#if loggedOut}}
       <a href="/login"><button>Login</a>
     </button>
@@ -27,17 +31,6 @@
 
 </section>
 <br />
-       <nav>
-        {{#if loggedIn}}
-       <button class="btn-no-style"><a href="/">Home</button></a>
-        <button class="btn-no-style"><a href="/dashboard">Dashboard</button></a>
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-   <button class="btn-no-style"><a href="/">Home</button></a>     
-   <button class="btn-no-style"><a href="/login">Login</button></a>
-   <button class="btn-no-style"><a href="/signup">Create Account</button></a>
-        {{/if}}
-      </nav>
     </header>
     <body>
     <main>

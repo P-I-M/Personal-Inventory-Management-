@@ -1,3 +1,7 @@
+const category_id = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 2
+];
+
 async function editMakeupProduct(event) {
     event.preventDefault();
     
