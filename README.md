@@ -5,7 +5,7 @@ Repo for Project 2 - Group 6
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [images](#images)
+* [Images](#images)
 
 ## General info
 Personal-Inventory-Management or P-I-M is an app to help originze your food, clohtes, furniture, and accesories. <br>
@@ -32,5 +32,5 @@ To run this project, install it locally using npm: <br>
     "mysql2": "^2.2.5", <br>
     "sequelize": "^6.5.1" <br>
 
-## images
+## Images
 ![localhost-3001-dashboard-create-](https://user-images.githubusercontent.com/40303668/111889995-e479a880-89bb-11eb-8082-421c966c6429.png)
