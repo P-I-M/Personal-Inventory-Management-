@@ -1,0 +1,18 @@
+{{#if products.length}}
+<section>
+  <h3>Your Inventory</h3>
+  
+   <ul>
+    {{#each products as |product| }}
+    <li>
+        <div>
+            <a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;">{{product_name}}</a>
+            <p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>
+        </div>
+    </li>
+    {{/each}}
+   </ul>
+  
+</section>
+{{/if}}
+

@@ -4,6 +4,10 @@ const { User, Product} = require('../models');
 
 // get all products for homepage
 router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
   console.log('======================');
   Product.findAll({
     attributes: [
@@ -27,7 +31,7 @@ router.get('/', (req, res) => {
     .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
 
-      res.render('homepage', {
+      res.render('login', {
         products,
         loggedIn: req.session.loggedIn
       });
@@ -40,7 +44,7 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
@@ -49,7 +53,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if(req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
@@ -64,6 +68,7 @@ router.get('/product/:id', (req, res) => {
     },
     attributes: [
       'id',
+      'img_url',
       'product_name',
       'prod_desc',
       'price',

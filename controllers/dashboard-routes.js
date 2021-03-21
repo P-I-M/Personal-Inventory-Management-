@@ -37,12 +37,45 @@ router.get('/', withAuth, (req, res) => {
 
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/products', withAuth, (req, res) => {
+    Product.findAll({
+        where: {
+            user_id: req.session.user_id
+        },
+        attributes: [
+            'id',
+            'product_name',
+            'prod_desc',
+            'price',
+            'stock',
+            'mfg_date',
+            'exp_date',
+            'author_name',
+            'category_id'
+        ],
+        include: [ 
+            {
+                model: User, 
+                attributes: ['email']
+            }
+        ]   
+    })
+    .then(dbProductData => {
+    const products = dbProductData.map(product => product.get({ plain: true }));
+    res.render('inventory-list', { products, loggedIn: true });
+})
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+
+});
+
+router.get('/edit/:category_id/:id', withAuth, (req, res) => {
     Product.findOne({
     where: {
         id: req.params.id
     },
-
     attributes: [
         'id',
         'product_name',
@@ -54,7 +87,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
         'author_name',
         'category_id'
     ],
-
     include: [
         {
             model: User, 
@@ -69,13 +101,20 @@ router.get('/edit/:id', withAuth, (req, res) => {
     }
 
     const product = dbProductData.get({ plain: true });
+        if(req.params.category_id == 4)
+        {
+            res.render('edit-book', { product, loggedIn: true });
+        }
+        else
+        {
         res.render('edit-product', { product, loggedIn: true });
+        }
     })
     .catch(err => {
     console.log(err);
     res.status(500).json(err);
     });
-})
+});
 
 router.get('/create/', withAuth, (req, res) => {
     Product.findAll({

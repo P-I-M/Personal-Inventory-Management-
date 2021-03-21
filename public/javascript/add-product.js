@@ -3,49 +3,29 @@
 //if medicine chosen then newMedicineProduct()
 //if books chosen then newBookProduct()
 
-const id = window.location.toString().split('/')[
-  window.location.toString().split('/').length - 1
-];
-const category_id = id;
-
-const handleGetCategorySubmit = event => {
+async function handleGetCategorySubmit(event) {
   event.preventDefault();
- 
-  const categoryRadioHTML = $productForm.querySelectorAll('[name="category"]');
-  let category; 
+    debugger;
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
+    const category_id = parseInt(id);
+    let mfg_date=null;
+    let exp_date=null;
+    
+    const product_name = document.querySelector('input[name="prod-name"]').value.trim();
+    const prod_desc = document.querySelector('textarea[name="prod-desc"]').value.trim();
+    const price = parseFloat(document.querySelector('input[name="prod-price"]').value.trim());
+    const stock = parseInt(document.querySelector('input[name="prod-stock"]').value.trim());
+    if(category_id == 1 || category_id== 2 || category_id == 3)
+    {
+    mfg_date = Date.parse(document.querySelector('input[name="mfg-date"]').value.trim());
+    exp_date = Date.parse(document.querySelector('input[name="exp-date"]').value.trim());
+    }   
+    const author_name = document.querySelector('input[name="prod-author"]').value.trim();
 
-  for (let i=0; i< categoryRadioHTML.length; i += 1) {
-    if(categoryRadioHTML[i].checked) {
-      category = categoryRadioHTML[i].value;
-    }
-  }
-  switch(id) {
-    case 1:
-      newGroceryProduct(); 
-      break; 
-    case 2:
-      newMedicineProduct(); 
-      break; 
-    case 3:
-      newMakeupProduct(); 
-      break;     
-    case 4 :
-      newBookProduct(); 
-      break; 
-  }
-};
-
-
-async function newMakeupProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const mfg_date = document.querySelector('input[name="mfg_date"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
-
+    if(product_name && prod_desc && price && stock)
+    {   
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
@@ -55,100 +35,6 @@ async function newMakeupProduct(event) {
         stock,
         mfg_date,
         exp_date,
-        category_id
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-async function newGroceryProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
-
-    const response = await fetch(`/api/products`, {
-      method: 'POST',
-      body: JSON.stringify({
-        product_name,
-        prod_desc,
-        price,
-        stock,
-        exp_date,
-        category_id
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-async function newMedicineProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const mfg_date = document.querySelector('input[name="mfg_date"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
-
-    const response = await fetch(`/api/products`, {
-      method: 'POST',
-      body: JSON.stringify({
-        product_name,
-        prod_desc,
-        price,
-        stock,
-        mfg_date,
-        exp_date,
-        category_id
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-async function newBookProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const author_name = document.querySelector('input[name="author_name"]').value;
-
-    const response = await fetch(`/api/products`, {
-      method: 'POST',
-      body: JSON.stringify({
-        product_name,
-        prod_desc,
-        price,
-        stock,
         author_name,
         category_id
       }),
@@ -158,12 +44,16 @@ async function newBookProduct(event) {
     });
   
     if (response.ok) {
+      window.alert("New product added!");
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
-    }
+    } 
+  }
+  else
+  {
+    window.alert("Product enter all details");
+  }
 };
-
-
-  
-document.querySelector('.xxx').addEventListener('submit', newFormHandler);
+ 
+document.querySelector('.new-product-form').addEventListener('submit', handleGetCategorySubmit);
