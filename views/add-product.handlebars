@@ -5,7 +5,8 @@
     {{#each categories as |category|}}         
         <li>   
           <div>       
-          <button class="categorybtn" href="/dashboard/add/{{id}}"> {{category_name}} </button>
+        {{!--  <button class="categorybtn" href="/dashboard/add/{{id}}"> {{category_name}} </button>   --}}
+        <a href="/dashboard/add/{{id}}"> {{category_name}} </a>
           </div>   
         </li> 
     {{/each}}
