@@ -16,6 +16,11 @@ Product.init(
       primaryKey: true,
       autoIncrement: true
     },
+    img_url: {
+      type: DataTypes.STRING,
+      defaultValue:null,
+      allowNull: true, 
+    },
     product_name:{
       type: DataTypes.STRING,
       allowNull: false

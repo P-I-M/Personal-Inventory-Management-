@@ -68,6 +68,7 @@ router.get('/product/:id', (req, res) => {
     },
     attributes: [
       'id',
+      'img_url',
       'product_name',
       'prod_desc',
       'price',
