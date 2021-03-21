@@ -4,11 +4,12 @@ const { User, Product} = require('../models');
 
 // get all products for homepage
 router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
   console.log('======================');
   Product.findAll({
-    where: {
-      user_id: req.session.user_id
-  },
     attributes: [
       'id',
       'product_name',
@@ -43,7 +44,7 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
@@ -52,7 +53,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if(req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
