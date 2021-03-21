@@ -27,7 +27,6 @@ form.addEventListener("submit", (e) => {
         var image = document.createElement("img");
         image.src = imageurl;
         div.appendChild(image);
-        console.log(imageurl);
       });
   }
 });

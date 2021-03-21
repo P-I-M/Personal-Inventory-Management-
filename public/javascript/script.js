@@ -38,7 +38,7 @@ window.onload = function(){
   function tuesday() {
     var input_textarea1 = document.querySelector("#entryTuesday");
     var output_div1 = document.querySelector("#entryTuesday");
-    var save_button1 = document.querySelector("#entryTuesday");
+    var save_button1 = document.querySelector("#buttonTuesday");
   
     save_button1.addEventListener("click", updateOutput1);
   
@@ -57,7 +57,7 @@ window.onload = function(){
   function wednesday() {
     var input_textarea2 = document.querySelector("#entryWednesday");
     var output_div2 = document.querySelector("#entryWednesday");
-    var save_button2 = document.querySelector("#entryWednesday");
+    var save_button2 = document.querySelector("#buttonWednesday");
   
     save_button2.addEventListener("click", updateOutput2);
   
@@ -75,7 +75,7 @@ window.onload = function(){
   function thursday() {
     var input_textarea3 = document.querySelector("#entryThursday");
     var output_div3 = document.querySelector("#entryThursday");
-    var save_button3 = document.querySelector("#entryThursday");
+    var save_button3 = document.querySelector("#buttonThursday");
   
     save_button3.addEventListener("click", updateOutput3);
   
@@ -93,7 +93,7 @@ window.onload = function(){
   function friday() {
     var input_textarea4 = document.querySelector("#entryFriday");
     var output_div4 = document.querySelector("#entryFriday");
-    var save_button4 = document.querySelector("#entryFriday");
+    var save_button4 = document.querySelector("#buttonFriday");
   
     save_button4.addEventListener("click", updateOutput4);
   
@@ -111,7 +111,7 @@ window.onload = function(){
   function saturday() {
     var input_textarea5 = document.querySelector("#entrySaturday");
     var output_div5 = document.querySelector("#entrySaturday");
-    var save_button5 = document.querySelector("#entrySaturday");
+    var save_button5 = document.querySelector("#buttonSaturday");
   
     save_button5.addEventListener("click", updateOutput5);
   
@@ -129,7 +129,7 @@ window.onload = function(){
   function sunday() {
     var input_textarea6 = document.querySelector("#entrySunday");
     var output_div6 = document.querySelector("#entrySunday");
-    var save_button6 = document.querySelector("#entrySunday");
+    var save_button6 = document.querySelector("#buttonSunday");
   
     save_button6.addEventListener("click", updateOutput6);
   
