@@ -3,8 +3,14 @@
 //if medicine chosen then newMedicineProduct()
 //if books chosen then newBookProduct()
 
+const id = window.location.toString().split('/')[
+  window.location.toString().split('/').length - 1
+];
+const category_id = id;
+
 const handleGetCategorySubmit = event => {
-  event.preventDefault(); 
+  event.preventDefault();
+ 
   const categoryRadioHTML = $productForm.querySelectorAll('[name="category"]');
   let category; 
 
@@ -13,17 +19,17 @@ const handleGetCategorySubmit = event => {
       category = categoryRadioHTML[i].value;
     }
   }
-  switch(category) {
-    case "makeup":
-      newMakeupProduct(); 
-      break; 
-    case "grocery":
+  switch(id) {
+    case 1:
       newGroceryProduct(); 
       break; 
-    case "medicine":
+    case 2:
       newMedicineProduct(); 
       break; 
-    case "books" :
+    case 3:
+      newMakeupProduct(); 
+      break;     
+    case 4 :
       newBookProduct(); 
       break; 
   }
@@ -48,7 +54,8 @@ async function newMakeupProduct(event) {
         price,
         stock,
         mfg_date,
-        exp_date
+        exp_date,
+        category_id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -78,7 +85,8 @@ async function newGroceryProduct(event) {
         prod_desc,
         price,
         stock,
-        exp_date
+        exp_date,
+        category_id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -110,7 +118,8 @@ async function newMedicineProduct(event) {
         price,
         stock,
         mfg_date,
-        exp_date
+        exp_date,
+        category_id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -140,7 +149,8 @@ async function newBookProduct(event) {
         prod_desc,
         price,
         stock,
-        author_name
+        author_name,
+        category_id
       }),
       headers: {
         'Content-Type': 'application/json'
