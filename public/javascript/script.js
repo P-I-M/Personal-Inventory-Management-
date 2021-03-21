@@ -1,5 +1,5 @@
 window.onload = function(){
-    colorCode();
+    //colorCode();
     monday();
     tuesday();
     wednesday();
