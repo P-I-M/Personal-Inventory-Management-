@@ -8,29 +8,48 @@ body {
     font-size: 24px;
 }
 .masthead {
+    border-bottom: solid 10px #098191;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 300px;
+    padding-top: 300px;
+    align-items: left;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     width: 100%;
     height: 50vh;
     overflow: hidden;
     background-size: cover !important;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 37%, rgba(0,0,0,0.65) 100%), url(/images/hero.jpg) no-repeat center center scroll;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url(/images/hero.png) no-repeat center center scroll;
+  }
+
+  img { 
+    width:470px; 
+    height:300px; 
+} 
+
+  .infographic {
+    text-align: center;
+  }
+
+  .loginh3 {
+    padding-left: 28px;
+    font-weight: 700;
+  }
+
+  .loginform {
+    font-weight: 500;
   }
   
   h1 {
+    color: #098191;
     font-style: normal;
-    font-weight: bold;
-    color: #eee;
-    font-size: 11vmin;
-    letter-spacing: 0.03em;
+    font-weight: 900;
+    font-size: 100px;
+    letter-spacing: 1em;
     line-height: 1;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 2px 4px #ffffff(0, 0, 0, 0.8);
     margin-bottom: 40px;
   }
-      
         
   button {
     font-weight: 700;
@@ -46,8 +65,6 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
   }
   button:hover {
     background: #63b6b8
@@ -61,6 +78,12 @@ body {
       text-align: center;
   }
 
+  .hero-button {
+    margin: 5px;
+    width: 37%;
+    gap: 2px 2px;
+  }
+
   a:link {
     text-decoration: none;
     color: black;
@@ -71,23 +94,42 @@ a:visited {
     color: white;
 }
 
+.categorybtn {
+  width: 300px;
+}
+
+p.lead {
+  text-align: center;
+  font-weight: 700;
+  font-size: 30px;
+  padding:40px;
+
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
+  grid-template-rows:  1fr 0.3fr 1.7fr 1fr;
+  gap: 5px 5px;
   grid-template-areas:
-    "dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header"
-    "product-display product-display product-nav product-nav scheduler scheduler scheduler scheduler"
-    "product-display product-display product-nav product-nav scheduler scheduler scheduler scheduler"
-    "product-info product-info product-info product-info scheduler scheduler scheduler scheduler"
-    "product-info product-info product-info product-info scheduler scheduler scheduler scheduler"
-    "product-info product-info product-info product-info scheduler scheduler scheduler scheduler";
+  "profile-photo profile-photo product-nav product-nav scheduler scheduler scheduler scheduler"
+  "iframe-title iframe-title iframe-title iframe-title scheduler scheduler scheduler scheduler"
+  "iframediv iframediv iframediv iframediv scheduler scheduler scheduler scheduler"
+  "dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header";
 }
 
+.dashboard-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ".";
+  grid-area: dashboard-header;
+}
 .textarea {
   background: lightgrey;
-  resize: vertical ;
+  resize: none;
   color: #000000;
   border-left: 3px dotted black;
   border-bottom: 3px;
@@ -116,76 +158,71 @@ a:visited {
 }
 
 
-
-
-.dashboard-header { 
-  margin: 15px;
-  font-weight: 700;
-  font-size: 30px;
-  text-align: center;
-  grid-area: dashboard-header; 
-}
-
-
-.product-display { 
-  border:solid black;
-  margin: 5px;
-  background: url(/images/banada.png);
-  text-align: center;
-  height: 300px;
-  grid-area: product-display; 
-}
-
-.product-nav {
-  border: solid black;
-  margin: 5px;
+.scheduler {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "my-inventory my-inventory my-inventory"
-    "add-item add-item add-item"
-    "suggetions suggetions suggetions"
-    "delete-item delete-item delete-item";
-  grid-area: product-nav;
+    "todays-date"
+    "monday"
+    "tuesday"
+    "wednesday"
+    "thursday"
+    "friday"
+    "saturday"
+    "sunday";
+  grid-area: scheduler;
 }
 
-.my-inventory { grid-area: my-inventory; }
+.todays-date { grid-area: todays-date; }
 
-.add-item { grid-area: add-item; }
+.monday { grid-area: monday; }
 
-.suggetions { grid-area: suggetions; }
+.tuesday { grid-area: tuesday; }
 
-.delete-item { grid-area: delete-item; }
+.wednesday { grid-area: wednesday; }
 
-.product-info {
+.thursday { grid-area: thursday; }
+
+.friday { grid-area: friday; }
+
+.saturday { grid-area: saturday; }
+
+.sunday { grid-area: sunday; }
+
+.iframe-title {
   display: grid;
-  color: white;
+  padding: 25px;
+  text-align: center;
+  font-size: 32px;
   font-weight: 700;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   gap: 0px 0px;
-  border: solid 5px;
-  margin: 5px;
   grid-template-areas:
-    "your-products your-products"
-    "prod_desc prod_desc"
-    "product_name product_name"
-    "price price"
-    "stock stock"
-    "mfg_date mfg_date"
-    "exp_date exp_date"
-    "author_name author_name"
-    "category_id category_id";
-  grid-area: product-info;
+    ".";
+  grid-area: iframe-title;
 }
 
-.product-info span{
+.iframediv {
+  display: grid;
+ 
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: 10px;
+  gap: 5px 5px;
+  grid-template-areas:
+    ".";
+  grid-area: iframediv;
+}
+
+.product-header {
   text-align: center;
   color: black;
   font-weight:700;
   font-size: 25px;
+  padding-top: 125px;
 }
 
 .btn {
@@ -206,118 +243,150 @@ a:visited {
   -moz-appearance: none;
 }
 
-.your-products { 
-  text-align: center;
-  font-weight:700;
-  font-size: 25px;
-  border-bottom: solid 5px;
-  grid-area: your-products; 
-}
-
 .prod_desc { 
+
+  text-align: center;
+  border: solid;
   background: #098191;
   grid-area: prod_desc;
 }
 
 .product_name { 
+  text-align: center;
+  border: solid;
   background: #098191;
-  border-top: dotted grey;
   grid-area: product_name; }
 
 .price { 
   background: #098191;
-  border-top: dotted grey;
+  text-align: center;
+  border: solid;
   grid-area: price; }
 
 .stock { 
+  border: solid;
   background: #098191;
-  border-top: dotted grey;
+  text-align: center;
+  border: solid;
   grid-area: stock; }
+
+.entry1 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry1; }
+
+.entry2 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry2; }
+
+.entry3 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry3; }
+
+.entry4 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry4; }
+
+.entry5 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry5; }
+
+.entry6 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry6; }
+
+.entry7 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry7; }
+
+.entry8 { 
+  border: solid white;
+  background: lightgrey;
+  text-align: center;
+  color: black;
+  grid-area: entry8; }
 
 .mfg_date { 
   background: #098191;
-  border-top: dotted grey;
+  text-align: center;
+  border: solid;
   grid-area: mfg_date; }
 
 .exp_date { 
   background: #098191;
-  border-top: dotted grey;
-  grid-area: exp_date; }
+  text-align: center;
+  border: solid;
+  grid-area: exp_date; 
+}
 
 .author_name { 
   background: #098191;
-  border-top: dotted grey;
-  border-bottom: dotted grey;
-  grid-area: author_name; }
+  text-align: center;
+  border: solid;
+  grid-area: author_name; 
+}
 
 .category_id { 
-  background: #098191;
-  grid-area: category_id; }
-
-  .scheduler {
-    width: 100%;
-    height: 100%;
-    padding: 0px 25px 0px 25px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 5px 5px;
-    grid-template-areas:
-      "todays-date"
-      "monday"
-      "tuesday"
-      "wednesday"
-      "thursday"
-      "friday"
-      "saturday"
-      "sunday";
-    grid-area: scheduler;
-  }
-
-.input-group-text {
-  width: 175px;
-}
-
-.todays-date { 
-  font-weight: 700;
   text-align: center;
-  padding-top: 5;
-  height: 100px;
-  grid-area: todays-date; 
+  border: solid;
+  background: #098191;
+  grid-area: category_id; 
 }
 
-.mborder {
-  padding: 10px;
-  margin-bottom: 24px!important;
-  height: 65px;
+.profile-photo { 
+  object-fit: cover;
+  margin-top: 140px;
+  border:solid 5px #098191;
+  margin: 10px;
+  text-align: center;
+  grid-area: profile-photo; 
 }
 
-.monday {
-border-top: solid black;
+
+.product-nav {
+  display: grid;
+  padding: 5px;
+  margin-right: 25px;
+  margin-top: 140px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "my-inventory"
+    "suggestions"
+    "add-item"
+    "delete-item";
+  grid-area: product-nav;
+}
+.input-group-text {
+  width: 130px;
+  height: 100%;
 }
 
-.tuesday {
-  border-top: dotted grey;
-}
+.my-inventory { grid-area: my-inventory; }
 
-.wednesday {
-  border-top: dotted grey;
-}
+.add-item { grid-area: add-item; }
 
-.thursday {
-  border-top: dotted grey;
-}
+.suggestions { grid-area: suggestions; }
 
-.friday {
-  border-top: dotted grey;
-}
-
-.saturday {
-  border-top: dotted grey;
-}
-
-.sunday {
-  border-top: dotted grey;
-}
-
-    
+.delete-item { grid-area: delete-item; }
