@@ -107,8 +107,8 @@
     <div class="entry7">PH</div>
     <div class="entry8">PH</div>
     <div class="prod_desc">Description:</div>
-    <div class="product_name">Name:</div>
-    <div class="mfg_date">Manufactured:</div>
+    <div class="product_name">Product Name:</div>
+    <div class="mfg_date">Manufacture Date:</div>
     <div class="stock">Quantity:</div>
     <div class="price">Price:</div>
     <div class="exp_date">Expiry Date:</div>
@@ -116,3 +116,17 @@
     <div class="category_id">Category:</div>
   </div>
 </div>
+
+{{#if posts.length}}
+<section>
+  <h2>Your Products</h2>
+    {{#each product as |product|}}
+      {{> dashboard-postinfo product}}
+    {{/each}}
+
+</section>
+{{/if}}
+
+<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
+
+<script src="/javascript/add-post.js"></script>
