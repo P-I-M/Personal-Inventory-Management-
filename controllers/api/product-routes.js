@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 const { User, Product } = require('../../models');
 
-// get all products for 
+// get all products
 router.get('/', (req, res) => {
     console.log('======================');
     Product.findAll({

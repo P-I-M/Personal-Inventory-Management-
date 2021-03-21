@@ -6,6 +6,9 @@ const { User, Product} = require('../models');
 router.get('/', (req, res) => {
   console.log('======================');
   Product.findAll({
+    where: {
+      user_id: req.session.user_id
+  },
     attributes: [
       'id',
       'product_name',
