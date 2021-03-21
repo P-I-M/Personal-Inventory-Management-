@@ -5,6 +5,7 @@ Repo for Project 2 - Group 6
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [images](#images)
 
 ## General info
 Personal-Inventory-Management or P-I-M is an app to help originze your food, clohtes, furniture, and accesories. <br>
