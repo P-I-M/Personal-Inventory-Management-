@@ -1,4 +1,4 @@
-const url = "https://api.cloudinary.com/v1_1/personal-inventory-management/image/upload";
+const url = "https://api.cloudinary.com/v1_1/personal-inventory-management/image/upload/cat.jpg/";
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {

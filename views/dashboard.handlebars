@@ -14,11 +14,15 @@
     </div>
   <div class="product-nav">
       <button class="my-inventory"><a href="/dashboard/products">My Inventory</button></a>
+       <button class="suggetions">Daily Suggestions</button>
       <button class="add-item"><a href="/dashboard/new">Add Item</button></a>
-      <button class="suggetions">Daily Suggestions</button>
       <button class="delete-item">Delete Item</button>
   </div>
+
   <div class="scheduler">
+    <div class="todays-date">
+      <p id="currentDay" class="lead"></p>
+    </div>
     <!-- Monday  -->
           <div class="input-group mborder">
             <div class="input-group-prepend row">
@@ -102,7 +106,13 @@
                     class="far fa-save"></i></button>
               </div>
             </div>
-           </div>
+            </div>
+
+            <div class="iframe-title">Place Holder Title</div>
+          <div class="iframediv">
+    <iframe src="/dashboard/new" width="1405px" height="500px"></iframe>
+  </div>
+           
 
 
 
