@@ -5,13 +5,13 @@ body {
     font-family: "PT Sans", sans-serif;
     color: black;;
     line-height: 1.5;
-    font-size: 24px;
+    font-size: 1vw;
 }
 .masthead {
     border-bottom: solid 10px #098191;
     display: flex;
-    padding-left: 300px;
-    padding-top: 300px;
+    padding-left: 1em;
+    padding-top: 1em;
     align-items: left;
     flex-direction: column;
     text-align: left;
@@ -22,40 +22,39 @@ body {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url(/images/hero.png) no-repeat center center scroll;
   }
 
-  img { 
-    width:470px; 
-    height:300px; 
-} 
 
   .infographic {
     text-align: center;
   }
 
   .loginh3 {
-    padding-left: 28px;
+    padding-left: 3em;
     font-weight: 700;
+    font-size: 2vw;
   }
 
   .loginform {
     font-weight: 500;
   }
   
-  h1 {
+  h1.hero {
     color: #098191;
     font-style: normal;
     font-weight: 900;
-    font-size: 100px;
+    font-size: 4vw;;
     letter-spacing: 1em;
     line-height: 1;
     text-shadow: 1px 2px 4px #ffffff(0, 0, 0, 0.8);
-    margin-bottom: 40px;
+    margin-bottom: .5em;
+    margin-left: 0em;
+    margin-top: .5em;
   }
         
   button {
     font-weight: 700;
     background: #098191;
     transition: background ease .25s;
-    border-radius: 5px;
+    border-radius: 1em;
     display: inline-block;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -75,6 +74,7 @@ body {
   }
 
   footer {
+    border-top: solid 10px #098191;
       text-align: center;
   }
 
@@ -96,14 +96,28 @@ a:visited {
 
 .categorybtn {
   width: 300px;
+  padding: 5px;
+
 }
 
 p.lead {
   text-align: center;
   font-weight: 700;
-  font-size: 30px;
-  padding:40px;
+  font-size: 1em;
+  padding:1.5em;
 
+}
+
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .grid-container {
@@ -118,22 +132,14 @@ p.lead {
   "dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header";
 }
 
-.dashboard-header {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ".";
-  grid-area: dashboard-header;
-}
 .textarea {
   background: lightgrey;
   resize: none;
   color: #000000;
   border-left: 3px dotted black;
-  border-bottom: 3px;
-  border-right: 3px dotted black;
+  border-bottom: dotted 3px grey;
+  border-top: dotted 3px grey;
+ 
   padding: 0;
   border-radius: 0;
   text-justify: center;
@@ -160,6 +166,7 @@ p.lead {
 
 .scheduler {
   display: grid;
+  margin-right: 1em;
   grid-template-columns: 1fr;
   grid-template-rows: 0.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
@@ -175,7 +182,6 @@ p.lead {
   grid-area: scheduler;
 }
 
-.todays-date { grid-area: todays-date; }
 
 .monday { grid-area: monday; }
 
@@ -206,12 +212,16 @@ p.lead {
 }
 
 .iframediv {
-  display: grid;
- 
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 45em;
+  max-height: 20em;
+  padding-top: 56.25%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  margin: 10px;
-  gap: 5px 5px;
+  margin-left: 1em;
+  gap: 0px 0px;
   grid-template-areas:
     ".";
   grid-area: iframediv;
@@ -233,10 +243,10 @@ p.lead {
   display: inline-block;
   border: none;
   padding: 0.75rem 1.5rem;
-  margin: 0;
+  margin-left: 2vw;
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1em;
   cursor: pointer;
   text-align: center;
   -webkit-appearance: none;
@@ -353,12 +363,17 @@ p.lead {
   grid-area: category_id; 
 }
 
+.cat-list {
+  margin: 5px;
+  gap: 5px 5px;
+  padding: 5px;
+}
+
 .profile-photo { 
   object-fit: cover;
-  margin-top: 140px;
-  border:solid 5px #098191;
-  margin: 10px;
+  border: dotted 10px #098191;
   text-align: center;
+  margin-left: 1em;
   grid-area: profile-photo; 
 }
 
@@ -367,7 +382,6 @@ p.lead {
   display: grid;
   padding: 5px;
   margin-right: 25px;
-  margin-top: 140px;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 5px 5px;
@@ -379,7 +393,7 @@ p.lead {
   grid-area: product-nav;
 }
 .input-group-text {
-  width: 130px;
+  width: 6em;
   height: 100%;
 }
 
@@ -390,3 +404,16 @@ p.lead {
 .suggestions { grid-area: suggestions; }
 
 .delete-item { grid-area: delete-item; }
+
+@media screen and (min-width: 601px) {
+  div.example {
+    font-size: 80px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+  }
+}
