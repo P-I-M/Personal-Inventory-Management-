@@ -20,9 +20,6 @@
   </div>
 
   <div class="scheduler">
-    <div class="todays-date">
-      <p id="currentDay" class="lead"></p>
-    </div>
     <!-- Monday  -->
           <div class="input-group mborder">
             <div class="input-group-prepend row">
@@ -108,11 +105,23 @@
             </div>
             </div>
 
-            <div class="iframe-title">Place Holder Title</div>
-          <div class="iframediv">
-    <iframe src="/dashboard/new" width="1405px" height="700px"></iframe>
+          
+         <div class="iframediv"> 
+  <iframe class="responsive-iframe" src="/dashboard/new"></iframe>
+</div>
+    
+    
   </div>
-           
+    <script type="text/javascript">
+        var frm = ['variable-window'];
+        var hrf = [['/dashboard/new', '/dashboard/products'], ['/dashboard/delete', '/dashboard/suggest']];
+
+        function setSource(num) {
+            for(i=0, l=frm.length; i<l; i++) {
+                document.querySelector('iframe[name="'+frm[i]+'"]').src = hrf[num][i];
+            }
+        }
+    </script>
 
 
 
