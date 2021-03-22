@@ -69,6 +69,7 @@ router.get('/', (req, res) => {
   router.put('/:id', withAuth,(req, res) => {
     Product.update(
       {
+        img_url:req.body.img_url,
         product_name: req.body.product_name,
         prod_desc: req.body.prod_desc,
         price: req.body.price,

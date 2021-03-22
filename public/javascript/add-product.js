@@ -23,12 +23,14 @@ async function handleGetCategorySubmit(event) {
     exp_date = Date.parse(document.querySelector('input[name="exp-date"]').value.trim());
     }   
     const author_name = document.querySelector('input[name="prod-author"]').value.trim();
+    const img_url = document.querySelector('input[id="prod-img"]').value.trim();
 
     if(product_name && prod_desc && price && stock)
     {   
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
+        img_url,
         product_name,
         prod_desc,
         price,
