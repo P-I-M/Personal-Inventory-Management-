@@ -74,6 +74,7 @@ body {
   }
 
   footer {
+    border-top: solid 10px #098191;
       text-align: center;
   }
 
@@ -95,6 +96,8 @@ a:visited {
 
 .categorybtn {
   width: 300px;
+  padding: 5px;
+
 }
 
 p.lead {
@@ -358,6 +361,12 @@ p.lead {
   border: solid;
   background: #098191;
   grid-area: category_id; 
+}
+
+.cat-list {
+  margin: 5px;
+  gap: 5px 5px;
+  padding: 5px;
 }
 
 .profile-photo { 

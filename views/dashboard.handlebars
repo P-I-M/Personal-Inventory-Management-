@@ -12,10 +12,12 @@
         </form>
     </div>
   <div class="product-nav">
-      <button class="my-inventory"><a href="/dashboard/products">My Inventory</button></a>
-       <button class="suggetions">Daily Suggestions</button>
-      <button class="add-item"><a href="/dashboard/new">Add Item</button></a>
-      <button class="delete-item">Delete Item</button>
+
+<button type="button" onClick="document.getElementById('frame').src='/dashboard/products'">My Inventory</button>
+<button type="button" onClick="document.getElementById('frame').src='/dashboard/suggestions'">Daily Suggestions</button>
+<button type="button" onClick="document.getElementById('frame').src='/dashboard/new'">Add Item</button>
+<button type="button" onClick="document.getElementById('frame').src='/dashboard/delete'">Delete Item</button>
+
   </div>
 
   <div class="scheduler">
@@ -106,24 +108,23 @@
 
           
          <div class="iframediv"> 
-  <iframe class="responsive-iframe" src="/dashboard/new" frameborder="0"></iframe>
+  <iframe id="frame" class="responsive-iframe" src="/dashboard/products" frameborder="0"></iframe>
 </div>
     
     
   </div>
-    <script type="text/javascript">
-        var frm = ['variable-window'];
-        var hrf = [['/dashboard/new', '/dashboard/products'], ['/dashboard/delete', '/dashboard/suggest']];
 
-        function setSource(num) {
-            for(i=0, l=frm.length; i<l; i++) {
-                document.querySelector('iframe[name="'+frm[i]+'"]').src = hrf[num][i];
-            }
-        }
-    </script>
+<script>
+function iframeChange() {
+    var buttons = document.querySelector("product-nav"),
+        iframe = document.getElementById('responsive-iframe');
 
+    buttons.addEventListener("click", function (e) {
+        iframe.src = e.target.dataset.src;
+    });
+}
 
-
-
+window.onload = iframeChange;
+</script>
 <script src="/javascript/add-post.js"></script>
 <script src="/javascript/upload-profile.js"></script>
