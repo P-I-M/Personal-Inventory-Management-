@@ -33,4 +33,5 @@ To run this project, install it locally using npm: <br>
     "sequelize": "^6.5.1" <br>
 
 ## Images
-![localhost-3001-dashboard-create-](https://user-images.githubusercontent.com/40303668/111889995-e479a880-89bb-11eb-8082-421c966c6429.png)
+![Screenshot (9)](https://user-images.githubusercontent.com/40303668/112070514-351c0d80-8b44-11eb-9073-d1f3ef1a7870.png)
+
