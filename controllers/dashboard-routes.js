@@ -10,6 +10,7 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
+            'img_url',
             'product_name',
             'prod_desc',
             'price',
@@ -44,6 +45,7 @@ router.get('/products', withAuth, (req, res) => {
         },
         attributes: [
             'id',
+            'img_url',
             'product_name',
             'prod_desc',
             'price',
@@ -78,6 +80,7 @@ router.get('/edit/:category_id/:id', withAuth, (req, res) => {
     },
     attributes: [
         'id',
+        'img_url',
         'product_name',
         'prod_desc',
         'price',
@@ -124,6 +127,7 @@ router.get('/create/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
+        'img_url',
         'product_name',
         'prod_desc',
         'price',
