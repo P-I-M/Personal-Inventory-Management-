@@ -94,6 +94,7 @@ router.get('/product/:id', (req, res) => {
       const product = dbProductData.get({ plain: true });
 
       res.render('single-product', {
+        layout: false,
         product,
         loggedIn: req.session.loggedIn
       });

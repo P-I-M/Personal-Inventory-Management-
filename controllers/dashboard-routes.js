@@ -64,7 +64,7 @@ router.get('/products', withAuth, (req, res) => {
     })
     .then(dbProductData => {
     const products = dbProductData.map(product => product.get({ plain: true }));
-    res.render('inventory-list', { products, loggedIn: true });
+    res.render('inventory-list', {layout: false, products, loggedIn: true });
 })
     .catch(err => {
         console.log(err);
@@ -106,11 +106,11 @@ router.get('/edit/:category_id/:id', withAuth, (req, res) => {
     const product = dbProductData.get({ plain: true });
         if(req.params.category_id == 4)
         {
-            res.render('edit-book', { product, loggedIn: true });
+            res.render('edit-book', { layout: false, product, loggedIn: true });
         }
         else
         {
-        res.render('edit-product', { product, loggedIn: true });
+        res.render('edit-product', { layout: false,  product, loggedIn: true });
         }
     })
     .catch(err => {
@@ -147,7 +147,7 @@ router.get('/create/', withAuth, (req, res) => {
       .then(dbProductData => {
         // serialize data before passing to template
         const products = dbProductData.map(product => product.get({ plain: true }));
-        res.render('create-post', { products, loggedIn: true });
+        res.render('create-post', { layout: false, products, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
@@ -167,7 +167,7 @@ router.get('/new',withAuth, (req, res) => {
       .then(dbPostData => {
         
         const categories = dbPostData.map(category =>category.get({ plain:true}));
-        res.render('add-product', { categories, loggedIn: true });
+        res.render('add-product', { layout: false, categories, loggedIn: true });
         })
         .catch(err => {
         console.log(err);
@@ -180,19 +180,19 @@ router.get('/add/:id',withAuth, (req, res) => {
     
     if(req.params.id == 1)
     {
-        res.render('add-grocery');
+        res.render('add-grocery', { layout: false});
     }
     if(req.params.id == 2)
     {
-        res.render('add-medicine');
+        res.render('add-medicine',{ layout: false});
     }
     if(req.params.id == 3)
     {
-        res.render('add-cosmetics');
+        res.render('add-cosmetics',{ layout: false});
     }
     if(req.params.id == 4)
     {
-        res.render('add-book');
+        res.render('add-book',{ layout: false});
     }
 });
 

@@ -22,10 +22,6 @@ body {
     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.65) 100%), url(/images/hero.png) no-repeat center center scroll;
   }
 
-  img { 
-    width: 15rem; 
-    height:15rem; 
-} 
 
   .infographic {
     text-align: center;
@@ -133,22 +129,14 @@ p.lead {
   "dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header dashboard-header";
 }
 
-.dashboard-header {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ".";
-  grid-area: dashboard-header;
-}
 .textarea {
   background: lightgrey;
   resize: none;
   color: #000000;
   border-left: 3px dotted black;
-  border-bottom: 3px;
-  border-right: 3px dotted black;
+  border-bottom: dotted 3px grey;
+  border-top: dotted 3px grey;
+ 
   padding: 0;
   border-radius: 0;
   text-justify: center;
@@ -192,9 +180,7 @@ p.lead {
 }
 
 
-.monday { 
-  border-bottom: dotted darkgrey;
-  grid-area: monday; }
+.monday { grid-area: monday; }
 
 .tuesday { grid-area: tuesday; }
 
@@ -226,7 +212,7 @@ p.lead {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 47em;
+  max-width: 45em;
   max-height: 20em;
   padding-top: 56.25%;
   grid-template-columns: 1fr;
@@ -254,10 +240,10 @@ p.lead {
   display: inline-block;
   border: none;
   padding: 0.75rem 1.5rem;
-  margin: 0;
+  margin-left: 2vw;
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1em;
   cursor: pointer;
   text-align: center;
   -webkit-appearance: none;
