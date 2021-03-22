@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
         window.alert("Congratulations, account created!");
         console.log('success');
-        document.location.replace('/dashboard');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
