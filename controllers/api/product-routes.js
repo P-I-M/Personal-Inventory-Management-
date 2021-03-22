@@ -110,6 +110,7 @@ router.get('/', (req, res) => {
         stock: req.body.stock,
         mfg_date: req.body.mfg_date,
         exp_date: req.body.exp_date,
+        author_name:req.body.author_name,
         category_id: req.body.category_id,
         user_id: req.session.user_id,
       })
