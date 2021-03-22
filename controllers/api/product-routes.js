@@ -120,5 +120,27 @@ router.get('/', (req, res) => {
           res.status(400).json(err);
         });
     });
+
+  //delete products
+  router.delete('/:id',withAuth, (req, res) => {
+     
+    Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    
+  });
   
   module.exports = router;

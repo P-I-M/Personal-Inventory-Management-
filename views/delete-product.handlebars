@@ -1,0 +1,26 @@
+{{#if products.length}}
+<section>
+  <h3>Your Inventory</h3>
+  
+   <ul>
+    {{#each products as |product| }}
+    <li>
+        <div>
+            <input type="checkbox" class="prod-check" id="{{product.id}}" name="{{product.product_name}}" value="{{product.id}}">
+            <label for="{{product.id}}">{{product.product_name}}</label><br>
+        </div>
+    </li>
+    {{/each}}
+   </ul>
+
+   <div>
+        <button type="button" class="delete-prod-btn btn">Delete Product</button>
+    </div>
+  
+</section>
+
+{{else}}
+<h6>You do not have any products in your inventory.</h6>
+{{/if}}
+
+<script src="/javascript/delete-product.js"></script>

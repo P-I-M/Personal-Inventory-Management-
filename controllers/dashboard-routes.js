@@ -196,4 +196,40 @@ router.get('/add/:id',withAuth, (req, res) => {
     }
 });
 
+router.get('/delete',withAuth, (req, res) => {   
+    Product.findAll({
+        where: {
+          // use the ID from the session
+          user_id: req.session.user_id
+        },
+        attributes: [
+          'id',
+          'img_url',
+          'product_name',
+          'prod_desc',
+          'price',
+          'stock',
+          'mfg_date',
+          'exp_date',
+          'author_name',
+          'category_id'
+        ],
+        include: [
+          {
+            model: User,
+            attributes: ['email']
+          }
+        ]
+      })
+        .then(dbProductData => {
+          // serialize data before passing to template
+          const products = dbProductData.map(product => product.get({ plain: true }));
+          res.render('delete-product', { layout: false, products, loggedIn: true });
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+});
+
 module.exports = router;

@@ -22,12 +22,14 @@
     <li>
         <div>
             <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;">{{product_name}}</button></a>
-            <p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>
+            {{!--<p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>--}}
         </div>
     </li>
     {{/each}}
    </ul>
   
 </section>
+{{else}}
+<h6>You do not have any products in your inventory.</h6>
 {{/if}}
 
