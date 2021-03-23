@@ -39,13 +39,12 @@
     </div>
     <!-- upload image -->
    <div class="prod-img">
-      <form method="post" enctype="multipart/form-data">
+      <form id="form" method="post" enctype="multipart/form-data">
       <label for="prod-img"><b>Book Image : </b></label>
       <input type="file" id="prod-img" name="files[]" multiple>
+      <button type="submit" class="btn">Upload Image</button>
       <!-- display image -->
-      <div id="product_image">
-        <p id="data"></p>
-      </div>
+      <div id="product_image"></div>
     </div>
     
     <div> 

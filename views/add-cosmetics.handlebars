@@ -46,14 +46,13 @@
       <textarea id="prod-desc" name="prod-desc"></textarea>
     </div>
     <!-- upload image -->
-    <div>
-      <form method="post" enctype="multipart/form-data">
-      <label for="prod-img"><b>Product Image : </b></label>
+   <div class="prod-img">
+      <form id="form" method="post" enctype="multipart/form-data">
+      <label for="prod-img"><b>Cosmetic Image : </b></label>
       <input type="file" id="prod-img" name="files[]" multiple>
+      <button type="submit" class="btn">Upload Image</button>
       <!-- display image -->
-      <div id="product_image">
-        <p id="data"></p>
-      </div>
+      <div id="product_image"></div>
     </div>
     
     <div> 

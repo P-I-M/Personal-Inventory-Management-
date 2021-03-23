@@ -23,7 +23,8 @@ async function handleGetCategorySubmit(event) {
     exp_date = Date.parse(document.querySelector('input[name="exp-date"]').value.trim());
     }   
     const author_name = document.querySelector('input[name="prod-author"]').value.trim();
-    const img_url = document.querySelector('input[id="prod-img"]').value.trim();
+    const img_url = document.getElementById("product-image").src;
+    //const img_url = document.querySelector('input[id="prod-img"]').value.trim();
 
     if(product_name && price && stock)
     {   
