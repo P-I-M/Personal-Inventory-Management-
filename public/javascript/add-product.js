@@ -8,7 +8,7 @@ async function handleGetCategorySubmit(event) {
     debugger;
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
-    ];
+    ];debugger;
     const category_id = parseInt(id);
     let mfg_date=null;
     let exp_date=null;
@@ -19,8 +19,18 @@ async function handleGetCategorySubmit(event) {
     const stock = parseInt(document.querySelector('input[name="prod-stock"]').value.trim());
     if(category_id == 1 || category_id== 2 || category_id == 3)
     {
-    mfg_date = Date.parse(document.querySelector('input[name="mfg-date"]').value.trim());
-    exp_date = Date.parse(document.querySelector('input[name="exp-date"]').value.trim());
+      mfg_date = Date.parse(document.querySelector('input[name="mfg-date"]').value.trim());
+      exp_date = Date.parse(document.querySelector('input[name="exp-date"]').value.trim());
+      if(!mfg_date)
+      {
+        var d = new Date();
+        mfg_date = d;
+      }
+      if(!exp_date)
+      {
+        var d = new Date();
+        exp_date = d;
+      }
     }   
     const author_name = document.querySelector('input[name="prod-author"]').value.trim();
     const img_url = document.querySelector('input[id="prod-img"]').value.trim();
@@ -54,7 +64,7 @@ async function handleGetCategorySubmit(event) {
   }
   else
   {
-    window.alert("Oops! Name, price and stock are mandatory");
+    window.alert("Oops! Name, price and quantity are mandatory");
   }
 };
  

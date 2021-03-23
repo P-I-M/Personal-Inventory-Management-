@@ -51,7 +51,7 @@ async function handleGetCategorySubmit(event) {
   }
   else
   {
-    window.alert("Oops! Name, price and stock are mandatory");
+    window.alert("Oops! Name, price and quantity are mandatory");
   }
 };
 
