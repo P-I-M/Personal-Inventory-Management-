@@ -91,6 +91,7 @@ body {
 
   .hero-button {
     margin-left: 9vw;
+    margin-bottom: 5px;
     width: 37%;
     gap: 2px 2px;
   }
