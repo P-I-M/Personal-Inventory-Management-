@@ -14,21 +14,23 @@
 </head>
 
 {{#if products.length}}
-
+    <div>
+        <h6>Select product(s) to delete</h6>
+    </div>
   
    <ul>
     {{#each products as |product| }}
     <li>
         <div class="medicine" style="font-size: 3vm;">
             <input type="checkbox" class="medicine" id="{{product.id}}" name="{{product.product_name}}" value="{{product.id}}">
-            <label for="{{product.id}}">{{product.product_name}}</label><br>
+            <label for="{{product.id}}">{{product.cat_name}} - {{product.product_name}}</label><br>
         </div>
     </li>
     {{/each}}
    </ul>
 
    <div>
-        <button class="categorybtn">Delete</button>
+        <button type="button" class="categorybtn delete-prod-btn">Delete</button>
     </div>
   
 

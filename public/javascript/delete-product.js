@@ -43,7 +43,7 @@ async function deleteProduct(event) {
         if (delflag == true)
         {
             window.alert("Product(s) deleted successfully");
-            document.location.replace('/dashboard/');
+            document.location.replace('/dashboard/products');
         }
     }
 };

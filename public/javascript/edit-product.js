@@ -43,7 +43,7 @@ async function handleGetCategorySubmit(event) {
     });
   
     if (response.ok) {
-      window.alert("New product added!");
+      window.alert("Product updated successfully!");
       document.location.replace('/dashboard/products');
     } else {
       alert(response.statusText);
