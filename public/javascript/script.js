@@ -145,5 +145,6 @@ window.onload = function(){
   }
 
   //display profile pic on dashboard
-
+  var profilePhoto = document.querySelector("profile-photo");
+  
   
