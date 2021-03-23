@@ -17,17 +17,20 @@ form.addEventListener("submit", (e) => {
       body: formData
     })
       .then((response) => {
+        console.log(response.text);
         return response.text();
+        
       })
       .then((data) => {
         var data = JSON.parse(data);
         var imageurl = data.url; 
-        document.getElementById("data").innerHTML += 'Image uploaded!';
-        var div = document.getElementById("product_image");
+        var div = document.querySelector("#product_image");
         var image = document.createElement("img");
+        image.setAttribute("id", "product-image")
         image.src = imageurl;
         div.appendChild(image);
       });
   }
 });
+
 

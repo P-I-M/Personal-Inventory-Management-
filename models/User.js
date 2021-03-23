@@ -45,7 +45,7 @@ User.init(
         },
         profile: {
           type: DataTypes.STRING,
-          defaultValue:null,
+          defaultValue:"https://res.cloudinary.com/personal-inventory-management/image/upload/v1616534747/default_paul_sc7mmk.jpg",
           allowNull: true, 
         }
       },

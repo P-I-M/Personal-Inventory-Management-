@@ -18,7 +18,7 @@ Product.init(
     },
     img_url: {
       type: DataTypes.STRING,
-      defaultValue:null,
+      defaultValue:"https://images.newscientist.com/wp-content/uploads/2019/10/16151942/cataglyphisbombycinasoldier1uniulmdouzfotohwolf.jpg",
       allowNull: true, 
     },
     product_name:{

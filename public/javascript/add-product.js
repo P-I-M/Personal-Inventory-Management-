@@ -33,7 +33,8 @@ async function handleGetCategorySubmit(event) {
       }
     }   
     const author_name = document.querySelector('input[name="prod-author"]').value.trim();
-    const img_url = document.querySelector('input[id="prod-img"]').value.trim();
+    const img_url = document.getElementById("product-image").src;
+    //const img_url = document.querySelector('input[id="prod-img"]').value.trim();
 
     if(product_name && price && stock)
     {   
