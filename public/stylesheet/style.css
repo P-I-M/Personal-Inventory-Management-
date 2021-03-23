@@ -23,14 +23,24 @@ body {
   }
 
 
-  .infographic {
+  .infographic-div {
     text-align: center;
+
+  }
+
+  .infographic {
+    width: 8em;
   }
 
   .loginh3 {
     padding-left: 3em;
     font-weight: 700;
     font-size: 2vw;
+  }
+
+  span.left-just {
+    text-align: left;
+    word-spacing: 3em;;
   }
 
   .loginform {
