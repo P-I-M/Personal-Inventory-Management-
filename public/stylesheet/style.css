@@ -76,15 +76,16 @@ body {
   footer {
     border-top: solid 10px #098191;
       text-align: center;
+      max-height: 20px;
   }
 
   .footer-link {
     padding: 5px;
     color: black;
     margin-top: 5px;
-    margin-bottom: 5px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 0vw;
 
   }
 
@@ -118,6 +119,11 @@ p.lead {
 
 }
 
+.signup-photo {
+  border: dotted 098191 10px;
+  max-height: 300px;
+  max-width: 300px;
+}
 
 /* Then style the iframe to fit in the container div with full height and width */
 .responsive-iframe {
