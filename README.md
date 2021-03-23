@@ -19,18 +19,8 @@ Project is created with:
 * css
 	
 ## Setup
-To run this project, install it locally using npm: <br>
-    "bcrypt": "^5.0.1", <br>
-    "bootstrap": "^3.4.1", <br>
-    "connect-session-sequelize": "^7.1.1", <br>
-    "dotenv": "^8.2.0", <br>
-    "express": "^4.17.1", <br>
-    "express-handlebars": "^5.2.1", <br>
-    "express-session": "^1.17.1", <br>
-    "handlebars": "^4.7.7", <br>
-    "jest": "^26.6.3", <br>
-    "mysql2": "^2.2.5", <br>
-    "sequelize": "^6.5.1" <br>
+//Clone the repository with:
+git clone 
 
 ## Images
 ![Screenshot (9)](https://user-images.githubusercontent.com/40303668/112070514-351c0d80-8b44-11eb-9073-d1f3ef1a7870.png)
