@@ -51,7 +51,7 @@ async function handleGetCategorySubmit(event) {
   }
   else
   {
-    window.alert("Product enter all details");
+    window.alert("Oops! We need all details");
   }
 };
 

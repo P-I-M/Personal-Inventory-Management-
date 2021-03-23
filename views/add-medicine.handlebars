@@ -12,28 +12,21 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
-<style>
-  body{
-    text-align: center;
-  }
-    </style>
+
 
 <section class="medicine">
   <form class="new-product-form">
     <div>
-      <label for="prod-name"><b>Product Name : </b></label>
+      <label for="prod-name"><b>Medicine Name : </b></label>
       <input type="text" id="prod-name" name="prod-name" />
     </div>
+
     <div>
-      <label for="prod-desc"><b>Product Description : </b></label>
-      <textarea id="prod-desc" name="prod-desc"></textarea>
-    </div>
-    <div>
-      <label for="prod-price"><b>Product Price : </b></label>
+      <label for="prod-price"><b>Medicine Price : </b></label>
       <input type="text" id="prod-price" name="prod-price" />
     </div>
     <div>
-      <label for="prod-stock"><b>Product Stock : </b></label>
+      <label for="prod-stock"><b>Quantity : </b></label>
       <input type="text" id="prod-stock" name="prod-stock" />
     </div>
     <div>
@@ -48,6 +41,11 @@
       <label for="prod-author"><b>Creator : </b></label>
       <input type="text" id="prod-author" name="prod-author" />
     </div>
+      <div>
+      <label for="prod-desc"><b>Product Description : </b></label>
+      <br />
+      <textarea id="prod-desc" name="prod-desc"></textarea>
+    </div>
     <!-- upload image -->
     <div>
       <form method="post" enctype="multipart/form-data">
@@ -60,7 +58,7 @@
     </div>
 
     <div> 
-      <button type="submit" class="btn">Add Product</button>
+      <button type="submit" class="btn">Add Medicine</button>
     </div>  
   </form>
 

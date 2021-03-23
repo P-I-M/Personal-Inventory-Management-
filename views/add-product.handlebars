@@ -12,11 +12,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
-<style>
-  body{
-    text-align: center;
-  }
-    </style>
+
 
 {{#if categories.length}}
 <section>
@@ -24,7 +20,7 @@
   <ul>
     {{#each categories as |category|}}         
         
-          <div>       
+          <div class="cat-list">   
        <button class="categorybtn"><a href="/dashboard/add/{{id}}"> {{category_name}} </button></a>
           </div>   
         

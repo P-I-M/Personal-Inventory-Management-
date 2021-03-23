@@ -47,7 +47,7 @@ async function handleGetCategorySubmit(event) {
   
     if (response.ok) {
       window.alert("New product added!");
-      document.location.replace('/dashboard');
+      document.location.replace('/dashboard/products');
     } else {
       alert(response.statusText);
     } 

@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
       });
   
       if (response.ok) {
-        window.alert("Congratulations, account created!");
+        window.alert("Welcome to m n mlize!");
         console.log('success');
         document.location.replace('/dashboard');
       } else {
