@@ -21,7 +21,7 @@
     {{#each products as |product| }}
     <li>
         <div class="cat-list">
-            <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;">{{cat_name}} - {{product_name}}</button></a>
+            <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;"><span class="left-just">{{cat_name}}</span> - {{product_name}}</button></a>
             <img src="{{img_url}}" alt="Produt image" width="40" height="40">
             {{!--<p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>--}}
         </div>
