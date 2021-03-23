@@ -19,7 +19,7 @@ Project is created with:
 * css
 	
 ## Setup
-'''
+```
 //Clone the repository with:
 git clone https://github.com/P-I-M/Personal-Inventory-Management-.git
 
@@ -67,7 +67,7 @@ Use this to make an app for easy orginization
     "jest": "^26.6.3", <br>
     "mysql2": "^2.2.5", <br>
     "sequelize": "^6.5.1" <br>
-    '''
+    ```
  
 ## Images
 ![Screenshot (9)](https://user-images.githubusercontent.com/40303668/112070514-351c0d80-8b44-11eb-9073-d1f3ef1a7870.png)
