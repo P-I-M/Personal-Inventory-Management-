@@ -22,10 +22,11 @@ form.addEventListener("submit", (e) => {
       .then((data) => {
         var data = JSON.parse(data);
         var imageurl = data.url; 
-        var div = document.getElementById("profile_image");
+        var div = document.querySelector(".profile-photo");
         var image = document.createElement("img");
         image.src = imageurl;
         div.appendChild(image);
       });
   }
 });
+

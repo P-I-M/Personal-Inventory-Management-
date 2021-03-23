@@ -3,13 +3,15 @@ async function signupFormHandler(event) {
 
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const profile = document.querySelector('#profile-signup').value.trim(); 
   
-    if (email && password) {
+    if (email && password && profile) {
       const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({
           email,
-          password
+          password, 
+          profile
         }),
         headers: { 'Content-Type': 'application/json' }
       });
@@ -17,7 +19,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
         window.alert("Congratulations, account created!");
         console.log('success');
-        document.location.replace('/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }

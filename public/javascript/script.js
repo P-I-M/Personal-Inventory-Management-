@@ -9,6 +9,7 @@ window.onload = function(){
     sunday();
    }
   
+
 // Display Current Time / Date Using moment.js
   
   var currentDay = moment().format("dddd LL");
@@ -142,3 +143,7 @@ window.onload = function(){
       output_div6.textContent = input_textarea6.value;
     }
   }
+
+  //display profile pic on dashboard
+
+  
