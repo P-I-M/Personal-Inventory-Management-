@@ -42,6 +42,11 @@ User.init(
             // this means the password must be at least six characters long
             len: [6]
           }
+        },
+        profile: {
+          type: DataTypes.STRING,
+          defaultValue:null,
+          allowNull: true, 
         }
       },
  {
