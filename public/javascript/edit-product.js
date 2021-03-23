@@ -24,7 +24,7 @@ async function handleGetCategorySubmit(event) {
     }   
     const author_name = document.querySelector('input[name="author_name"]').value.trim();
 
-    if(product_name && prod_desc && price && stock)
+    if(product_name && price && stock)
     {   
       const response = await fetch(`/api/products/${id}`, {
         method: 'PUT',
@@ -51,10 +51,11 @@ async function handleGetCategorySubmit(event) {
   }
   else
   {
-    window.alert("Oops! We need all details");
+    window.alert("Oops! Name, price and stock are mandatory");
   }
 };
 
+document.querySelector('.edit-post-form').addEventListener('submit', handleGetCategorySubmit);
 
 
 
@@ -64,9 +65,7 @@ async function handleGetCategorySubmit(event) {
 
 
 
-
-
-
+/* don't need this code 
 const category_id = window.location.toString().split('/')[
   window.location.toString().split('/').length - 2
 ];
@@ -205,6 +204,5 @@ async function editBookProduct(event) {
       } else {
         alert(response.statusText);
       }
-};
+};*/
   
-document.querySelector('.edit-post-form').addEventListener('submit', handleGetCategorySubmit);
