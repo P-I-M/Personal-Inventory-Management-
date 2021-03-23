@@ -1,7 +1,8 @@
 async function deleteProduct(event) {
     event.preventDefault();
     var arr=[];
-    flag = false;
+    var flag = false;
+    var delflag = false;
     const listcheckboxes = document.querySelectorAll('input[type="checkbox"]');
     
     for (let i =0;i<listcheckboxes.length;i++)
@@ -18,11 +19,13 @@ async function deleteProduct(event) {
         window.alert("Please select product");
     }
     else
-    {  
-        const response = await fetch(`/api/products/${arr}`, {
+    {   for(var i =0;i<arr.length;i++)
+        {
+            var delflag = false;
+        const response = await fetch(`/api/products/${arr[i]}`, {
             method: 'DELETE',
             body: JSON.stringify({
-            id: arr
+            id: arr[i]
             }),
             headers: {
             'Content-Type': 'application/json'
@@ -30,10 +33,17 @@ async function deleteProduct(event) {
         });
         
         if (response.ok) {
-            window.alert("Product(s) deleted successfully");
-            document.location.replace('/dashboard/');
+            
+            delflag = true;
+            
         } else {
             alert(response.statusText);
+        }
+        }
+        if (delflag == true)
+        {
+            window.alert("Product(s) deleted successfully");
+            document.location.replace('/dashboard/');
         }
     }
 };
