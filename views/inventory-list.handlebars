@@ -17,11 +17,17 @@
 <section>
   <h3>Your Inventory</h3>
   
-   <ul>
+   <ul style="list-style-type:none">
     {{#each products as |product| }}
     <li>
+<<<<<<< HEAD
         <div class="cat-list">
             <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;"> {{product_name}}</button></a>
+=======
+        <div>
+            <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;">{{product_name}}</button></a>
+            <img src="{{product.img_url}}" alt="image" width="50" height="50">
+>>>>>>> 50ae846004eb5f7c7bf7d3f3dd92cf23e63ddba2
             {{!--<p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>--}}
         </div>
     </li>
