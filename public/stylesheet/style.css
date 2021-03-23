@@ -46,8 +46,8 @@ body {
     line-height: 1;
     text-shadow: 1px 2px 4px #ffffff(0, 0, 0, 0.8);
     margin-bottom: .5em;
-    margin-left: 0em;
-    margin-top: .5em;
+    margin-left: 2em;
+    margin-top: 2em;
   }
         
   button {
@@ -90,7 +90,7 @@ body {
   }
 
   .hero-button {
-    margin: 5px;
+    margin-left: 9vw;
     width: 37%;
     gap: 2px 2px;
   }
@@ -442,6 +442,7 @@ p.lead {
 
 label {
   width: 4vm;
+  padding-left: 25vm;
 }
 
 .prod-check {
