@@ -19,7 +19,43 @@ Project is created with:
 * css
 	
 ## Setup
-To run this project, install it locally using npm: <br>
+```
+//Clone the repository with:
+git clone https://github.com/P-I-M/Personal-Inventory-Management-.git
+
+//Install the dependices:
+npm i
+
+// Ensure you have set up MySQL and you have a legacy password to log in with ****
+
+// Create a .env file in the root of the folder and fill out the following with your information:
+DB_NAME='mnmlize'
+DB_USER='root'
+DB_PW='password'
+
+// From the root folder, login to your MySQL using:
+mysql -u root -p
+
+// Then, run this command to create the database:
+source db/schema.sql;
+
+// Then quit the MySQL shell by typing
+quit;
+
+// Seed the test data into the database by typing:
+npm run seeds
+
+// Then use the below command to start the server:
+npm start
+
+
+##usage 
+Use this to make an app for easy orginization 
+
+##Deployed Link
+-insert link here-
+
+##Technology used
     "bcrypt": "^5.0.1", <br>
     "bootstrap": "^3.4.1", <br>
     "connect-session-sequelize": "^7.1.1", <br>
@@ -31,6 +67,8 @@ To run this project, install it locally using npm: <br>
     "jest": "^26.6.3", <br>
     "mysql2": "^2.2.5", <br>
     "sequelize": "^6.5.1" <br>
-
+```    
+ 
 ## Images
-![localhost-3001-dashboard-create-](https://user-images.githubusercontent.com/40303668/111889995-e479a880-89bb-11eb-8082-421c966c6429.png)
+![Screenshot (9)](https://user-images.githubusercontent.com/40303668/112070514-351c0d80-8b44-11eb-9073-d1f3ef1a7870.png)
+
