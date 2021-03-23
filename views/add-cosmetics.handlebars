@@ -5,49 +5,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-<title>mNmLize</title>
+<title>mnmlize</title>
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
-<style>
-  body{
-    text-align: center;
-  }
-    </style>
-    
+
 <section class="medicine">
-  <h3>Add Cosmetics Information</h3>
+
   <form class="new-product-form">
     <div>
       <label for="prod-name"><b>Product Name : </b></label>
       <input type="text" id="prod-name" name="prod-name" />
     </div>
     <div>
-      <label for="prod-desc"><b>Product Description : </b></label>
-      <textarea id="prod-desc" name="prod-desc"></textarea>
-    </div>
-    <div>
-      <label for="prod-price"><b>Product Price : </b></label>
+      <label for="prod-price"><b>Cosmetic Price : </b></label>
       <input type="text" id="prod-price" name="prod-price" />
     </div>
     <div>
-      <label for="prod-stock"><b>Product Stock : </b></label>
+      <label for="prod-stock"><b>Quantity : </b></label>
       <input type="text" id="prod-stock" name="prod-stock" />
     </div>
     <div>
       <label for="mfg-date"><b>Manufacturing Date : </b></label>
-      <input type="date" id="mfg-date" name="mfg-date">
+      <input type="date" id="mfg-date" name="mfg-date" placeholder="yyyy-mm-dd">
     </div>
      <div>
       <label for="exp-date"><b>Expiry Date : </b></label>
-      <input type="date" id="exp-date" name="exp-date">
+      <input type="date" id="exp-date" name="exp-date" placeholder="yyyy-mm-dd">
     </div>
     <div>
       <label for="prod-author"><b>Creator : </b></label>
       <input type="text" id="prod-author" name="prod-author" />
+    </div>
+        <div>
+      <label for="prod-desc"><b>Product Description : </b></label>
+      <br />
+      <textarea id="prod-desc" name="prod-desc"></textarea>
     </div>
     <!-- upload image -->
     <div>
@@ -61,7 +57,7 @@
     </div>
     
     <div> 
-      <button type="submit" class="btn">Add Product</button>
+      <button type="submit" class="btn">Add Cosmetic</button>
     </div>
   </form>
 </section>

@@ -53,8 +53,10 @@ router.get('/products', withAuth, (req, res) => {
             'mfg_date',
             'exp_date',
             'author_name',
-            'category_id'
+            'category_id',
+            [sequelize.literal('(SELECT category_name FROM category WHERE product.category_id = category.id)'), 'cat_name'] 
         ],
+        order: [['category_id', 'ASC']],
         include: [ 
             {
                 model: User, 
@@ -212,8 +214,10 @@ router.get('/delete',withAuth, (req, res) => {
           'mfg_date',
           'exp_date',
           'author_name',
-          'category_id'
+          'category_id',
+          [sequelize.literal('(SELECT category_name FROM category WHERE product.category_id = category.id)'), 'cat_name'] 
         ],
+        order: [['category_id', 'ASC']],
         include: [
           {
             model: User,

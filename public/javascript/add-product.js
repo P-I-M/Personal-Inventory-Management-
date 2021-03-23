@@ -25,7 +25,7 @@ async function handleGetCategorySubmit(event) {
     const author_name = document.querySelector('input[name="prod-author"]').value.trim();
     const img_url = document.querySelector('input[id="prod-img"]').value.trim();
 
-    if(product_name && prod_desc && price && stock)
+    if(product_name && price && stock)
     {   
     const response = await fetch(`/api/products`, {
       method: 'POST',
@@ -47,14 +47,14 @@ async function handleGetCategorySubmit(event) {
   
     if (response.ok) {
       window.alert("New product added!");
-      document.location.replace('/dashboard');
+      document.location.replace('/dashboard/products');
     } else {
       alert(response.statusText);
     } 
   }
   else
   {
-    window.alert("Product enter all details");
+    window.alert("Oops! Name, price and stock are mandatory");
   }
 };
  

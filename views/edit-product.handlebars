@@ -13,16 +13,14 @@
 <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
 
-<div class="card">
-    <h3 class="card-header">Edit Post</h3>
+<div class="medicine">
+
     <form class="card-body edit-post-form">
         <div>
         <label for="product-title" class="form-label">Product</label>
         <input name="product-title" type="text" value="{{product.product_name}}" class="form-input" />
         </div>
         <div>
-        <label for="prod-desc" class="form-label" >Description</label>
-        <input name="prod-desc" type="text" value="{{product.prod_desc}}" class="form-input" />
         </div>
         <div>
         <label for="price" class="form-label" >Price</label>
@@ -34,17 +32,19 @@
         </div>
         <div>
          <label for="mfg_date" class="form-label" >Manufacturing Date : </label>
-        <input name="mfg_date" type="date" value={{format_date product.mfg_date}} class="form-input" />
+        <input name="mfg_date" type="date" value={{format_date product.mfg_date}} class="form-input" placeholder="yyyy-mm-dd" />
         </div>
         <div>
         <label for="exp_date" class="form-label" >Expiration Date</label>
-        <input name="exp_date" type="date" value={{format_date product.exp_date}} class="form-input" />
+        <input name="exp_date" type="date" value={{format_date product.exp_date}} class="form-input" placeholder="yyyy-mm-dd" />
         </div>
         <div>
         <label for="author_name" class="form-label" >Creator</label>
         <input name="author_name" type="text" value="{{product.author_name}}" class="form-input" />
         </div>
         <div>
+             <label for="prod-desc" class="form-label" >Description</label>
+        <input name="prod-desc" type="text" value="{{product.prod_desc}}" class="form-input" />
         <button type="submit" class="btn">Update Product</button>
         {{!--<button type="button" class="delete-prod-btn btn">Delete Product</button>--}}
         </div>
@@ -53,4 +53,4 @@
 
 
 <script src="/javascript/edit-product.js"></script>
-<script src="/javascript/delete-product.js"></script>
+{{!--<script src="/javascript/delete-product.js"></script>--}}

@@ -122,8 +122,8 @@ router.get('/', (req, res) => {
     });
 
   //delete products
-  router.delete('/:id',withAuth, (req, res) => {
-     
+  router.delete('/:id',withAuth, (req, res) => {  
+       
     Product.destroy({
       where: {
         id: req.params.id
