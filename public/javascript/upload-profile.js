@@ -17,13 +17,16 @@ form.addEventListener("submit", (e) => {
       body: formData
     })
       .then((response) => {
+        console.log(response.text);
         return response.text();
+        
       })
       .then((data) => {
         var data = JSON.parse(data);
         var imageurl = data.url; 
-        var div = document.querySelector(".profile-photo");
+        var div = document.querySelector(".signup-photo");
         var image = document.createElement("img");
+        image.setAttribute("id", "profile-signup")
         image.src = imageurl;
         div.appendChild(image);
       });
