@@ -56,7 +56,7 @@ npm start
 Use this site to organize your life and live a minimalist lifestyle.
 
 ## Deployed application link
-https://boiling-woodland-97764.herokuapp.com/ 
+https://mnmlize.herokuapp.com/ 
 
 ## Languages/Technology Used
 Bcrypt <br />
@@ -77,23 +77,29 @@ CSS <br />
 ### Homepage:
 ![homepage](./public/images/screenshot.jpg?raw=true) <br /><br />
 
-### Creating a new user:
-![creating a user](./public/images/screenshot1.jpg?raw=true) <br /><br />
+### Dashboard:
+![dashboard](./public/images/screenshot1.jpg?raw=true) <br /><br />
 
 ### Adding a product:
 ![adding a product](./public/images/screenshot2.jpg?raw=true) <br /><br />
+![adding a product detailed](./public/images/screenshot3.jpg?raw=true) <br /><br />
 
-### Your calendar:
-![personal calendar](./public/images/screenshot3.jpg?raw=true) <br /><br />
-
-## License
-
-  This project is licensed under the MIT license.
   
 ## Contributing
 If you would like to contribute, please reach out to us. You can find our contact information in the  "Questions?" section below.
 
 ## Questions?
 
-If you have any questions about the project, contact us at: 
+If you have any questions about the project, contact us at: https://github.com/orgs/P-I-M/people
 
+## License
+
+This project is licensed under the MIT license.
+
+Copyright (c) 2021 https://github.com/P-I-M
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
