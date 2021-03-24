@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Product, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
+/* get all products route
 router.get('/', withAuth, (req, res) => {
   Product.findAll({
       where: {
@@ -37,7 +38,30 @@ router.get('/', withAuth, (req, res) => {
       res.status(500).json(err);
   });
 });
+*/
 
+//route for profile picture
+
+router.get('/', withAuth, (req, res) => {
+  User.findAll({
+      where: {
+          id: req.session.user_id
+      },
+      attributes: ['id','profile'],
+      
+  })
+  .then(dbProductData => {
+  const products = dbProductData.map(product => product.get({ plain: true }));
+  res.render('dashboard', { products, loggedIn: true });
+})
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+
+});
+
+//route to get list of products for my inventory
 router.get('/products', withAuth, (req, res) => {
     Product.findAll({
         where: {

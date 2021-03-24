@@ -1,8 +1,16 @@
-<div class="grid-container">
+{{!--<div class="grid-container">
       <div class="profile-photo">
         <img src="https://res.cloudinary.com/personal-inventory-management/image/upload/v1616542037/default_paul_dkx9mo.jpg" alt="Profile picture">
       </div>
-<div class="product-nav">
+<div class="product-nav">--}}
+
+ {{#each products as |product| }}
+  <div class="grid-container">
+    <div class="profile-photo">
+      <img src="{{product.profile}}" alt="profile pic" width="300" height="300">
+    </div>
+  <div class="product-nav">
+  {{/each}}
 
 <button type="button" onClick="document.getElementById('frame').src='/dashboard/products'">My Inventory</button>
 <button type="button" onClick="document.getElementById('frame').src='/dashboard/suggestions'">Daily Suggestions</button>
