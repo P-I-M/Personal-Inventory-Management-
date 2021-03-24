@@ -15,14 +15,16 @@
 
 {{#if products.length}}
 
-  <h3>Your Inventory</h3>
+  <h2 style="text-align: center;">Your Inventory</h2>
+  <h3 style="text-align: center;">(Click to edit)<h3>
   
    <ul style="list-style-type:none">
     {{#each products as |product| }}
     <li>
-        <div class="cat-list">
+        <div class="medicine" style="text-align: center;">
             <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;"><span class="left-just">{{cat_name}}</span> - {{product_name}}</button></a>
-            <img src="{{img_url}}" alt="Produt image" width="40" height="40">
+            <br />
+          <div class="inv-img"><img src="{{img_url}}" alt="Produt image" width="150" height="150" style="text-align: center;"></div>
             {{!--<p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>--}}
         </div>
     </li>
