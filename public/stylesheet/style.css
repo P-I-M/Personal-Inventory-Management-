@@ -401,7 +401,7 @@ p.lead {
 }
 
 .profile-photo { 
-  object-fit: cover;
+
   border: dotted 10px #098191;
   text-align: center;
   margin-left: 1em;

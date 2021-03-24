@@ -15,7 +15,7 @@
 
 {{#if products.length}}
 
-  <h2 class="center">Select Item to Remove</h2>
+  <h2 class="center">Select Item(s) to Remove</h2>
  
     {{#each products as |product| }}
   
@@ -35,6 +35,7 @@
 
 {{else}}
 <h6>You do not have any products in your inventory.</h6>
+<button type="button"><a href="/dashboard/new">Add Item</button></a>
 {{/if}}
 
 <script src="/javascript/delete-product.js"></script>
