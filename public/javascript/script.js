@@ -164,5 +164,15 @@ window.onload = function(){
 //   }
 // };
   
-document.querySelector('#calendar-add').addEventListener('click', addCalendarEvent)
+// document.querySelector('#calendar-add').addEventListener('click', addCalendarEvent)
+
+// function onDragStart(event) {
+//   event
+//     .dataTransfer
+//     .setData('text/plain', event.target.id);
   
+//   event 
+//     .currentTarget
+//     .style
+//     .backgroundColor = 'yellow';
+// }

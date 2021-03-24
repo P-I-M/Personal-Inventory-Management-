@@ -11,6 +11,21 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.textContent);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
 </head>
 
 
@@ -21,7 +36,10 @@
       </div>
       {{#each products as |product|}}
         <div>
-          <h5>{{product.product_name}} / {{product.stock}}</h5>
+          <h5 id="drag-item" 
+          draggable="true"
+          ondragstart = "drag(event)">
+          {{product.product_name}} / {{product.stock}}</h5>
       {{/each}}
     </div>
  
