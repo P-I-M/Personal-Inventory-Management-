@@ -127,7 +127,7 @@ router.get('/calendar', withAuth, (req, res) => {
   })
   .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
-      res.render('dashboard', {layout: false, products, loggedIn: true });
+      res.render('calendar', {layout: false, products, loggedIn: true });
 })
   .catch(err => {
       console.log(err);
