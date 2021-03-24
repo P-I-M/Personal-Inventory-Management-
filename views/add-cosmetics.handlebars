@@ -21,8 +21,8 @@
       <input type="text" id="prod-name" name="prod-name" />
     </div>
     <div>
-      <label for="prod-price"><b>Cosmetic Price : $</b></label>
-      <input type="text" id="prod-price" name="prod-price" />
+      <label for="prod-price"><b>Cosmetic Price :</b></label>
+      <input type="text" id="prod-price" name="prod-price" placeholder="$" />
     </div>
     <div>
       <label for="prod-stock"><b>Quantity : </b></label>
@@ -42,7 +42,7 @@
     </div>
         <div>
       <label for="prod-desc"><b>Product Description : </b></label>
-      <br />
+  
       <textarea id="prod-desc" name="prod-desc"></textarea>
     </div>
     <!-- upload image -->
@@ -50,12 +50,12 @@
       <form id="form" method="post" enctype="multipart/form-data">
       <label for="prod-img"><b>Cosmetic Image : </b></label>
       <input type="file" id="prod-img" name="files[]" multiple>
-      <button type="submit" class="btn">Upload Image</button>
       <!-- display image -->
       <div id="product_image"></div>
     </div>
     
     <div> 
+      <button type="submit" class="btn">Upload Image</button>
       <button type="submit" class="btn">Add Cosmetic</button>
     </div>
   </form>

@@ -2,21 +2,25 @@
     <div class="card">
       <h3 class="card-header">Sign up for an account</h3>
       <form id="signup-form" class="card-body">
-        <label for="email-signup" class="form-label">Email</label>
+      Email:   
         <input id="email-signup" type="text" class="form-input" />
 
 
-        <label class="form-label" for="password-signup">Password</label>
+      Password:   
         <input  id="password-signup" type="password" class="form-input" />
-        
+        <br />
+        <br />
         <!-- upload image -->
       
           <div class ="signup-photo">
+           <p style="font-weight: 700;">Choose Profile Photo: </p>
+        
             <form id="form" method="post" enctype="multipart/form-data">
             <input type="file" id="profile" name="files[]" multiple>
-            <button type="submit" class="btn">Upload Image</button>
+          
           </div>
-    
+          <br />
+     <button type="submit" class="btn">Upload Image</button>
         <button type="submit" class="btn">Create Account</button>
       </form>
     </div>
