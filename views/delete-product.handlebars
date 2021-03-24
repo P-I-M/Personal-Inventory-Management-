@@ -16,17 +16,17 @@
 {{#if products.length}}
 
   <h2 class="center">Select Item to Remove</h2>
-   <ul>
+ 
     {{#each products as |product| }}
   
-        <div class="cat-list">
+        <div class="cat-list center">
             <input type="checkbox" id="{{product.id}}" name="{{product.product_name}}" value="{{product.id}}">
            <button> <label for="{{product.id}}">{{product.cat_name}} - {{product.product_name}}</button></label><br>
         </div>
 
     {{/each}}
-   </ul>
-
+   
+<br />
    <div class="delete-prod-btn">
         <button type="button" class="categorybtn delete-prod-btn">Remove</button>
     </div>

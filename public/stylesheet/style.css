@@ -43,6 +43,10 @@ body {
     word-spacing: 3em;;
   }
 
+.rightjust {
+  text-align: right;
+}
+
   .loginform {
     font-weight: 500;
   }
@@ -137,7 +141,6 @@ p.lead {
   max-width: 300px;
 }
 
-/* Then style the iframe to fit in the container div with full height and width */
 .responsive-iframe {
   position: absolute;
   top: 0;
@@ -244,7 +247,7 @@ p.lead {
   overflow: hidden;
   width: 100%;
   max-width: 45em;
-  max-height: 20em;
+  max-height: 500em;
   padding-top: 56.25%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -454,14 +457,18 @@ p.lead {
 
 label {
 
-  height: 50px;
-  padding: 10px;
-  width: 4em;
+  height: 40px;
+  padding: 5px;
+  width: 20em;
+  font-weight: 700;
 }
 
-.form-label {
-  width: 6vw;;
+.product_image {
+  max-width: 150px;
+  max-height: 150px;
 }
+
+
 
 .center {
   text-align: center;

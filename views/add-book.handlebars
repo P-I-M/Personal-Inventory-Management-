@@ -21,8 +21,8 @@
       <input type="text" id="prod-name" name="prod-name" />
     </div>
      <div class="prod-price">
-      <label for="prod-price"><b>Book Price : $</b></label>
-      <input type="text" id="prod-price" name="prod-price" />
+      <label class="labeljust" for="prod-price"><b>Book Price :</b></label>
+      <input type="text" id="prod-price" name="prod-price" placeholder="$" />
     </div>
     <div class="prod-stock">
       <label for="prod-stock"><b>Quantity : </b></label>
@@ -34,7 +34,7 @@
     </div>
         <div class="prod-desc">
       <label for="prod-desc"><b>Book Description : </b></label>
-      <br />
+  
       <textarea id="prod-desc" name="prod-desc"></textarea>
     </div>
     <!-- upload image -->
@@ -42,12 +42,13 @@
       <form id="form" method="post" enctype="multipart/form-data">
       <label for="prod-img"><b>Book Image : </b></label>
       <input type="file" id="prod-img" name="files[]" multiple>
-      <button type="submit" class="btn">Upload Image</button>
-      <!-- display image -->
-      <div id="product_image"></div>
-    </div>
     
+      <!-- display image -->
+      <div id="product_image" width="150" height="150"></div>
+    </div>
+  
     <div> 
+         <button type="submit" class="btn">Upload Image</button>
       <button type="submit" class="btn">Add Book</button>
     </div>
   </form>
