@@ -22,6 +22,7 @@ form.addEventListener("submit", (e) => {
         
       })
       .then((data) => {
+        //append to sign in page 
         var data = JSON.parse(data);
         var imageurl = data.url; 
         var div = document.querySelector(".signup-photo");
