@@ -12,8 +12,8 @@ window.onload = function(){
 
 // Display Current Time / Date Using moment.js
   
-  //var currentDay = moment().format("dddd LL");
-  //$("#currentDay").append(currentDay);
+  var currentDay = moment().format("dddd LL");
+  $("#currentDay").append(currentDay);
   
  
   
@@ -43,8 +43,8 @@ window.onload = function(){
   
     save_button1.addEventListener("click", updateOutput1);
   
-    output_div1.textContent = localStorage.getItem("content");
-    input_textarea1.value = localStorage.getItem("content");
+    output_div1.textContent = localStorage.getItem("content1");
+    input_textarea1.value = localStorage.getItem("content1");
   
     function updateOutput1() {
       localStorage.setItem("content1", input_textarea1.value);
@@ -144,12 +144,6 @@ window.onload = function(){
     }
   }
 
-//display profile pic on dashboard
-const profile = document.getElementById("profile-signup").src; 
-const div = document.querySelector('.profile-photo')
-var image = document.createElement("img");
-image.setAttribute("id", "profileimage")
-image.src = profile;
-div.appendChild(image);
+
   
   
