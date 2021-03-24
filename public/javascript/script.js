@@ -43,8 +43,8 @@ window.onload = function(){
   
     save_button1.addEventListener("click", updateOutput1);
   
-    output_div1.textContent = localStorage.getItem("content");
-    input_textarea1.value = localStorage.getItem("content");
+    output_div1.textContent = localStorage.getItem("content1");
+    input_textarea1.value = localStorage.getItem("content1");
   
     function updateOutput1() {
       localStorage.setItem("content1", input_textarea1.value);
@@ -144,12 +144,25 @@ window.onload = function(){
     }
   }
 
-//display profile pic on dashboard
-const profile = document.getElementById("profile-signup").src; 
-const div = document.querySelector('.profile-photo')
-var image = document.createElement("img");
-image.setAttribute("id", "profileimage")
-image.src = profile;
-div.appendChild(image);
+// async function addCalendarEvent(event) {
+//   event.preventDefault(); 
+
+//   const response = await fetch('/dashboard/calendar' , {
+//     method: 'POST',
+//     body: JSON.stringify({
+//     }),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   });
+//   if (response.ok) {
+//     window.alert('Yay!');
+//     document.location.reload('/dashboard/calendar')
+//   } else {
+//     alert(response.statusText);
+//     console.log(response)
+//   }
+// };
   
+document.querySelector('#calendar-add').addEventListener('click', addCalendarEvent)
   

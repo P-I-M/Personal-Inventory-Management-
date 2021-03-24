@@ -19,6 +19,8 @@
 
   </div>
 
+  
+
   <div class="scheduler">
     <!-- Monday  -->
           <div class="input-group mborder">
@@ -103,17 +105,31 @@
                     class="far fa-save"></i></button>
               </div>
             </div>
+            {{> calendar}}
             </div>
 
           
          <div class="iframediv"> 
   <iframe id="frame" class="responsive-iframe" src="/dashboard/products" frameborder="0"></iframe>
 </div>
-    
-    
-  </div>
 
-{{!-- <script src="/javascript/upload-profile.js"></script> --}}
+  </iframe>
+  {{#if products.length}}
+  <iframe class="responsive-iframe" src="/dashboard/calendar" frameborder ="0"></iframe>
+    <section>
+      <h2>Your products</h2>
+      {{#each products as |product|}}
+          {{> calendar product}}
+          <p>{{product.product_name}} / {{product.stock}}</p>
+      {{/each}}
+    </section>
+  </iframe>
+  {{/if}}
+
+
+</div>
+
+<script src="/javascript/script.js"></script>
 
 
 
