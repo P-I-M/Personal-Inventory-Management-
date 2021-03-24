@@ -1,20 +1,32 @@
 const express = require('express');
 const routes = require('./controllers/');
-const exphbs = require('express-handlebars');
+const sequelize = require('./config/connection');
 const path = require('path');
+const cloudinary = require('cloudinary-core');
+
+const helpers = require('./utils/helpers');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({helpers});
+
 const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    // Session will expire in 10 minutes
-    expires: 10 * 60 * 1000
+    // Session will expire in 60 minutes
+    expires: 60 * 60 * 1000
   },
   resave: true,
   rolling: true,
@@ -24,14 +36,8 @@ const sess = {
   })
 };
 
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
-
 app.use(session(sess));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', hbs.engine);
+
 // turn on routes
 app.use(routes);
 

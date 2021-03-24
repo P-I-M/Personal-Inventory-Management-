@@ -42,6 +42,11 @@ User.init(
             // this means the password must be at least six characters long
             len: [6]
           }
+        },
+        profile: {
+          type: DataTypes.STRING,
+          defaultValue:"https://res.cloudinary.com/personal-inventory-management/image/upload/v1616534747/default_paul_sc7mmk.jpg",
+          allowNull: true, 
         }
       },
  {
@@ -61,7 +66,7 @@ User.init(
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
     // don't automatically create createdAt/updatedAt timestamp fields
-    timestamps: false,
+    
     // don't pluralize name of database table
     freezeTableName: true,
     // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)

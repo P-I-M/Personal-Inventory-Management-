@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<title>mnmlize</title>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+{{#if products.length}}
+<stlye></stlye>
+  <h2 style="text-align: center;">Your Inventory</h2>
+  <h3 style="text-align: center;">(Click to edit)<h3>
+  
+  
+    {{#each products as |product| }}
+  
+        <div class="medicine" style="text-align: center;">
+            <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;"><span class="left-just">{{cat_name}}</span> - {{product_name}}</button></a>
+            <br />
+          <div class="inv-img"><img src="{{img_url}}" alt="Produt image" width="150" height="150" style="text-align: center;"></div>
+            {{!--<p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>--}}
+        </div>
+
+    {{/each}}
+
+
+
+{{else}}
+<h6>You do not have any products in your inventory.</h6>
+<button type="button"><a href="/dashboard/new">Add Item</button></a>
+{{/if}}
+

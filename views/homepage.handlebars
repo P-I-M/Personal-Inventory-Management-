@@ -1,9 +1,17 @@
 
-<ol class="post-list">
-  TEST
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
+<div>
+  <h2 class="dash-title">Your Inventory</h2>
+  <a href="/dashboard/create/"><button id="create-product">Create New Product</button></a>
+
+{{#if products.length}}
+</div>
+ 
+  {{#each products as |product|}}
+    {{> product-info product}}
+      <a href="/dashboard/edit/{{product.id}}"><button id="edit-product">Edit Product</button></a>
+    </div>
   {{/each}}
-</ol>
+
+{{else}}
+<h6>You do not have any products in your inventory.</h6>
+{{/if}}

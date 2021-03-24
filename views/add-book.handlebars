@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<title>mnmlize</title>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+
+<div class="medicine">
+  <form class="new-product-form">
+  <div class="prod-name">
+      <label for="prod-name"><b>Book Name : </b></label>
+      <input type="text" id="prod-name" name="prod-name" />
+    </div>
+     <div class="prod-price">
+      <label class="labeljust" for="prod-price"><b>Book Price :</b></label>
+      <input type="text" id="prod-price" name="prod-price" placeholder="$" />
+    </div>
+    <div class="prod-stock">
+      <label for="prod-stock"><b>Quantity : </b></label>
+      <input type="text" id="prod-stock" name="prod-stock" />
+    </div>
+    <div class="prod-author">
+      <label for="prod-author"><b>Creator : </b></label>
+      <input type="text" id="prod-author" name="prod-author" style="width: 200px;" />
+    </div>
+        <div class="prod-desc">
+      <label for="prod-desc"><b>Book Description : </b></label>
+  
+      <textarea id="prod-desc" name="prod-desc"></textarea>
+    </div>
+    <!-- upload image -->
+   <div class="prod-img">
+      <form id="form" method="post" enctype="multipart/form-data">
+      <label for="prod-img"><b>Book Image : </b></label>
+      <input type="file" id="prod-img" name="files[]" multiple>
+    
+      <!-- display image -->
+      <div id="product_image" width="150" height="150"></div>
+    </div>
+  
+    <div> 
+         <button type="submit" class="btn">Upload Image</button>
+      <button type="submit" class="btn">Add Book</button>
+    </div>
+  </form>
+</div>
+
+<script src="/javascript/add-product.js"></script>
+<script src="/javascript/upload.js"></script>

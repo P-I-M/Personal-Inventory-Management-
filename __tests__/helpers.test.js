@@ -2,8 +2,8 @@ const { format_date } = require('../utils/helpers');
 
 test('format_date() return date', () => {
 
-const date = new Date('2021-03-18 8:43:00');
+const date = new Date('Sun Mar 21 2021 20:00:00 GMT-0400 (Eastern Daylight Time)');
 
-expect(format_date(date)).toBe('3/12/2021');
+expect(format_date(date)).toBe('2021-03-21');
 
 });

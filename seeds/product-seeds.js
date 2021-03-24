@@ -2,6 +2,7 @@ const { Product } = require('../models');
 
 const productdata = [
   {
+    img_url: "https://res.cloudinary.com/personal-inventory-management/image/upload/v1616339802/samples/food/spices.jpg",
     product_name: 'Lip gloss',
     prod_desc: 'Lakme',
     price: 20,
@@ -13,7 +14,7 @@ const productdata = [
     user_id:1
   },
   {  
-    product_name: 'Lipstik',
+    product_name: 'Lipstick',
     prod_desc: 'Maybelline',
     price: 30,
     stock:3,
@@ -78,7 +79,7 @@ const productdata = [
     category_id:2,
     user_id:4
   },
-  {  
+  { 
     product_name: 'Tylenol kids',
     prod_desc: 'Paracetamol',
     price: 12,

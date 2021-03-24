@@ -3,25 +3,53 @@
 //if medicine chosen then newMedicineProduct()
 //if books chosen then newBookProduct()
 
-async function newMakeupProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const mfg_date = document.querySelector('input[name="mfg_date"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
+async function handleGetCategorySubmit(event) {
+  event.preventDefault();
+    debugger;
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];debugger;
+    const category_id = parseInt(id);
+    let mfg_date=null;
+    let exp_date=null;
+    
+    const product_name = document.querySelector('input[name="prod-name"]').value.trim();
+    const prod_desc = document.querySelector('textarea[name="prod-desc"]').value.trim();
+    const price = parseFloat(document.querySelector('input[name="prod-price"]').value.trim());
+    const stock = parseInt(document.querySelector('input[name="prod-stock"]').value.trim());
+    if(category_id == 1 || category_id== 2 || category_id == 3)
+    {
+      mfg_date = Date.parse(document.querySelector('input[name="mfg-date"]').value.trim());
+      exp_date = Date.parse(document.querySelector('input[name="exp-date"]').value.trim());
+      if(!mfg_date)
+      {
+        var d = new Date();
+        mfg_date = d;
+      }
+      if(!exp_date)
+      {
+        var d = new Date();
+        exp_date = d;
+      }
+    }   
+    const author_name = document.querySelector('input[name="prod-author"]').value.trim();
+    const img_url = document.getElementById("product-image").src;
+    //const img_url = document.querySelector('input[id="prod-img"]').value.trim();
 
-    const response = await fetch(`/api/cosmetics`, {
+    if(product_name && price && stock)
+    {   
+    const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
+        img_url,
         product_name,
         prod_desc,
         price,
         stock,
         mfg_date,
-        exp_date
+        exp_date,
+        author_name,
+        category_id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -29,104 +57,16 @@ async function newMakeupProduct(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      window.alert("New product added!");
+      document.location.replace('/dashboard/products');
     } else {
       alert(response.statusText);
-    }
+    } 
+  }
+  else
+  {
+    window.alert("Oops! Name, price and quantity are mandatory");
+  }
 };
-
-async function newGroceryProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
-
-    const response = await fetch(`/api/grocery`, {
-      method: 'POST',
-      body: JSON.stringify({
-        product_name,
-        prod_desc,
-        price,
-        stock,
-        exp_date
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-async function newMedicineProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const mfg_date = document.querySelector('input[name="mfg_date"]').value;
-    const exp_date = document.querySelector('input[name="exp_date"]').value;
-
-    const response = await fetch(`/api/medicine`, {
-      method: 'POST',
-      body: JSON.stringify({
-        product_name,
-        prod_desc,
-        price,
-        stock,
-        mfg_date,
-        exp_date
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-async function newBookProduct(event) {
-    event.preventDefault();
-  
-    const product_name = document.querySelector('input[name="product-name"]').value;
-    const prod_desc = document.querySelector('input[name="prod_desc"]').value;
-    const price = document.querySelector('input[name="price"]').value;
-    const stock = document.querySelector('input[name="stock"]').value;
-    const author_name = document.querySelector('input[name="author_name"]').value;
-
-    const response = await fetch(`/api/books`, {
-      method: 'POST',
-      body: JSON.stringify({
-        product_name,
-        prod_desc,
-        price,
-        stock,
-        author_name
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-};
-
-
-  
-document.querySelector('.xxx').addEventListener('submit', newFormHandler);
+ 
+document.querySelector('.new-product-form').addEventListener('submit', handleGetCategorySubmit);

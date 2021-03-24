@@ -1,8 +1,13 @@
 const router = require('express').Router();
-const { User, Product, Category } = require('../models');
+const sequelize = require('../config/connection');
+const { User, Product} = require('../models');
 
 // get all products for homepage
 router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
   console.log('======================');
   Product.findAll({
     attributes: [
@@ -26,7 +31,7 @@ router.get('/', (req, res) => {
     .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
 
-      res.render('homepage', {
+      res.render('login', {
         products,
         loggedIn: req.session.loggedIn
       });
@@ -37,6 +42,24 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  if(req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('signup');
+});
+
 // get single product
 router.get('/product/:id', (req, res) => {
   product.findOne({
@@ -45,6 +68,7 @@ router.get('/product/:id', (req, res) => {
     },
     attributes: [
       'id',
+      'img_url',
       'product_name',
       'prod_desc',
       'price',
@@ -70,6 +94,7 @@ router.get('/product/:id', (req, res) => {
       const product = dbProductData.get({ plain: true });
 
       res.render('single-product', {
+        layout: false,
         product,
         loggedIn: req.session.loggedIn
       });
@@ -81,13 +106,5 @@ router.get('/product/:id', (req, res) => {
 });
 
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 module.exports = router;
