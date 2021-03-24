@@ -12,7 +12,6 @@ body {
     display: flex;
     padding-left: 1em;
     padding-top: 1em;
-    align-items: left;
     flex-direction: column;
     text-align: left;
     width: 100%;
@@ -68,7 +67,7 @@ body {
   button {
     font-weight: 700;
     background: #098191;
-    transition: background ease .25s;
+  
     border-radius: 1em;
     display: inline-block;
     border: none;
@@ -142,7 +141,6 @@ p.lead {
 }
 
 .signup-photo {
-  border: dotted 098191 10px;
   max-height: 300px;
   max-width: 300px;
 }
@@ -176,10 +174,8 @@ p.lead {
   border-left: 3px dotted black;
   border-bottom: dotted 3px grey;
   border-top: dotted 3px grey;
- 
   padding: 0;
   border-radius: 0;
-  text-justify: center;
 }
 
 .time-block {
