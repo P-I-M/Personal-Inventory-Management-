@@ -16,18 +16,19 @@
 
   {{#if products.length}}
   
-    <section>
-      <h2>Your products</h2>
+    <div>
+      <h2>Schedule Items for Consumption</h2>
+      </div>
       {{#each products as |product|}}
-        
-          <p>{{product.product_name}} / {{product.stock}}</p>
+        <div>
+          <h5>{{product.product_name}} / {{product.stock}}</h5>
       {{/each}}
-    </section>
+    </div>
  
   {{/if}}
 
 <div class="calendar-options">
 {{#if products.length}}
-  <a href="/dashboard/calendar"><button type="button" id="calendar-add">Do you want to add items to your calendar?</button></a>
+  <a href="/dashboard/calendar"><button type="button" id="calendar-add">Push to calender</button></a>
 {{/if}}
 </div>

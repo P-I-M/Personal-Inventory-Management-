@@ -135,6 +135,10 @@ p.lead {
 
 }
 
+.cat-list {
+  font-size: 6vw;
+}
+
 .signup-photo {
   border: dotted 098191 10px;
   max-height: 300px;
