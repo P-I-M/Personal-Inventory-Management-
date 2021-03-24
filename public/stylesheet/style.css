@@ -36,6 +36,7 @@ body {
  
     font-weight: 700;
     font-size: 2vw;
+    padding-left: 2vw;
   }
 
   span.left-just {
@@ -137,6 +138,7 @@ p.lead {
 
 .cat-list {
   font-size: 6vw;
+  margin-left: -2vw;
 }
 
 .signup-photo {
