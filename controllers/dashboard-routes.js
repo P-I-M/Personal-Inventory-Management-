@@ -1,41 +1,41 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Product,Category } = require('../models');
+const { User, Product, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    Product.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: [
-            'id',
-            'img_url',
-            'product_name',
-            'prod_desc',
-            'price',
-            'stock',
-            'mfg_date',
-            'exp_date',
-            'author_name',
-            'category_id'
-        ],
-        include: [ 
-            {
-                model: User, 
-                attributes: ['email']
-            }
-        ]   
-    })
-    .then(dbProductData => {
-    const products = dbProductData.map(product => product.get({ plain: true }));
-    res.render('dashboard', { products, loggedIn: true });
+  Product.findAll({
+      where: {
+          user_id: req.session.user_id
+      },
+      attributes: [
+          'id',
+          'img_url',
+          'product_name',
+          'prod_desc',
+          'price',
+          'stock',
+          'mfg_date',
+          'exp_date',
+          'author_name',
+          'category_id',
+          [sequelize.literal('(SELECT profile FROM user WHERE product.user_id = id)'), 'prof_url'] 
+      ],
+      include: [ 
+          {
+              model: User, 
+              attributes: ['email', 'profile']
+          }
+      ]   
+  })
+  .then(dbProductData => {
+  const products = dbProductData.map(product => product.get({ plain: true }));
+  res.render('dashboard', { products, loggedIn: true });
 })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 router.get('/products', withAuth, (req, res) => {

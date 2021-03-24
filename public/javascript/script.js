@@ -144,7 +144,12 @@ window.onload = function(){
     }
   }
 
-  //display profile pic on dashboard
-  var profilePhoto = document.querySelector("profile-photo");
+//display profile pic on dashboard
+const profile = document.getElementById("profile-signup").src; 
+const div = document.querySelector('.profile-photo')
+var image = document.createElement("img");
+image.setAttribute("id", "profileimage")
+image.src = profile;
+div.appendChild(image);
   
   
