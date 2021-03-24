@@ -144,25 +144,25 @@ window.onload = function(){
     }
   }
 
-// async function addCalendarEvent(event) {
-//   event.preventDefault(); 
+async function addCalendarEvent(event) {
+  event.preventDefault(); 
 
-//   const response = await fetch('/dashboard/calendar' , {
-//     method: 'POST',
-//     body: JSON.stringify({
-//     }),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-//   if (response.ok) {
-//     window.alert('Yay!');
-//     document.location.reload('/dashboard/calendar')
-//   } else {
-//     alert(response.statusText);
-//     console.log(response)
-//   }
-// };
+  const response = await fetch('/dashboard/calendar' , {
+    method: 'POST',
+    body: JSON.stringify({
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    window.alert('Yay!');
+    document.location.reload('/dashboard/calendar')
+  } else {
+    alert(response.statusText);
+    console.log(response)
+  }
+};
   
 document.querySelector('#calendar-add').addEventListener('click', addCalendarEvent)
   
