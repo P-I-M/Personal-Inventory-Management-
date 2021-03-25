@@ -15,9 +15,13 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
+        //window.alert("Welcome to m n mlize!");
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+         //alert(response.statusText);
+        response.json().then(data => {
+        window.alert(data.message);
+       });
       }
     }
   }

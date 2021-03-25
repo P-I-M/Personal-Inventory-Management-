@@ -26,7 +26,9 @@ form.addEventListener("submit", (e) => {
         var imageurl = data.url; 
         var div = document.querySelector("#product_image");
         var image = document.createElement("img");
-        image.setAttribute("id", "product-image")
+        image.setAttribute("id", "product-image");
+        image.width ="150";
+        image.height ="150";
         image.src = imageurl;
         div.appendChild(image);
       });

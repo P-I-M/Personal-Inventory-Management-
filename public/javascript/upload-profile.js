@@ -27,7 +27,9 @@ form.addEventListener("submit", (e) => {
         var imageurl = data.url; 
         var div = document.querySelector(".signup-photo");
         var image = document.createElement("img");
-        image.setAttribute("id", "profile-signup")
+        image.setAttribute("id", "profile-signup");
+        image.width ="150";
+        image.height ="150";
         image.src = imageurl;
         div.appendChild(image);
       });
