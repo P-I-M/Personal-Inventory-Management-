@@ -39,7 +39,7 @@ function drop(ev) {
           <h5 id="drag-item" 
           draggable="true"
           ondragstart = "drag(event)">
-          {{product.product_name}} / {{product.stock}}</h5>
+          {{product.product_name}} / {{product.stock}} pcs </h5>
       {{/each}}
     </div>
  
@@ -47,6 +47,6 @@ function drop(ev) {
 
 <div class="calendar-options">
 {{#if products.length}}
-  <a href="/dashboard/calendar"><button type="button" id="calendar-add">Push to calender</button></a>
+  <a href="/dashboard/calendar"><button type="button" id="calendar-add">Push to calendar</button></a>
 {{/if}}
 </div>
