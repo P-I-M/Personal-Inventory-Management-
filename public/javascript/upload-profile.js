@@ -41,4 +41,3 @@ else
 window.alert("Please select file to upload");
 }
 });
-
