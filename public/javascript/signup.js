@@ -1,9 +1,5 @@
 async function signupFormHandler(event) {
-<<<<<<< HEAD
-  event.preventDefault();
-=======
   //event.preventDefault();
->>>>>>> develop
   var profile ="";
   const imageEl = document.getElementById("profile-signup");
   const email = document.querySelector('#email-signup').value.trim();
@@ -33,9 +29,13 @@ async function signupFormHandler(event) {
       console.log('success');
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      //alert(response.statusText);
+      response.json().then(data => {
+      window.alert(data.message);
+     });
     }
   }
 }
 
+//document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
 document.querySelector('#sign-up').addEventListener('click', signupFormHandler);
