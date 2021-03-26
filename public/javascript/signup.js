@@ -1,5 +1,9 @@
 async function signupFormHandler(event) {
+<<<<<<< HEAD
   event.preventDefault();
+=======
+  //event.preventDefault();
+>>>>>>> develop
   var profile ="";
   const imageEl = document.getElementById("profile-signup");
   const email = document.querySelector('#email-signup').value.trim();

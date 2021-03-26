@@ -6,7 +6,10 @@ form.addEventListener("submit", (e) => {
 
   const files = document.querySelector("[type=file]").files;
   const formData = new FormData();
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
   if(files.length)
   {
   for (let i = 0; i < files.length; i++) {
@@ -39,7 +42,11 @@ form.addEventListener("submit", (e) => {
 }
 else
 {
+<<<<<<< HEAD
   window.alert("Please select file to upload");
+=======
+window.alert("Please select file to upload");
+>>>>>>> develop
 }
 });
 

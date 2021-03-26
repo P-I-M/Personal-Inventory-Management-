@@ -11,6 +11,21 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.textContent);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
 </head>
 
 {{#if products.length}}
@@ -22,7 +37,7 @@
     {{#each products as |product| }}
   
         <div class="medicine" style="text-align: center;">
-            <button class="categorybtn"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;"><span class="left-just">{{cat_name}}</span> - {{product_name}}</button></a>
+            <button class="categorybtn" id="drag-item" draggable="true" ondragstart = "drag(event)"><a href="/dashboard/edit/{{product.category_id}}/{{product.id}}" style="font-size: 20px;"><span class="left-just">{{cat_name}}</span> - {{product_name}}</button></a>
             <br />
           <div class="inv-img"><img src="{{img_url}}" alt="Produt image" width="150" height="150" style="text-align: center;"></div>
             {{!--<p class="card-text" style="font-size: 15px;">{{prod_desc}}</p>--}}

@@ -52,9 +52,7 @@ window.onload = function(){
       output_div1.textContent = input_textarea1.value;
     }
   }
-  
-  
-  
+    
   function wednesday() {
     var input_textarea2 = document.querySelector("#entryWednesday");
     var output_div2 = document.querySelector("#entryWednesday");
@@ -71,7 +69,6 @@ window.onload = function(){
       output_div2.textContent = input_textarea2.value;
     }
   }
-  
   
   function thursday() {
     var input_textarea3 = document.querySelector("#entryThursday");
@@ -90,7 +87,6 @@ window.onload = function(){
     }
   }
   
-  
   function friday() {
     var input_textarea4 = document.querySelector("#entryFriday");
     var output_div4 = document.querySelector("#entryFriday");
@@ -107,7 +103,6 @@ window.onload = function(){
       output_div4.textContent = input_textarea4.value;
     }
   }
-  
   
   function saturday() {
     var input_textarea5 = document.querySelector("#entrySaturday");
@@ -126,7 +121,6 @@ window.onload = function(){
     }
   }
   
-  
   function sunday() {
     var input_textarea6 = document.querySelector("#entrySunday");
     var output_div6 = document.querySelector("#entrySunday");
@@ -144,35 +138,55 @@ window.onload = function(){
     }
   }
 
-// async function addCalendarEvent(event) {
-//   event.preventDefault(); 
+//push suggestion to calendar
 
-//   const response = await fetch('/dashboard/calendar' , {
-//     method: 'POST',
-//     body: JSON.stringify({
-//     }),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-//   if (response.ok) {
-//     window.alert('Yay!');
-//     document.location.reload('/dashboard/calendar')
-//   } else {
-//     alert(response.statusText);
-//     console.log(response)
-//   }
-// };
+async function addToCalendar(event) {
+  event.preventDefault();
+  var arr=[];
+  var flag = false;
+  var addflag = false;
+  const listcheckboxes = document.querySelectorAll('input[type="checkbox"]');
   
-// document.querySelector('#calendar-add').addEventListener('click', addCalendarEvent)
+  for (let i =0;i<listcheckboxes.length;i++)
+  {
+      console.log(listcheckboxes[i].value);
+      if(listcheckboxes[i].checked == true)
+      {
+          arr.push(parseInt(listcheckboxes[i].value));
+          flag=true;
+      }
+  }
+  if(flag == false)
+  {
+      window.alert("Please select product");
+  }
+  else
+  {   for(var i =0;i<arr.length;i++)
+      {
+          var addflag = false;
+      const response = await fetch(`/api/products/${arr[i]}`, {
+          method: 'GET',
+          // body: JSON.stringify({
+          // id: arr[i]
+          // }),
+          headers: {
+          'Content-Type': 'application/json'
+          }
+      });
+      
+      if (response.ok) {
+        console.log(response);
+        addflag = true;
+          
+      } else {
+          alert(response.statusText);
+      }
+      }
+      if (addflag == true)
+      {
+          document.location.replace('/dashboard/calendar');
+      }
+  }
+};
 
-// function onDragStart(event) {
-//   event
-//     .dataTransfer
-//     .setData('text/plain', event.target.id);
-  
-//   event 
-//     .currentTarget
-//     .style
-//     .backgroundColor = 'yellow';
-// }
+document.querySelector('#calendar-add').addEventListener('click', addToCalendar);
