@@ -4,15 +4,16 @@
 //if books chosen then newBookProduct()
 
 async function handleGetCategorySubmit(event) {
-  event.preventDefault();
-    debugger;
+ // event.preventDefault();
+    
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
-    ];debugger;
+    ];
     const category_id = parseInt(id);
     let mfg_date=null;
     let exp_date=null;
-    
+    var img_url = "";
+    const imageEl = document.getElementById("product-image");
     const product_name = document.querySelector('input[name="prod-name"]').value.trim();
     const prod_desc = document.querySelector('textarea[name="prod-desc"]').value.trim();
     const price = parseFloat(document.querySelector('input[name="prod-price"]').value.trim());
@@ -33,7 +34,21 @@ async function handleGetCategorySubmit(event) {
       }
     }   
     const author_name = document.querySelector('input[name="prod-author"]').value.trim();
-    const img_url = document.getElementById("product-image").src;
+
+    if(category_id == 1)
+    {img_url = "http://res.cloudinary.com/personal-inventory-management/image/upload/v1616716089/grocery_eyoham.jpg";}
+    if(category_id == 2)
+    {img_url = "http://res.cloudinary.com/personal-inventory-management/image/upload/v1616716123/medicines_h4lxxt.jpg";}
+    if(category_id == 3)
+    {img_url = "http://res.cloudinary.com/personal-inventory-management/image/upload/v1616716156/cosmetics_rvtlpi.jpg";}
+    if(category_id == 4)
+    {img_url = "http://res.cloudinary.com/personal-inventory-management/image/upload/v1616716192/books_is7gtz.jpg";}
+
+    if(document.body.contains(imageEl))
+    {
+      img_url = imageEl.src;
+    }
+   
     //const img_url = document.querySelector('input[id="prod-img"]').value.trim();
 
     if(product_name && price && stock)
@@ -69,4 +84,4 @@ async function handleGetCategorySubmit(event) {
   }
 };
  
-document.querySelector('.new-product-form').addEventListener('submit', handleGetCategorySubmit);
+document.querySelector('#add-product').addEventListener('click', handleGetCategorySubmit);
