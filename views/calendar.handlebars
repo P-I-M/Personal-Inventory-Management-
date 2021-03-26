@@ -35,11 +35,10 @@ function drop(ev) {
       <h2>Schedule Items for Consumption</h2>
       </div>
       {{#each products as |product|}}
-        <div>
-          <h5 id="drag-item" 
-          draggable="true"
-          ondragstart = "drag(event)">
-          {{product.product_name}} / {{product.stock}} pcs </h5>
+      <div class="cat-list center">
+            <input type="checkbox" id="{{product.id}}" name="{{product.product_name}} / {{product.stock}}pcs" value="{{product.id}}">
+           <button draggable="true" ondragstart="drag(event)" > <label for="{{product.id}}">{{product.cat_name}} - {{product.product_name}}</button></label><br>
+      </div>
       {{/each}}
     </div>
  
@@ -50,3 +49,5 @@ function drop(ev) {
   <a href="/dashboard/calendar"><button type="button" id="calendar-add">Push to calendar</button></a>
 {{/if}}
 </div>
+
+<script src="/javascript/script.js"></script>

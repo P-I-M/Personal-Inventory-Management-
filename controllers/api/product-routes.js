@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
   });
   
   // get single product
-  router.get('/product/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
     Product.findOne({
       where: {
         id: req.params.id
