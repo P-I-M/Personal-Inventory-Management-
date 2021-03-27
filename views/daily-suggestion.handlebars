@@ -11,15 +11,30 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/stylesheet/style.css">
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.textContent);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
 </head>
 
 {{#if products.length}}
 
-  <h2>Your products</h2>
+  <h2>Use these products before they expire!</h2>
   <div class="cat-list center">
   <select id="person">
     {{#each products as |product|}}        
-       <option value="{{product.category_id}}" name="prod-cat">{{product.id}} - {{product.product_name}} - {{product.stock}} - {{format_date product.exp_date}}</option>
+       <option draggable="true" ondragstart="drag(event)" value="{{product.category_id}}" name="prod-cat">{{product.product_name}} - {{product.stock}} - {{format_date product.exp_date}}</option>
     {{/each}}
   </select>
   </div>

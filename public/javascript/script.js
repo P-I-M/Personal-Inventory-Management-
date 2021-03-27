@@ -25,7 +25,6 @@ for (let i = 0; i<= daysRequired; i++){
   dateEls[i].append(calDateEl);
 }
 
-//console.log(days);
 
 function day1() {
   var input_textarea = document.querySelector("#day1");
@@ -39,9 +38,14 @@ function day1() {
 
   function updateOutput() {
     localStorage.setItem(days[0], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(1*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[0]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
+
 }
 
 function day2() {
@@ -56,9 +60,14 @@ function day2() {
 
   function updateOutput() {
     localStorage.setItem(days[1], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(2*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[1]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
+
 }
 
 function day3() {
@@ -73,8 +82,12 @@ function day3() {
 
   function updateOutput() {
     localStorage.setItem(days[2], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(3*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[2]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
 }
 
@@ -90,8 +103,12 @@ function day4() {
 
   function updateOutput() {
     localStorage.setItem(days[3], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(4*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[3]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
 }
 
@@ -107,8 +124,12 @@ function day5() {
 
   function updateOutput() {
     localStorage.setItem(days[4], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(5*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[4]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
 }
 
@@ -124,9 +145,14 @@ function day6() {
 
   function updateOutput() {
     localStorage.setItem(days[5], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(6*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[5]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
+
 }
 
 function day7() {
@@ -141,9 +167,14 @@ function day7() {
 
   function updateOutput() {
     localStorage.setItem(days[6], input_textarea.value);
-
-    output_div.textContent = input_textarea.value;
+    let date = new Date();
+    date.setTime(date.getTime()+(7*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[6]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
   }
+
 }
 
 
