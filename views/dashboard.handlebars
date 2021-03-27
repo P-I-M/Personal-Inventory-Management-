@@ -1,10 +1,4 @@
-{{!--<div class="grid-container">
-      <div class="profile-photo">
-        <img src="https://res.cloudinary.com/personal-inventory-management/image/upload/v1616542037/default_paul_dkx9mo.jpg" alt="Profile picture">
-      </div>
-<div class="product-nav">--}}
-
-    <p id="currentDay" class="lead"></p>
+<p id="currentDay" class="lead"></p>
 
  {{#each products as |product| }}
   <div class="grid-container">
@@ -23,15 +17,14 @@
 
   
   <div class="scheduler">
-    <div id="currentDay">Todays Date: </div>
           <!-- day 1 -->
           <div class="input-group mborder">
             <div class="input-group-prepend row">
               <div class="cal-date"></div>
             </div>
-            <textarea id="day1" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+            <textarea value="" id="day1" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary saveBtn" type="button"><i
+              <button id = "save1"  class="btn btn-outline-secondary saveBtn" type="button"><i
                   class="far fa-save"></i></button>
             </div>
           </div>
@@ -42,7 +35,7 @@
             </div>
             <textarea value="" id="day2" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary saveBtn" type="button"><i
+              <button id = "save2"  class="btn btn-outline-secondary saveBtn" type="button"><i
                   class="far fa-save"></i></button>
             </div>
           </div>
@@ -53,7 +46,7 @@
               </div>
               <textarea value=""  id="day3" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button id = "save3"  class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
@@ -64,7 +57,7 @@
               </div>
               <textarea value=""  id="day4" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button id = "save4"  class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
@@ -75,7 +68,7 @@
               </div>
               <textarea value="" id="day5" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button id = "save5" class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
@@ -86,7 +79,7 @@
               </div>
               <textarea value="" id="day6" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button id = "save6"  class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
@@ -97,7 +90,7 @@
               </div>
               <textarea value="" id="day7" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button id = "save7"  class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
