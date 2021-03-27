@@ -30,13 +30,18 @@ function drop(ev) {
 
 {{#if products.length}}
 
-  <h2>Use these products before they expire!</h2>
+  <h2>Your product suggestion</h2>
   <div class="cat-list center">
-  <select id="person">
+  <select id="person" style="visibility:hidden">
     {{#each products as |product|}}        
-       <option draggable="true" ondragstart="drag(event)" value="{{product.category_id}}" name="prod-cat">{{product.product_name}} - {{product.stock}} - {{format_date product.exp_date}}</option>
+       <option id ="daily" value="{{product.category_id}}" name="prod-cat">{{product.category_id}}/{{product.product_name}}/{{product.stock}}/{{format_date product.exp_date}}</option>
     {{/each}}
   </select>
+  </div>
+  <div class="cat-list ">
+    <p id='name'>Product Name: <span id="nm"></span></p>
+    <p id='stock'>Product Stock: <span id="st"></span></p>
+    <p id="exp">Product Expiry date: <span id="ex"></span></p>
   </div>
 {{else}}
 <h6>You do not have products</h6>
