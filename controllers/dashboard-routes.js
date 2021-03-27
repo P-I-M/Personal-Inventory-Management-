@@ -46,16 +46,16 @@ router.get('/suggestion', withAuth, (req, res) => {
   const NOW = new Date();
   Product.findAll({
     where: { 
-      [Op.or]: {
+      [Op.and]: {
 
-      [Op.and]: [
-        { user_id: req.session.user_id },
+      [Op.or]: [
+        { category_id:{[Op.eq]: 4} },
         { exp_date: {[Op.gt]: NOW}}
-      ],      
+      ],     
       
-    category_id:{[Op.eq]: 4},      
-        
-    }    
+        user_id: req.session.user_id 
+            
+      }
     }
   })
   .then(dbProductData => {
