@@ -44,6 +44,9 @@ function day1() {
     let day = days[0]
     let content = input_textarea.value; 
     document.cookie = day + '=' + content + ";expires=" + expires;
+
+    output_div.textContent = content;
+    input_textarea.value = content;
   }
 
 }
