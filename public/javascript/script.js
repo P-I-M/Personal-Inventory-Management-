@@ -13,17 +13,19 @@ var currentDay = moment().format("dddd LL");
 $("#currentDay").append(currentDay);
   
 let days = [];
-//let daysRequired = 7
-var dateEls = document.querySelectorAll(".cal-date");
+let daysRequired = 7
+let dateEls = document.querySelectorAll(".cal-date");
 
-for (let i = 0; i<= dateEls.length; i++){
-  //dateEls[i].innerHTML=""; 
-  days.push(moment().add(i, 'days').format('ddd, MMM M'));
+for (let i = 0; i<= daysRequired; i++){
+  dateEls[i].innerHTML=""; 
+  days.push( moment().add(i, 'days').format('MMM D'));
   var calDateEl = document.createElement("span");
   calDateEl.className ='day-info';
   calDateEl.innerHTML = days[i]; 
-  //dateEls[i].append(calDateEl);
+  dateEls[i].append(calDateEl);
 }
+
+//console.log(days);
 
 function day1() {
   var input_textarea = document.querySelector("#day1");
