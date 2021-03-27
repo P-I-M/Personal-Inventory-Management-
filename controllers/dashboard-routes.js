@@ -98,11 +98,12 @@ router.get('/products', withAuth, (req, res) => {
 
 });
 
+
 //route to get list of products for my calendar
 router.get('/calendar', withAuth, (req, res) => {
   Product.findAll({
       where: {
-          user_id: req.session.user_id
+        user_id: req.session.user_id
       },
       attributes: [
           'id',

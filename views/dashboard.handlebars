@@ -1,9 +1,3 @@
-{{!--<div class="grid-container">
-      <div class="profile-photo">
-        <img src="https://res.cloudinary.com/personal-inventory-management/image/upload/v1616542037/default_paul_dkx9mo.jpg" alt="Profile picture">
-      </div>
-<div class="product-nav">--}}
-
  {{#each products as |product| }}
   <div class="grid-container">
     <div class="profile-photo">
@@ -19,91 +13,87 @@
 
   </div>
 
+  
   <div class="scheduler">
-    <!-- Monday  -->
+    <div id="currentDay">Todays Date: </div>
+          <!-- day 1 -->
           <div class="input-group mborder">
             <div class="input-group-prepend row">
-              <span class="input-group-text day">Monday:</span>
+              <div class="cal-date"></div>
             </div>
-            <textarea value="" id="entryMonday" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+            <textarea id="day1" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
             <div class="input-group-append">
-              <button id="buttonMonday" class="btn btn-outline-secondary saveBtn" type="button"><i
+              <button class="btn btn-outline-secondary saveBtn" type="button"><i
                   class="far fa-save"></i></button>
             </div>
           </div>
-      
-          <!-- Tuesday -->
-          <div class="input-group mborder .col-lg-">
+          <!-- day 2 -->
+          <div class="input-group mborder">
             <div class="input-group-prepend row">
-              <span class="input-group-text day">Tuesday:</span>
+              <div class="cal-date"></div>
             </div>
-            <textarea id="entryTuesday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+            <textarea value="" id="day2" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
             <div class="input-group-append">
-              <button id="buttonTuesday" class="btn btn-outline-secondary saveBtn" type="button"><i
+              <button class="btn btn-outline-secondary saveBtn" type="button"><i
                   class="far fa-save"></i></button>
             </div>
           </div>
-      
-          <!-- Wednesday -->
+          <!-- day 3 -->
           <div class="input-group mborder">
             <div class="input-group-prepend row">
-              <span class="input-group-text day">Wednesday:</span>
+              <div class="cal-date"></div>
               </div>
-              <textarea id="entryWednesday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+              <textarea value=""  id="day3" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button id="buttonWednesday" class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
-      
-            <!--Thursday -->
+            <!-- day 4 -->
             <div class="input-group mborder">
               <div class="input-group-prepend row">
-                <span class="input-group-text day">Thursday:</span>
+                <div class="cal-date"></div>
               </div>
-              <textarea id="entryThursday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+              <textarea value=""  id="day4" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button id="buttonThursday" class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
-      
-            <!-- Friday -->
+            <!-- day 5 -->
             <div class="input-group mborder">
               <div class="input-group-prepend row">
-                <span class="input-group-text day"> Friday:</span>
+                <div class="cal-date"></div>
               </div>
-              <textarea id="entryFriday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+              <textarea value="" id="day5" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button id="buttonFriday" class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
-      
-            <!-- Saturday -->
+            <!-- day 6 -->
             <div class="input-group mborder">
               <div class="input-group-prepend row">
-                <span class="input-group-text day">Saturday:</span>
+                <div class="cal-date"></div>
               </div>
-              <textarea id="entrySaturday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+              <textarea value="" id="day6" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button id="buttonSaturday" class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
-      
-            <!-- Sunday -->
+            <!-- day 7 -->
             <div class="input-group mborder">
               <div class="input-group-prepend row">
-                <span class="input-group-text day">Sunday:</span>
+                <div class="cal-date"></div>
               </div>
-              <textarea id="entrySunday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
+              <textarea value="" id="day7" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
-                <button id="buttonSunday" class="btn btn-outline-secondary saveBtn" type="button"><i
+                <button class="btn btn-outline-secondary saveBtn" type="button"><i
                     class="far fa-save"></i></button>
               </div>
             </div>
-            </div>
+  </div>
 
           
          <div class="iframediv"> 
@@ -115,7 +105,11 @@
 
 </div>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="/javascript/script.js"></script>
+
+
 
 
 

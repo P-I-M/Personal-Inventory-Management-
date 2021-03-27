@@ -36,8 +36,10 @@ function drop(ev) {
       </div>
       {{#each products as |product|}}
       <div class="cat-list center">
-            <input type="checkbox" id="{{product.id}}" name="{{product.product_name}} / {{product.stock}}pcs" value="{{product.id}}">
-           <button draggable="true" ondragstart="drag(event)" > <label for="{{product.id}}">{{product.cat_name}} - {{product.product_name}}</button></label><br>
+        {{#if}}
+           <input type="checkbox" id="{{product.id}}" name="{{product.product_name}} / {{product.stock}}pcs" value="{{product.id}}">
+           <button draggable="true" ondragstart="drag(event)" id="cal-item"> <label for="{{product.id}}">{{product.cat_name}} - {{product.product_name}} - {{product.stock}} - {{product.exp_date}}</button></label><br>
+        {{/if}}
       </div>
       {{/each}}
     </div>
@@ -50,4 +52,6 @@ function drop(ev) {
 {{/if}}
 </div>
 
-<script src="/javascript/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="/javascript/calendar.js"></script>
