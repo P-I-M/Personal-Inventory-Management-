@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Product, Category } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require("sequelize");
 
 /* get all products route
 router.get('/', withAuth, (req, res) => {
@@ -38,6 +39,37 @@ router.get('/', withAuth, (req, res) => {
   });
 });
 */
+
+//route to get list of products for logged in user not expired
+
+router.get('/suggestion', withAuth, (req, res) => {
+  const NOW = new Date();
+  Product.findAll({
+    where: { 
+      [Op.or]: {
+
+      [Op.and]: [
+        { user_id: req.session.user_id },
+        { exp_date: {[Op.gt]: NOW}}
+      ],      
+      
+    category_id:{[Op.eq]: 4},      
+        
+    }    
+    }
+  })
+  .then(dbProductData => {
+  const products = dbProductData.map(product => product.get({ plain: true }));
+  res.render('daily-suggestion', {layout: false, products, loggedIn: true });
+})
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
+
+
+
 
 //route for profile picture
 
