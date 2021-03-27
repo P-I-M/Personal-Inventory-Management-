@@ -168,18 +168,19 @@ p.lead {
   background: lightgrey;
   resize: none;
   color: #000000;
-  border-left: 3px dotted black;
-  border-bottom: dotted 3px grey;
-  border-top: dotted 3px grey;
   padding: 0;
   border-radius: 0;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+  font-weight: 700;
 }
 
-.time-block {
-  text-align: center;
-  border-radius: 15px;
-  padding-bottom: 10px;
-}
+
+
 
 .row {
   white-space: pre-wrap;
@@ -423,7 +424,7 @@ p.lead {
   grid-area: product-nav;
 }
 .input-group-text {
-  width: 6em;
+  width: 7em;
   height: 100%;
 }
 
