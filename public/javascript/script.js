@@ -12,8 +12,8 @@ window.onload = function(){
 
 // Display Current Time / Date Using moment.js
   
-  //var currentDay = moment().format("dddd LL");
-  //$("#currentDay").append(currentDay);
+  var currentDay = moment().format("dddd LL");
+  $("#currentDay").append(currentDay);
   
  
   

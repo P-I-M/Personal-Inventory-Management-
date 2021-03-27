@@ -4,6 +4,8 @@
       </div>
 <div class="product-nav">--}}
 
+    <p id="currentDay" class="lead"></p>
+
  {{#each products as |product| }}
   <div class="grid-container">
     <div class="profile-photo">
@@ -95,7 +97,8 @@
             <!-- Sunday -->
             <div class="input-group mborder">
               <div class="input-group-prepend row">
-                <span class="input-group-text day">Sunday:</span>
+                <span class="input-group-text day">Sunday:<br /><p id="currentDay" class="lead"></p></span>
+              
               </div>
               <textarea id="entrySunday" value="" type="text" cols="100" rows="2" class="form-control description textarea"></textarea>
               <div class="input-group-append">
