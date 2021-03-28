@@ -26,7 +26,9 @@ router.get('/', (req, res) => {
         }
       ]
     })
+    // Once you have all the products, send the response as a json
     .then(dbProductData => res.json(dbProductData))
+    // If there's an error, return the error message to the console log
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -34,7 +36,7 @@ router.get('/', (req, res) => {
   });
   
   // get single product
-  router.get('/product/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
     Product.findOne({
       where: {
         id: req.params.id
@@ -58,14 +60,16 @@ router.get('/', (req, res) => {
         }
       ]
     })
+        // Once you have the product, send the response as a json
     .then(dbProductData => res.json(dbProductData))
+    // If there's an error, return the error message to the console log
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
   });
 
-
+// Update a product (only allowed when logged in)
   router.put('/:id', withAuth,(req, res) => {
     Product.update(
       {
@@ -84,6 +88,7 @@ router.get('/', (req, res) => {
         }
       }
     )
+    // Update the product
       .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this id' });
@@ -91,6 +96,7 @@ router.get('/', (req, res) => {
         }
         res.json(dbPostData);
       })
+      // If there's an error, return the error message to the console log
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -115,13 +121,14 @@ router.get('/', (req, res) => {
         user_id: req.session.user_id,
       })
         .then(dbProductData => res.json(dbProductData))
+        // If there's an error, return the error message to the console log
         .catch(err => {
           console.log(err);
           res.status(400).json(err);
         });
     });
 
-  //delete products
+  // delete products
   router.delete('/:id',withAuth, (req, res) => {  
        
     Product.destroy({
@@ -136,6 +143,7 @@ router.get('/', (req, res) => {
         }
         res.json(dbPostData);
       })
+      // If there's an error, return the error message to the console log
       .catch(err => {
         console.log(err);
         res.status(500).json(err);

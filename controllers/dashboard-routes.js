@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Product, Category } = require('../models');
 const withAuth = require('../utils/auth');
+const { Op } = require("sequelize");
 
 /* get all products route
 router.get('/', withAuth, (req, res) => {
@@ -38,6 +39,37 @@ router.get('/', withAuth, (req, res) => {
   });
 });
 */
+
+//route to get list of products for logged in user not expired
+
+router.get('/suggestion', withAuth, (req, res) => {
+  const NOW = new Date();
+  Product.findAll({
+    where: { 
+      [Op.and]: {
+
+      [Op.or]: [
+        { category_id:{[Op.eq]: 4} },
+        { exp_date: {[Op.gt]: NOW}}
+      ],     
+      
+        user_id: req.session.user_id 
+            
+      }
+    }
+  })
+  .then(dbProductData => {
+  const products = dbProductData.map(product => product.get({ plain: true }));
+  res.render('daily-suggestion', {layout: false, products, loggedIn: true });
+})
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
+
+
+
 
 //route for profile picture
 
@@ -98,11 +130,12 @@ router.get('/products', withAuth, (req, res) => {
 
 });
 
+
 //route to get list of products for my calendar
 router.get('/calendar', withAuth, (req, res) => {
   Product.findAll({
       where: {
-          user_id: req.session.user_id
+        user_id: req.session.user_id
       },
       attributes: [
           'id',
@@ -129,6 +162,7 @@ router.get('/calendar', withAuth, (req, res) => {
       const products = dbProductData.map(product => product.get({ plain: true }));
       res.render('calendar', {layout: false, products, loggedIn: true });
 })
+// If there's an error, return the error message to the console log
   .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -176,6 +210,7 @@ router.get('/edit/:category_id/:id', withAuth, (req, res) => {
         res.render('edit-product', { layout: false,  product, loggedIn: true });
         }
     })
+    // If there's an error, return the error message to the console log
     .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -212,6 +247,7 @@ router.get('/create/', withAuth, (req, res) => {
         const products = dbProductData.map(product => product.get({ plain: true }));
         res.render('create-post', { layout: false, products, loggedIn: true });
       })
+      // If there's an error, return the error message to the console log
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -232,6 +268,7 @@ router.get('/new',withAuth, (req, res) => {
         const categories = dbPostData.map(category =>category.get({ plain:true}));
         res.render('add-product', { layout: false, categories, loggedIn: true });
         })
+        // If there's an error, return the error message to the console log
         .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -291,6 +328,7 @@ router.get('/delete',withAuth, (req, res) => {
           const products = dbProductData.map(product => product.get({ plain: true }));
           res.render('delete-product', { layout: false, products, loggedIn: true });
         })
+        // If there's an error, return the error message to the console log
         .catch(err => {
           console.log(err);
           res.status(500).json(err);

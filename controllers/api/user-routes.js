@@ -39,13 +39,23 @@ router.get('/:id', (req, res) => {
 
 //POST new user 
 router.post('/', (req, res) => {
+  User.findOne({
+    where: {
+      email: req.body.email
+    }
+  })
+  .then(dbUserData => {
+    if (dbUserData) {
+      res.status(400).json({ message: 'User already exist' });
+      return;
+    }
     User.create({
       email: req.body.email,
       password: req.body.password,
       profile: req.body.profile
     })
     .then(dbUserData => {
-      req.session.save(() => {
+        req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.email = dbUserData.email;
         req.session.profile = dbUserData.profile;
@@ -53,6 +63,7 @@ router.post('/', (req, res) => {
         res.json(dbUserData);
       });
     });
+  })
 });
 
 // LOGIN

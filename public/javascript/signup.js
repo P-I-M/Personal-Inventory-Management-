@@ -1,11 +1,19 @@
+//Signup to app 
 async function signupFormHandler(event) {
-  event.preventDefault();
-
+  var profile =""; 
+  const imageEl = document.getElementById("profile-signup");
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
-  const profile = document.getElementById("profile-signup").src; 
+  if(document.body.contains(imageEl)) //If a user has uploaded an image get the source of that image
+  {
+  profile = document.getElementById("profile-signup").src; 
+  }
+  else //If the user has not uploaded an image, use this default source 
+  {
+    profile = "https://res.cloudinary.com/personal-inventory-management/image/upload/v1616952335/profile2_tg1iqv.png";
+  }
 
-  if (email && password) {
+  if (email && password) { //User must enter an email and password to sign up 
     const response = await fetch('/api/users', {
       method: 'post',
       body: JSON.stringify({
@@ -18,12 +26,13 @@ async function signupFormHandler(event) {
 
     if (response.ok) {
       window.alert("Welcome to m n mlize!");
-      console.log('success');
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      response.json().then(data => {
+      window.alert(data.message);
+     });
     }
   }
 }
 
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#sign-up').addEventListener('click', signupFormHandler);

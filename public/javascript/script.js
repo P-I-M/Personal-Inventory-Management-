@@ -1,168 +1,188 @@
 window.onload = function(){
-    //colorCode();
-    monday();
-    tuesday();
-    wednesday();
-    thursday();
-    friday();
-    saturday();
-    sunday();
-   }
-  
+  day1(); 
+  day2(); 
+  day3(); 
+  day4(); 
+  day5(); 
+  day6(); 
+  day7();  
+}
 
 // Display Current Time / Date Using moment.js
-  
-  //var currentDay = moment().format("dddd LL");
-  //$("#currentDay").append(currentDay);
-  
- 
-  
-// Add Local Storage And Recall of Local Storage Information Into TextEntry Divs
+var currentDay = moment().format("dddd LL");
+$("#currentDay").append(currentDay);
 
-  function monday() {
-    var input_textarea = document.querySelector("#entryMonday");
-    var output_div = document.querySelector("#entryMonday");
-    var save_button = document.querySelector("#buttonMonday");
-  
-    save_button.addEventListener("click", updateOutput);
-  
-    output_div.textContent = localStorage.getItem("content");
-    input_textarea.value = localStorage.getItem("content");
-  
-    function updateOutput() {
-      localStorage.setItem("content", input_textarea.value);
-  
-      output_div.textContent = input_textarea.value;
-    }
-  }
-  
-  function tuesday() {
-    var input_textarea1 = document.querySelector("#entryTuesday");
-    var output_div1 = document.querySelector("#entryTuesday");
-    var save_button1 = document.querySelector("#buttonTuesday");
-  
-    save_button1.addEventListener("click", updateOutput1);
-  
-    output_div1.textContent = localStorage.getItem("content1");
-    input_textarea1.value = localStorage.getItem("content1");
-  
-    function updateOutput1() {
-      localStorage.setItem("content1", input_textarea1.value);
-  
-      output_div1.textContent = input_textarea1.value;
-    }
-  }
-  
-  
-  
-  function wednesday() {
-    var input_textarea2 = document.querySelector("#entryWednesday");
-    var output_div2 = document.querySelector("#entryWednesday");
-    var save_button2 = document.querySelector("#buttonWednesday");
-  
-    save_button2.addEventListener("click", updateOutput2);
-  
-    output_div2.textContent = localStorage.getItem("content2");
-    input_textarea2.value = localStorage.getItem("content2");
-  
-    function updateOutput2() {
-      localStorage.setItem("content2", input_textarea2.value);
-  
-      output_div2.textContent = input_textarea2.value;
-    }
-  }
-  
-  
-  function thursday() {
-    var input_textarea3 = document.querySelector("#entryThursday");
-    var output_div3 = document.querySelector("#entryThursday");
-    var save_button3 = document.querySelector("#buttonThursday");
-  
-    save_button3.addEventListener("click", updateOutput3);
-  
-    output_div3.textContent = localStorage.getItem("content3");
-    input_textarea3.value = localStorage.getItem("content3");
-  
-    function updateOutput3() {
-      localStorage.setItem("content3", input_textarea3.value);
-  
-      output_div3.textContent = input_textarea3.value;
-    }
-  }
-  
-  
-  function friday() {
-    var input_textarea4 = document.querySelector("#entryFriday");
-    var output_div4 = document.querySelector("#entryFriday");
-    var save_button4 = document.querySelector("#buttonFriday");
-  
-    save_button4.addEventListener("click", updateOutput4);
-  
-    output_div4.textContent = localStorage.getItem("content4");
-    input_textarea4.value = localStorage.getItem("content4");
-  
-    function updateOutput4() {
-      localStorage.setItem("content4", input_textarea4.value);
-  
-      output_div4.textContent = input_textarea4.value;
-    }
-  }
-  
-  
-  function saturday() {
-    var input_textarea5 = document.querySelector("#entrySaturday");
-    var output_div5 = document.querySelector("#entrySaturday");
-    var save_button5 = document.querySelector("#buttonSaturday");
-  
-    save_button5.addEventListener("click", updateOutput5);
-  
-    output_div5.textContent = localStorage.getItem("content5");
-    input_textarea5.value = localStorage.getItem("content5");
-  
-    function updateOutput5() {
-      localStorage.setItem("content5", input_textarea5.value);
-  
-      output_div5.textContent = input_textarea5.value;
-    }
-  }
-  
-  
-  function sunday() {
-    var input_textarea6 = document.querySelector("#entrySunday");
-    var output_div6 = document.querySelector("#entrySunday");
-    var save_button6 = document.querySelector("#buttonSunday");
-  
-    save_button6.addEventListener("click", updateOutput6);
-  
-    output_div6.textContent = localStorage.getItem("content6");
-    input_textarea6.value = localStorage.getItem("content6");
-  
-    function updateOutput6() {
-      localStorage.setItem("content6", input_textarea6.value);
-  
-      output_div6.textContent = input_textarea6.value;
-    }
+// Get the next seven days after the current day 
+let days = [];
+let daysRequired = 7
+var dateEls = document.querySelectorAll(".cal-date");
+
+// Push every day to an array and display them in divs 
+for (let i = 0; i<= dateEls.length-1; i++){
+  dateEls[i].innerHTML=""; 
+  days.push( moment().add(i, 'days').format('MMM D'));
+  var calDateEl = document.createElement("span");
+  calDateEl.className ='day-info';
+  calDateEl.innerHTML = days[i]; 
+  dateEls[i].append(calDateEl);
+}
+
+// Save calendar info to localStorage and cookies 
+// Cookies expire for Day 1 after 24 hours, Day 2 after 48 hours, Day 3 after 72 hours etc...
+function day1() {
+  var input_textarea = document.querySelector("#day1");
+  var output_div = document.querySelector("#day1");
+  var save_button = document.querySelector("#save1");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[0]);
+  input_textarea.value = localStorage.getItem(days[0]);
+
+  // Name of the cookie is set as the date where the info is entered, and the value is the text content of that day
+  function updateOutput() {
+    localStorage.setItem(days[0], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(1*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[0]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+
+    output_div.textContent = content;
+    input_textarea.value = content;
   }
 
-// async function addCalendarEvent(event) {
-//   event.preventDefault(); 
+}
 
-//   const response = await fetch('/dashboard/calendar' , {
-//     method: 'POST',
-//     body: JSON.stringify({
-//     }),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-//   if (response.ok) {
-//     window.alert('Yay!');
-//     document.location.reload('/dashboard/calendar')
-//   } else {
-//     alert(response.statusText);
-//     console.log(response)
-//   }
-// };
-  
-document.querySelector('#calendar-add').addEventListener('click', addCalendarEvent)
-  
+function day2() {
+  var input_textarea = document.querySelector("#day2");
+  var output_div = document.querySelector("#day2");
+  var save_button = document.querySelector("#save2");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[1]);
+  input_textarea.value = localStorage.getItem(days[1]);
+
+  function updateOutput() {
+    localStorage.setItem(days[1], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(2*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[1]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+  }
+
+}
+
+function day3() {
+  var input_textarea = document.querySelector("#day3");
+  var output_div = document.querySelector("#day3");
+  var save_button = document.querySelector("#save3");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[2]);
+  input_textarea.value = localStorage.getItem(days[2]);
+
+  function updateOutput() {
+    localStorage.setItem(days[2], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(3*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[2]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+  }
+}
+
+function day4() {
+  var input_textarea = document.querySelector("#day4");
+  var output_div = document.querySelector("#day4");
+  var save_button = document.querySelector("#save4");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[3]);
+  input_textarea.value = localStorage.getItem(days[3]);
+
+  function updateOutput() {
+    localStorage.setItem(days[3], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(4*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[3]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+  }
+}
+
+function day5() {
+  var input_textarea = document.querySelector("#day5");
+  var output_div = document.querySelector("#day5");
+  var save_button = document.querySelector("#save5");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[4]);
+  input_textarea.value = localStorage.getItem(days[4]);
+
+  function updateOutput() {
+    localStorage.setItem(days[4], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(5*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[4]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+  }
+}
+
+function day6() {
+  var input_textarea = document.querySelector("#day6");
+  var output_div = document.querySelector("#day6");
+  var save_button = document.querySelector("#save6");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[5]);
+  input_textarea.value = localStorage.getItem(days[5]);
+
+  function updateOutput() {
+    localStorage.setItem(days[5], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(6*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[5]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+  }
+
+}
+
+function day7() {
+  var input_textarea = document.querySelector("#day7");
+  var output_div = document.querySelector("#day7");
+  var save_button = document.querySelector("#save7");
+
+  save_button.addEventListener("click", updateOutput);
+
+  output_div.textContent = localStorage.getItem(days[6]);
+  input_textarea.value = localStorage.getItem(days[6]);
+
+  function updateOutput() {
+    localStorage.setItem(days[6], input_textarea.value);
+    let date = new Date();
+    date.setTime(date.getTime()+(7*24*60*60*1000));
+    var expires = '; expires='+date.toGMTString(); 
+    let day = days[6]
+    let content = input_textarea.value; 
+    document.cookie = day + '=' + content + ";expires=" + expires;
+  }
+
+}
+
+
+
