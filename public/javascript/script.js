@@ -1,32 +1,32 @@
-window.onload = function(){
+window.addEventListener('load', function () {
   day1(); 
   day2(); 
   day3(); 
   day4(); 
   day5(); 
   day6(); 
-  day7();  
-}
-
-// Display Current Time / Date Using moment.js
-var currentDay = moment().format("dddd LL");
-$("#currentDay").append(currentDay);
+  day7(); 
+  // Display Current Time / Date Using moment.js
+  var currentDay = moment().format("dddd LL");
+  $("#currentDay").append(currentDay); 
+})
 
 // Get the next seven days after the current day 
 let days = [];
 let daysRequired = 7
 var dateEls = document.querySelectorAll(".cal-date");
 
+
 // Push every day to an array and display them in divs 
 for (let i = 0; i<= dateEls.length; i++){
+  debugger;
   dateEls[i].innerHTML=""; 
   days.push( moment().add(i, 'days').format('MMM D'));
   var calDateEl = document.createElement("span");
-  calDateEl.className ='day-info';
+  //calDateEl.className ='day-info';
   calDateEl.innerHTML = days[i]; 
   dateEls[i].append(calDateEl);
-}
-
+}; 
 // Save calendar info to localStorage and cookies 
 // Cookies expire for Day 1 after 24 hours, Day 2 after 48 hours, Day 3 after 72 hours etc...
 function day1() {
@@ -48,12 +48,10 @@ function day1() {
     let day = days[0]
     let content = input_textarea.value; 
     document.cookie = day + '=' + content + ";expires=" + expires;
-
-    output_div.textContent = content;
-    input_textarea.value = content;
   }
 
 }
+
 
 function day2() {
   var input_textarea = document.querySelector("#day2");
@@ -183,6 +181,7 @@ function day7() {
   }
 
 }
+
 
 
 
