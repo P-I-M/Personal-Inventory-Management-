@@ -60,20 +60,20 @@ Use this site to organize your life and live a minimalist lifestyle.
 https://mnmlize.herokuapp.com/ 
 
 ## Languages/Technology Used
-Bcrypt [Bcrypt](https://www.npmjs.com/package/bcrypt "Bcrypt")<br />
-Bootstrap [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/ "Bootstrap")<br />
-Sequelize [Sequelize](https://sequelize.org/ "Sequelize")<br />
-Dotenv [Dotenv](https://www.npmjs.com/package/dotenv "Dotenv")<br />
-Express [Express](https://expressjs.com/ "Express")<br />
-Handlebars [Handlebars](https://handlebarsjs.com/ "Handlebars")<br />
-MySQL2 [MySQL2](https://www.npmjs.com/package/mysql2 "MySQL2")<br />
-Cloudinary [Cloudinary](https://www.npmjs.com/package/cloudinary "Cloudinary")<br />
-Node [Node](https://nodejs.org/en/docs/ "Node")<br />
-Heroku [Heroku](https://devcenter.heroku.com/ "Heroku")<br />
-Moment.js [Moment.js](https://momentjs.com/ "Moment.js")<br />
-JQuery [JQuery](https://jquery.com/ "JQuery")<br />
-Javascript [Javascript](https://www.javascript.com/ "Javascript")<br />
-CSS [CSS](https://www.w3schools.com/css/ "CSS")<br />
+[Bcrypt](https://www.npmjs.com/package/bcrypt "Bcrypt")<br />
+[Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/ "Bootstrap")<br />
+[Sequelize](https://sequelize.org/ "Sequelize")<br />
+[Dotenv](https://www.npmjs.com/package/dotenv "Dotenv")<br />
+[Express](https://expressjs.com/ "Express")<br />
+[Handlebars](https://handlebarsjs.com/ "Handlebars")<br />
+[MySQL2](https://www.npmjs.com/package/mysql2 "MySQL2")<br />
+[Cloudinary](https://www.npmjs.com/package/cloudinary "Cloudinary")<br />
+[Node](https://nodejs.org/en/docs/ "Node")<br />
+[Heroku](https://devcenter.heroku.com/ "Heroku")<br />
+[Moment.js](https://momentjs.com/ "Moment.js")<br />
+[JQuery](https://jquery.com/ "JQuery")<br />
+[Javascript](https://www.javascript.com/ "Javascript")<br />
+[CSS](https://www.w3schools.com/css/ "CSS")<br />
 
 
 
