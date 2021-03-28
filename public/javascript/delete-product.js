@@ -49,6 +49,8 @@ async function deleteProduct(event) {
     }
 }
 };
+
+// Event listener for the delete product button
   
 document.querySelector('.delete-prod-btn').addEventListener('click', deleteProduct);
 
