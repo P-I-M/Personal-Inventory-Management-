@@ -173,7 +173,6 @@ p.lead {
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
-	background-image: url(bg.gif);
 	background-position: bottom right;
 	background-repeat: no-repeat;
   font-weight: 700;
@@ -426,6 +425,11 @@ p.lead {
 .input-group-text {
   width: 7em;
   height: 100%;
+}
+
+.cal-date {
+  font-weight: 700;
+  padding-left: 8vm;
 }
 
 .my-inventory { grid-area: my-inventory; }
