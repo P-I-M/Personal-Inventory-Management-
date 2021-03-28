@@ -30,7 +30,8 @@ function drop(ev) {
 
 {{#if products.length}}
 
-  <h2>Your product suggestion</h2>
+  <h2 class="center">Your product suggestion</h2>
+  <h5 class="center">Drag and drop into calendar</h5>
   <div class="cat-list center">
   <select id="person" style="visibility:hidden">
     {{#each products as |product|}}        
@@ -39,12 +40,12 @@ function drop(ev) {
   </select>
   </div>
   <div class="cat-list ">
-    <p id='name'>Product Name: <span draggable="true" ondragstart="drag(event)" id="nm"></span></p>
-    <p id='stock'>Product Stock: <span id="st"></span></p>
-    <p id="exp">Product Expiry date: <span id="ex"></span></p>
+    <p class="body-temp" id='name'>Product Name: <button class="categorybtn"> <span draggable="true" ondragstart="drag(event)" id="nm"></span></button></p>
+    <p class="body-temp" id='stock'>Product Stock: <span id="st" style="font-weight: 800;"></span></p>
+    <p class="body-temp" id="exp">Product Expiry date: <span id="ex" style="font-weight: 800;"></span></p>
   </div>
 {{else}}
-<h6>You do not have products</h6>
+<h6 class="body-temp">You do not have products</h6>
 {{/if}}
 
 <script src="/javascript/daily-suggestion.js"></script>
