@@ -20,6 +20,34 @@ As a consumer in the current state of the world who has been stockpiling supplie
 
 We decided to create an organizer tool for your personal inventory: M N M LIZE
 
+#### User Story
+GIVEN a personal inventory management site  
+WHEN I visit the site for the first time  
+THEN I am presented with the login page and option to create new account  
+WHEN I choose to create account  
+THEN I am prompted to create a email, password and option to upload profile image  
+WHEN I click on the create account  
+THEN my user credentials are saved and I am logged into the site  
+WHEN I revisit the site at a later time and choose to log in  
+THEN I am prompted to enter my email and password  
+WHEN I am signed in to the site  
+THEN I am presented with the dashboard, and the option to log out  
+On dashboard I see uploaded user Image and buttons My Inventory,Daily suggestion, Add items, Delete Items and calendar   
+WHEN I click on Add Items, THEN I am presented with list of categories to choose from  
+WHEN I click on any one category, THEN I am presented with form to enter product details and upload product Image for selected category  
+WHEN I click on Add product, product details are saved and I am redirected to My Inventory  
+WHEN I click on Product name, THEN I am presented with form to Edit Product details and save   
+WHEN I click on My Inventory, THEN I am presented with list of products in my inventory and product Image  
+WHEN I click on Daily suggestion, THEN I am presented with one random item from my Inventory which is not expired  
+As a user I can drag product name to the calendar   
+WHEN I click save button for calendar, THEN product entry is saved to calendar for that day  
+WHEN I click on Delete Items, THEN I am presented with list of products in my Inventory  
+WHEN I select one or more products and click Remove, THEN items will be removed from   Inventory and taken back to My Inventory  
+WHEN I click on the logout option in the navigation  
+THEN I am signed out of the site  
+WHEN I am idle on the page for 60 minutes  
+
+
 ## Installation
 
 ```
@@ -88,6 +116,12 @@ https://mnmlize.herokuapp.com/
 ### Adding a product:
 ![adding a product](./public/images/screenshot2.jpg?raw=true) <br /><br />
 ![adding a product detailed](./public/images/screenshot3.jpg?raw=true) <br /><br />
+
+### Daily Suggestion:
+![Daily suggestion](./public/images/daily.png?raw=true) <br /><br />
+
+### Delete Items:
+![Daily suggestion](./public/images/delete.png?raw=true) <br /><br />
 
   
 ## Contributing
