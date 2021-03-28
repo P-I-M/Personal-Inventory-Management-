@@ -10,7 +10,7 @@ async function signupFormHandler(event) {
   }
   else //If the user has not uploaded an image, use this default source 
   {
-    profile = "https://res.cloudinary.com/personal-inventory-management/image/upload/v1616534747/default_paul_sc7mmk.jpg";
+    profile = "https://res.cloudinary.com/personal-inventory-management/image/upload/v1616952335/profile2_tg1iqv.png";
   }
 
   if (email && password) { //User must enter an email and password to sign up 
