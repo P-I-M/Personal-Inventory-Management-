@@ -12,7 +12,10 @@ router.get('/', (req, res) => {
         'category_desc'
       ]
     })
+    // Once you have all the categories, send the response as a json
       .then(dbCategoryData => res.json(dbCategoryData))
+
+      // If there's an error, return the error message to the console log
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -31,6 +34,7 @@ router.get('/', (req, res) => {
         'category_desc'
       ]
     })
+     // Once you have the category, send the response as a json
     .then(dbCategoryData => res.json(dbCategoryData))
     .catch(err => {
       console.log(err);
@@ -46,6 +50,7 @@ router.get('/', (req, res) => {
       category_name: req.body.category_name,
       user_id: req.session.user_id,
     })
+     // Post a new category to the database
       .then(dbCategoryData => res.json(dbCategoryData))
       .catch(err => {
         console.log(err);

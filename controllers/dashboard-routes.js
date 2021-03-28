@@ -162,6 +162,7 @@ router.get('/calendar', withAuth, (req, res) => {
       const products = dbProductData.map(product => product.get({ plain: true }));
       res.render('calendar', {layout: false, products, loggedIn: true });
 })
+// If there's an error, return the error message to the console log
   .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -209,6 +210,7 @@ router.get('/edit/:category_id/:id', withAuth, (req, res) => {
         res.render('edit-product', { layout: false,  product, loggedIn: true });
         }
     })
+    // If there's an error, return the error message to the console log
     .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -245,6 +247,7 @@ router.get('/create/', withAuth, (req, res) => {
         const products = dbProductData.map(product => product.get({ plain: true }));
         res.render('create-post', { layout: false, products, loggedIn: true });
       })
+      // If there's an error, return the error message to the console log
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -265,6 +268,7 @@ router.get('/new',withAuth, (req, res) => {
         const categories = dbPostData.map(category =>category.get({ plain:true}));
         res.render('add-product', { layout: false, categories, loggedIn: true });
         })
+        // If there's an error, return the error message to the console log
         .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -324,6 +328,7 @@ router.get('/delete',withAuth, (req, res) => {
           const products = dbProductData.map(product => product.get({ plain: true }));
           res.render('delete-product', { layout: false, products, loggedIn: true });
         })
+        // If there's an error, return the error message to the console log
         .catch(err => {
           console.log(err);
           res.status(500).json(err);
