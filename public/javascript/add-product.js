@@ -79,9 +79,11 @@ async function handleGetCategorySubmit(event) {
     } 
   }
   else
+  // If there's an error due to missing information, return this error message as an alert
   {
     window.alert("Oops! Name, price and quantity are mandatory");
   }
 };
  
+// Event listener for the add-product button
 document.querySelector('#add-product').addEventListener('click', handleGetCategorySubmit);

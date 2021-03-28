@@ -36,6 +36,7 @@ form.addEventListener("submit", (e) => {
   }
 }
 else
+// If no image is selected, alert user
 {
 window.alert("Please select file to upload");
 }

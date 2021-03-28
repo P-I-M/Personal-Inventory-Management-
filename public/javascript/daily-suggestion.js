@@ -1,8 +1,9 @@
     var arr=[];
     var flag = false;
-   
+
     const dropdownEl = document.getElementById('person');
-        
+    if(dropdownEl !== null)   
+    {
     for (let i =0;i<dropdownEl.length;i++)
     {
         //console.log(dropdownEl[i].text);
@@ -21,5 +22,6 @@
     document.getElementById("nm").innerHTML = arr1[1];
     document.getElementById("st").innerHTML = arr1[2];
     document.getElementById("ex").innerHTML = arr1[3];
+}
     
     

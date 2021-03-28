@@ -97,6 +97,8 @@ else
 
 };
 
+// Event listener for the update a product button
+
 document.querySelector('#update-product').addEventListener('click', handleGetCategorySubmit);
 
 
