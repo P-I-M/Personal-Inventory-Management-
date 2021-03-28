@@ -1,10 +1,11 @@
 async function deleteProduct(event) {
-    event.preventDefault();
+    //event.preventDefault();
     var arr=[];
     var flag = false;
     var delflag = false;
     const listcheckboxes = document.querySelectorAll('input[type="checkbox"]');
-    
+    if (listcheckboxes !== null)
+    {
     for (let i =0;i<listcheckboxes.length;i++)
     {
         console.log(listcheckboxes[i].value);
@@ -46,6 +47,7 @@ async function deleteProduct(event) {
             document.location.replace('/dashboard/products');
         }
     }
+}
 };
   
 document.querySelector('.delete-prod-btn').addEventListener('click', deleteProduct);
