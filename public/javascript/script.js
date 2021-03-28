@@ -5,18 +5,20 @@ window.onload = function(){
   day4(); 
   day5(); 
   day6(); 
-  day7(); 
+  day7();  
 }
 
 // Display Current Time / Date Using moment.js
 var currentDay = moment().format("dddd LL");
 $("#currentDay").append(currentDay);
-  
+
+// Get the next seven days after the current day 
 let days = [];
 let daysRequired = 7
-let dateEls = document.querySelectorAll(".cal-date");
+var dateEls = document.querySelectorAll(".cal-date");
 
-for (let i = 0; i<= daysRequired; i++){
+// Push every day to an array and display them in divs 
+for (let i = 0; i<= dateEls.length; i++){
   dateEls[i].innerHTML=""; 
   days.push( moment().add(i, 'days').format('MMM D'));
   var calDateEl = document.createElement("span");
@@ -25,7 +27,8 @@ for (let i = 0; i<= daysRequired; i++){
   dateEls[i].append(calDateEl);
 }
 
-
+// Save calendar info to localStorage and cookies 
+// Cookies expire for Day 1 after 24 hours, Day 2 after 48 hours, Day 3 after 72 hours etc...
 function day1() {
   var input_textarea = document.querySelector("#day1");
   var output_div = document.querySelector("#day1");
@@ -36,6 +39,7 @@ function day1() {
   output_div.textContent = localStorage.getItem(days[0]);
   input_textarea.value = localStorage.getItem(days[0]);
 
+  // Name of the cookie is set as the date where the info is entered, and the value is the text content of that day
   function updateOutput() {
     localStorage.setItem(days[0], input_textarea.value);
     let date = new Date();

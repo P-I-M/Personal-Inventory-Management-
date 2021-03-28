@@ -1,10 +1,11 @@
 //Update product info
 async function handleGetCategorySubmit(event) {
-  //event.preventDefault();
-    
+
+    //Get the category id of product being updated from the URL
     let category_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 2
     ];
+    //Get the id of product being updated from the URL 
     let id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -20,18 +21,18 @@ async function handleGetCategorySubmit(event) {
     prod_desc = document.querySelector('input[name="prod-desc"]').value.trim();
     const price = parseFloat(document.querySelector('input[name="price"]').value.trim());
     const stock = parseInt(document.querySelector('input[name="stock"]').value.trim());
-    if(category_id == 1 || category_id== 2 || category_id == 3)
+    if(category_id == 1 || category_id== 2 || category_id == 3) //Get the manufacturing and expiry date from food, medicine and cosmetics
     {
     mfg_date = Date.parse(document.querySelector('input[name="mfg_date"]').value.trim());
     exp_date = Date.parse(document.querySelector('input[name="exp_date"]').value.trim());
     }   
     author_name = document.querySelector('input[name="author_name"]').value.trim();
 
-    if(document.body.contains(imageEl))
+    if(document.body.contains(imageEl)) //If an image is being updated 
     {
       var img_url = imageEl.src;
 
-      if(product_name && price && stock)
+      if(product_name && price && stock) //If name, price and stock is entered, allow this product to be updated
       {   
         const response = await fetch(`/api/products/${id}`, {
           method: 'PUT',
@@ -64,7 +65,7 @@ async function handleGetCategorySubmit(event) {
   }
 else
 {
-      if(product_name && price && stock)
+      if(product_name && price && stock) //If an image is not being updated 
       {   
         const response = await fetch(`/api/products/${id}`, {
           method: 'PUT',
