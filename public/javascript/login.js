@@ -1,10 +1,11 @@
+//Login to app
 async function loginFormHandler(event) {
   event.preventDefault();
 
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  if (email && password) {
+  if (email && password) { //User must enter correct email and password to login
     const response = await fetch('/api/users/login', {
       method: 'post',
       body: JSON.stringify({
@@ -18,7 +19,6 @@ async function loginFormHandler(event) {
       window.alert("Welcome to m n mlize!");
       document.location.replace('/dashboard');
     } else {
-       //alert(response.statusText);
       response.json().then(data => {
       window.alert(data.message);
      });

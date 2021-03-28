@@ -1,5 +1,7 @@
+//Delete products from database
 async function deleteProduct(event) {
-    //event.preventDefault();
+ 
+    //Empty array to store all of the ids for chosen products to delete
     var arr=[];
     var flag = false;
     var delflag = false;
@@ -8,20 +10,22 @@ async function deleteProduct(event) {
     {
     for (let i =0;i<listcheckboxes.length;i++)
     {
-        console.log(listcheckboxes[i].value);
-        if(listcheckboxes[i].checked == true)
+        //console.log(listcheckboxes[i].value);
+        //If check boxes have been checked, push the ids of those products to the array
+        if(listcheckboxes[i].checked == true) 
         {
             arr.push(parseInt(listcheckboxes[i].value));
             flag=true;
         }
     }
+    //If no products were selected, alert the user. 
     if(flag == false)
     {
         window.alert("Please select product");
     }
     else
     {   for(var i =0;i<arr.length;i++)
-        {
+        { // Delete all products from the database with the ids chosen
             var delflag = false;
         const response = await fetch(`/api/products/${arr[i]}`, {
             method: 'DELETE',
@@ -56,6 +60,7 @@ document.querySelector('.delete-prod-btn').addEventListener('click', deleteProdu
 
 
 
+//Can we delete the below? 
 
 /*async function deleteProduct(event) {
     event.preventDefault();
