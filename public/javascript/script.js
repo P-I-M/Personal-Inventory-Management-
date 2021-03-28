@@ -5,7 +5,7 @@ window.onload = function(){
   day4(); 
   day5(); 
   day6(); 
-  day7(); 
+  day7();  
 }
 
 // Display Current Time / Date Using moment.js
@@ -14,17 +14,16 @@ $("#currentDay").append(currentDay);
   
 let days = [];
 let daysRequired = 7
-let dateEls = document.querySelectorAll(".cal-date");
+var dateEls = document.querySelectorAll(".cal-date");
 
-for (let i = 0; i<= daysRequired; i++){
-  dateEls[i].innerHTML=""; 
+for (let i = 0; i<= dateEls.length; i++){
+  //dateEls[i].innerHTML=""; 
   days.push( moment().add(i, 'days').format('MMM D'));
   var calDateEl = document.createElement("span");
   calDateEl.className ='day-info';
   calDateEl.innerHTML = days[i]; 
-  dateEls[i].append(calDateEl);
+  //dateEls[i].append(calDateEl);
 }
-
 
 function day1() {
   var input_textarea = document.querySelector("#day1");
