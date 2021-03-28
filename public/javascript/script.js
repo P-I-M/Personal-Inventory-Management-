@@ -18,7 +18,7 @@ let daysRequired = 7
 var dateEls = document.querySelectorAll(".cal-date");
 
 // Push every day to an array and display them in divs 
-for (let i = 0; i<= dateEls.length; i++){
+for (let i = 0; i<= dateEls.length-1; i++){
   dateEls[i].innerHTML=""; 
   days.push( moment().add(i, 'days').format('MMM D'));
   var calDateEl = document.createElement("span");
