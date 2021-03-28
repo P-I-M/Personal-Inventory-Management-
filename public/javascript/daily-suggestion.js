@@ -10,7 +10,7 @@
         arr.push(dropdownEl[i].text);        
     }
    
-    var rndno = Math.floor((Math.random() * (arr.length-1)) + 0);
+    var rndno = Math.floor((Math.random() * (arr.length)) + 0);
     var rndprod = arr[rndno]; // Use Math.random() to get a random product from the array
     var arr1 = arr[rndno].split("/");
     if(arr1[0]==4)
