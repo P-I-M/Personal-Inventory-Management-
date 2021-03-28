@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
       }
     ]
   })
+  // Render the products on the homepage
     .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
 
@@ -36,21 +37,25 @@ router.get('/', (req, res) => {
         loggedIn: req.session.loggedIn
       });
     })
+    // If there's an error, return the error message to the console log
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
+// If logged in, redirect to the dashboard page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/dashboard');
     return;
   }
 
+// render the login page
   res.render('login');
 });
 
+// Get the signup page, if logged in already, instead render the dashboard
 router.get('/signup', (req, res) => {
   if(req.session.loggedIn) {
     res.redirect('/dashboard');
@@ -99,6 +104,7 @@ router.get('/product/:id', (req, res) => {
         loggedIn: req.session.loggedIn
       });
     })
+    // If there's an error, return the error message to the console log
     .catch(err => {
       console.log(err);
       res.status(500).json(err);

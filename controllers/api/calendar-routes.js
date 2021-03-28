@@ -31,10 +31,13 @@ router.get('/', withAuth, (req, res) => {
             }
         ]   
     })
+    // Once you get the products, render them on the calendar
     .then(dbProductData => {
         const products = dbProductData.map(product => product.get({ plain: true }));
         res.render('calendar', {layout: false, products, loggedIn: true });
   })
+
+  // If error, return the error message to the console log
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
